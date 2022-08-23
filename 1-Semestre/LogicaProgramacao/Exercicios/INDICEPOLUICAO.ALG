@@ -1,6 +1,6 @@
 Algoritmo "IndicePoluicao"
-// Disciplina   : [Linguagem e Lógica de Programação]
-// Professor   : Antonio Carlos Nicolodi
+// Disciplina   : [Linguagem e LÃ³gica de ProgramaÃ§Ã£o]
+// Professor   : Fabricia Noronha
 
 Var
    valor: real
@@ -23,7 +23,7 @@ Inicio
                escreval ("Empresas do grupo 1 devem suspender atividades")
             fimse
          senao
-            escreval("Níveis aceitaveis de poluição")
+            escreval("NÃ­veis aceitaveis de poluiÃ§Ã£o")
          fimse
       senao
          escreval(" Valor de indice invalido")
