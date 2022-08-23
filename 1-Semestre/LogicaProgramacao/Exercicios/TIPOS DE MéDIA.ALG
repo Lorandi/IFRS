@@ -1,6 +1,6 @@
-Algoritmo "Tipos de média"
-// Disciplina   : [Linguagem e Lógica de Programação]
-// Professor   : Antonio Carlos Nicolodi
+Algoritmo "Tipos de mÃ©dia"
+// Disciplina   : [Linguagem e LÃ³gica de ProgramaÃ§Ã£o]
+// Professor   : Fabricia Noronha
 
 Var
    nota1, nota2, nota3: real
@@ -13,18 +13,18 @@ Inicio
    leia(nota2)
    escreval("Escreva a nota 3")
    leia(nota3)
-   escreval("Escolha o tipo de média")
-   escreval("Digite 1 para média aritmética ou digite 2 para média ponderada")
+   escreval("Escolha o tipo de mÃ©dia")
+   escreval("Digite 1 para mÃ©dia aritmÃ©tica ou digite 2 para mÃ©dia ponderada")
    leia(tipoDeMedia)
 
    escolha tipoDeMedia
    caso "1"
-      escreval("Você selecionou média aritmética")
-      escreval("O resultado é: ",(nota1+nota2+nota3)/3)
+      escreval("VocÃª selecionou mÃ©dia aritmÃ©tica")
+      escreval("O resultado Ã©: ",(nota1+nota2+nota3)/3)
    caso "2"
-      escreval("Você selecionou média ponderada")
-      escreval("O resultado é: ", (nota1 *3 +nota2 * 3 + nota3 * 4)/10)
+      escreval("VocÃª selecionou mÃ©dia ponderada")
+      escreval("O resultado Ã©: ", (nota1 *3 +nota2 * 3 + nota3 * 4)/10)
    outrocaso
-      escreval("Valor inválido")
+      escreval("Valor invÃ¡lido")
    fimescolha
 Fimalgoritmo
