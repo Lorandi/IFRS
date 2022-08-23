@@ -1,6 +1,6 @@
 Algoritmo "Aluno por idade"
-// Disciplina   : [Linguagem e Lógica de Programação]
-// Professor   : Antonio Carlos Nicolodi
+// Disciplina   : [Linguagem e LÃ³gica de ProgramaÃ§Ã£o]
+// Professor   : Fabricia Noronha
 
 Var
    idade: caracter
@@ -11,14 +11,14 @@ Inicio
 
    escolha idade
    caso "0", "1", "2", "3"
-      escreval("Bebê")
+      escreval("BebÃª")
    caso "4", "5", "6", "7", "8", "9", "10", "11"
-      escreval("Criança")
+      escreval("CrianÃ§a")
    caso "12", "13", "14", "15", "16", "17"
       escreval("Adolescente")
    caso "18", "19", "20"
       escreval("Adulto")
    outrocaso
-      escreval("Valor inválido")
+      escreval("Valor invÃ¡lido")
    fimescolha
 Fimalgoritmo
