@@ -1,5 +1,5 @@
 Algoritmo "calcule area do terreno"
-// Disciplina   : [Linguagem e Lógica de Programação]
+// Disciplina   : Lógica de Programação
 // Professor   : Fabricia Noronha
 
 Var a:inteiro
