@@ -1,5 +1,5 @@
 Algoritmo "Aluno por idade"
-// Disciplina   : [Linguagem e Lógica de Programação]
+// Disciplina   : Lógica de Programação
 // Professor   : Fabricia Noronha
 
 Var
