@@ -1,12 +1,12 @@
 Algoritmo "Dias da semana"
-// Disciplina   : [Linguagem e Lógica de Programação] 
-// Professor   : Antonio Carlos Nicolodi 
+// Disciplina   : [Linguagem e LÃ³gica de ProgramaÃ§Ã£o] 
+// Professor   : Fabricia Noronha 
 
 Var
    n1:caracter
 
 Inicio
-   escreval("Digite um número de 1 a 7 para ver o dia da semana correspondente")
+   escreval("Digite um nÃºmero de 1 a 7 para ver o dia da semana correspondente")
    leia(n1)
 
    escolha n1
@@ -15,7 +15,7 @@ Inicio
    caso "2"
       escreval("Segunda")
    caso "3'
-      escreval("Terça")
+      escreval("TerÃ§a")
    caso "4"
    escreval("Quarta")
    caso "5"
@@ -23,8 +23,8 @@ Inicio
    caso "6"
    escreval("Sexta")
    caso "7"
-   escreval("Sábado")
+   escreval("SÃ¡bado")
    outrocaso
-      escreval("Valor inválido")
+      escreval("Valor invÃ¡lido")
    fimescolha
 Fimalgoritmo
