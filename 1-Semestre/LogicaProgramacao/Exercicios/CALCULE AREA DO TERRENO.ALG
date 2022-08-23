@@ -1,14 +1,12 @@
 Algoritmo "calcule area do terreno"
-// Disciplina   : [Linguagem e Lógica de Programação]
-// Professor   : Antonio Carlos Nicolodi 
-// Descrição   : Aqui você descreve o que o programa faz! (função)
-// Autor(a)    : Nome do(a) aluno(a)
-// Data atual  : 16/08/2022
+// Disciplina   : [Linguagem e LÃ³gica de ProgramaÃ§Ã£o]
+// Professor   : Fabricia Noronha
+
 Var a:inteiro
-   // Seção de Declarações das variáveis
+   // SeÃ§Ã£o de DeclaraÃ§Ãµes das variÃ¡veis
 Inicio
-   // Seção de Comandos, procedimento, funções, operadores, etc...
+   // SeÃ§Ã£o de Comandos, procedimento, funÃ§Ãµes, operadores, etc...
    escreval("Informe o lado do terreno")
    leia(a)
-   escreval("A área do terreno é", a * a)
+   escreval("A Ã¡rea do terreno Ã©", a * a)
 Fimalgoritmo
