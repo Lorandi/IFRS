@@ -1,5 +1,5 @@
 Algoritmo "Dias da semana"
-// Disciplina   : [Linguagem e Lógica de Programação] 
+// Disciplina   :  Lógica de Programação
 // Professor   : Fabricia Noronha 
 
 Var
