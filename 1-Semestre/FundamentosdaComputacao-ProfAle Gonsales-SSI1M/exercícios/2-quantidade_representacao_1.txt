@@ -1,0 +1,35 @@
+Considerando sistemas de numeração posicionais, com representação de apenas números inteiros
+positivos, conforme visto em aula, responda às seguintes perguntas:
+
+1) Quantos números diferentes é possível representar em um sistema de numeração decimal que
+utiliza 5 dígitos? Qual o maior valor representável nesse sistema?
+total 100.000 
+maior 99.999
+
+2) Quantos números diferentes é possível representar em um sistema de numeração em base 3 que
+utiliza 4 dígitos? Qual o maior valor (decimal) representável nesse sistema?
+base 3
+729 243 81 27 9 3 1
+
+total 81
+maior numero 2222 base 3 = 80
+
+3) Quantos números diferentes é possível representar em um sistema de numeração octal que utiliza
+6 dígitos? Qual o maior valor (decimal) representável nesse sistema?
+base 8
+32768 4096 512 64 8 1
+
+total 262144
+maior numero 777777 base 8 = 262.143
+
+4) Quantos números diferentes é possível representar em um sistema de numeração binário que
+utiliza 8 dígitos? Qual o maior valor (decimal) representável nesse sistema?
+
+total 256
+maior numero 11111111 base 2 = 255
+
+5) Quantos números diferentes é possível representar em um sistema de hexadecimal que utiliza 6
+dígitos? Qual o maior valor (decimal) representável nesse sistema?
+
+total 16.777.216
+maior numero ffffff base 16 = 16.777.215

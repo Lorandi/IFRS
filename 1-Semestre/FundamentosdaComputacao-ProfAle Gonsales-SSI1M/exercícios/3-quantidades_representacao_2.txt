@@ -1,0 +1,52 @@
+Considerando sistemas de numeração posicionais, com representação de apenas números inteiros
+positivos, conforme visto em aula, responda às seguintes perguntas:
+
+1) Um monitor de vídeo utiliza 8 bits (8 dígitos binários) para representar cada ponto da tela.
+Quantas cores é possível representar em cada ponto dessa tela?
+256
+
+2) Cada caractere em um painel é representado por um número binário de 7 bits (7 dígitos binários).
+Quantos caracteres diferentes é possível se representar nesse painel?
+128
+
+3) Qual a quantidade mínima de dígitos binários (bits) necessárias para se representar todas as letras
+do alfabeto português? E se for necessário representar letras maiúsculas e minúsculas. Qual a
+quantidade mínima de bits?
+todas as letras 5 bits
+maíusculas e minúsculas 6 bits
+
+4) Um dispositivo eletrônico precisa representar números inteiros entre 0 a 99. Qual a quantidade
+mínima de dígitos binários (bits) para representar um número nesse dispositivo?
+7 bits
+
+5) Qual a quantidade de números que se pode representar com 2 dígitos em hexadecimal?
+256
+
+6) Qual o maior número hexadecimal que pode ser representado em um sistema que utiliza
+representação binária com 6 bits? Qual o valor decimal desse número?
+268.435.455
+ffffff
+
+7) Qual o maior número hexadecimal que pode ser representado em um sistema binário com 11
+bits? Qual o valor decimal desse número?
+binário = 11111111111
+octo = 3777
+Decimal = 2047
+Hexa = 7ff
+
+
+8) Uma rede TCP/IP dispõe de 6 bits para formar endereços. Qual o total de endereços que podem
+ser formados?
+64
+
+
+9) Um processador dispõe de 22 linhas (bits) para gerar números que representam endereços de
+células de memória. Quantos endereços podem ser representados por esse processador?
+2^22 = 4.194.304
+
+
+10) Uma memória eletrônica possui capacidade de 4 Gi Byte, ou seja 4.294.967.296 bytes, sendo que
+cada byte é acessado por um endereço. Quantos bits são necessários para gerar todos os endereços
+possíveis dessa memória?
+4.294.967.296 = 2^32
+32bits
