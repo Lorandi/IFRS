@@ -1,0 +1,54 @@
+Lista de Exercícios 01 - Conversão de uma  base  qualquer para decimal
+1) Converter para decimal:
+
+base 3
+729 243 81 27 9 3 1
+
+ 2102 base 3= 2 * 27 + 1 * 9 + 0 * 3 + 2 * 1 = 65
+ 212121 base 3 = 637
+ 222 base  3 = 26
+ 2222 base  3 = 80
+ 10000  base  3 =81
+ 100000  base  3 = 243
+
+
+base 8
+32768 4096 512 64 8 1
+
+ 12035 base 8 = 5149
+ 2746 base 8 =2 * 512 + 7 * 64 + 4 * 8 + 6 * 1 = 1510
+ 37 base 8 = 31
+ 116 base 8 =78
+ 2537 base 8 =1375
+ 777 base 8 =511
+ 1000 base 8 = 512
+ 10000 base 8 = 4096
+
+
+base 2
+128 64 32 16 8 4 2 1 
+
+ 110101 base 2 =53
+ 11111 base 2 = 31
+ 101011 base 2 = 43
+ 111111 base 2 = 63
+ 1000000 base 2 = 64
+ 1000001 base 2 = 65
+ 1000011 base 2 = 67
+
+
+base 16
+1048576 65536 4096 256 16 1
+
+ A8D base 16 = 2701
+ AB5C base 16 = 43868
+ 2E base 16 = 46
+ 2F base 16 = 47
+ 30 base 16 = 48
+ 31 base 16 = 49
+ F2D base 16 = 3885
+ B3AC base 16 = 45996
+ FF base 16 =255
+ 100 base 16 =256
+ FFF base 16 =4095
+ 1000 base 16 = 4096
