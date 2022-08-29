@@ -1,0 +1,28 @@
+Exercícios - bit, byte, múltiplos
+
+1) 24576 bit equivalem a quantos Byte? 24576/8 = 3072 Byte
+2) 24576 bit equivalem a quantos Ki bit? 24756/1024 = 24 Ki bit
+3) 24576 bit equivalem a quantos Ki Byte? 2456/8/1024 = 3Ki byte
+4) 24576 Ki bit equivalem a quantos bit? 24576 * 1024 =  25.165.824 bit
+5) 24576 Ki bit equivalem a quantos Ki Byte? 24576 * 1024 / 1024 * 8 = 3.072 Ki Byte
+6) 24576 Ki bit equivalem a quantos Byte?24576 * 1024 / 8 = 3.145.728 Byte
+7) 24576 Byte equivalem a quantos bit? = 24576 x 8 bit = 196.608 bit
+8) 24576 Byte equivalem a quantos Ki Byte? 24576 / 1024 Ki byte = 24 Ki byte
+9) 24576 Byte equivalem a quantos Ki bit? = 24576 * 8 bit / 1024 Ki bit = = 192 Ki bit
+10) 24576 Ki Byte equivalem a quantos Byte?  24576 x 1024 Byte = 25.165.824 Byte
+11) 24576 Ki Byte equivalem a quantos Ki bit? = 24576 x 8 Ki bit = 196.608 Ki bit
+12) 24576 Ki Byte equivalem a quantos bit? = 24576 x 1024 Byte x 8 bit = 201.326.592 bit
+13) Considerando que um sistema efetua 2048 transferências de dados em 1 segundo e que, em cada
+transferência são transportados 16 bits, responda:
+a) Quantos bytes esse sistema transfere em 1 segundo? 2048 transferencia x 16 bit/s  / 8 Byte = 4096 Byte
+b) Quantos K bit o sistema transfere em 1 segundo? 2048 x 16 bit = 32768 bit = 32768 / 1000 K bit = 32,77 K bit
+c) Quantos Ki bit o sistema transfere em 1 segundo? 2048 x 16 bit = 32768 bit = 32768 / 1024 Ki bit = 32 Ki bit
+d) Quantos K Byte o sistema transfere em 1 segundo? = 4096 / 1000 K Byte = 4,1 K Byte (aprox.)
+e) Quantos Ki Byte o sistema transfere em 1 segundo? = 4096 / 1024 Ki Byte = 4 Ki Byte
+14) Considerando que um processador dispõe de 22 linhas (bits) para endereçar células de memória,
+ou seja, para gerar números que representam endereços de memória, responda:
+a) Quantos endereços de memória podem ser gerados por esse processador? : 2^22 = 4.194.304 Células
+b) Quantas Kilo células podem ser endereçadas por esse processador? 4.194.304 / 1000 = 4.194,3 Kilo células
+c) Quantas Mega células podem ser endereçadas por esse processador? : 4.194.304 / 1000000 = 4,19 Mega células
+d) Quantas Kibi células podem ser endereçadas por esse processador?= 2^12 x 2^10 células = 2^12 Kibi células = 4096 Kibi Células
+e) Quantas Mebi células podem ser endereçadas por esse processador?: 2^22 células = 2^2 x 2^20 células = 2^2 Mebi células = 4 Mebi Células
