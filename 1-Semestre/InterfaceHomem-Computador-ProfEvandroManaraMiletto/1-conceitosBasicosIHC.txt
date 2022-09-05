@@ -1,0 +1,13 @@
+IHC é área do conhecimento que se ocupa da interação entre o humano e o computador fazendo com que o uso da máquina se dê de forma simples, agradável e o mais simples possível.
+
+Os três princípios que regem essa relação são interação, interface e affordance.
+
+A interação pode ser dividida em 4 perspectivas: sistema(o usuário é visto como um sistema computacional), parceiro de discurso (o sistema assume o papel de um ser humano), ferramenta(o sistema é visto como um facilitador para o usuário) e mídia(sistema auxilia o usuário para comunicação). “podemos considerar a interação usuário-sistema como sendo um processo de manipulação, comunicação, conversa, troca, influência, e assim por diante.” Barbosa e da Silva, p. 20
+
+Interface é tudo que o usuário pode interagir, seja de forma física ou conceitual, utilizando periféricos, gestos, sons ou qualquer outra forma de fazer uma entrada ou solicitação ao sistema. “toda a porção do sistema com a qual o usuário mantém contato físico (motor ou perceptivo) ou conceitual durante a interação. [...] A grande maioria dos usuários acredita que ela é o sistema.” Barbosa e da Silva, p. 25
+
+Affordance é aquilo que o sistema deixa óbvio para o usuário, ou seja, deixa muito claro qual a entrada ou de que forma o usuário deve interagir com esse sistema para concluir o seu uso.“um conjunto de operações que podem ser realizadas com o sistema interativo, bem como [...] as formas de realizá-las manipulando os elementos da interface.” Barbosa e da Silva, p. 27
+
+Como exemplo colo esse imagem do Linkedin. Apesar de ter outros links para clicar, fica bem evidente que o que o Linkedin realmente quer é que eu ACEITE o convite de receber essa Newsletter
+
+
