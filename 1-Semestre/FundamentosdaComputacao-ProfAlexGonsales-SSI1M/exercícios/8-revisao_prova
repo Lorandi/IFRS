@@ -1,0 +1,54 @@
+Converter os números abaixo para decimal (mostrar o desenvolvimento):
+1) 101011 base 2 = 43
+2) 2537 base 8 = 1375
+3) B3AC base 16 = 11 * 4096 + 3 * 256 + 10 * 16 + 12 * 1 = 45996 
+
+4) Converter o número 117 para binário (mostrar o desenvolvimento):
+1 x 64 + 1 x 32 + 1 x 16 + 0 x 8 + 1 * 4 + 0 x 2 +  1 * 1  = 1 1 1 0 1 0 1
+
+5) Converter o número 43490 para hexadecimal (mostrar o desenvolvimento):
+10 * 4096 + 9 * 256 + 14 * 16 + 2 * 1 = A 9 E 2
+
+6) Converter para binário (mostrar o desenvolvimento):
+68AB5C base 16 =0110.1000 1010.1011 0101.1100
+
+7) Converter para hexadecimal (mostrar o desenvolvimento):
+110110110111100111 base 2 = 3 6 D E 7
+
+8) Converter para octal (mostrar o desenvolvimento):
+1110011011100111 base 2 =
+9) 4096 Ki bit equivalem a quantos byte?
+10) 24576 byte equivalem a quantos Ki bit?
+
+
+11) Uma memória organizada a bytes, contém um valor de 16 bits que foi armazenado utilizando
+little endian, conforme mostrado abaixo. Qual o valor armazenado nessa memória?
+posição 0 = 10000000
+posição 1 = 00000111
+0000.0111 1000.0000 = 1920
+
+12) Um sistema possui uma variável X de 16 bits a qual contém o valor 516. Essa variável será
+armazenada em uma memória organizada a bytes. Mostre como fica essa memória se a ordem de
+armazenamento for big endian.
+Efetue as seguintes operações em binário (mostre o desenvolvimento):
+13) 101011 base 2 + 101110 base 2 =
+14) 100100 base 2 x 101 base 2 =
+
+15) Considerando representação em complemento de 2 com 8 bits, qual é o valor decimal dos
+seguintes números:
+01000011 base 2 =
+10111001 base 2 =
+
+16) Considerando representação em complemento de 2 com 7 bits, qual é a representação binária
+dos números abaixo?
+ 29 =
+-37 =
+Considerando complemento de 2 com 6 bits, mostre as seguintes operações em binário:
+17) 5 - 19
+18) -7 + (-13)
+19) Converta o número abaixo para decimal (mostre o desenvolvimento):
+101,0010112 =
+20) Converta o número abaixo para binário (mostre o desenvolvimento):
+2,3 =
+21 a 23: Questões que visam relacionar os conteúdos teóricos da disciplina com aspectos reais da
+área da computação.
