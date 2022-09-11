@@ -16,13 +16,21 @@ Converter os números abaixo para decimal (mostrar o desenvolvimento):
 110110110111100111 base 2 = 3 6 D E 7
 
 8) Converter para octal (mostrar o desenvolvimento):
-1110011011100111 base 2 =
+1110011011100111 base 2 = 1 110 011 011 100 111 = 1 6 3 3 4 7 ^ 8 
+
 9) 4096 Ki bit equivalem a quantos byte?
+4096 Ki bit = 4096 x 1024 bit = 4.194.304 bit
+4.194.304 bit = 4.194.304 / 8 Byte = 524.288 Byte
+
 10) 24576 byte equivalem a quantos Ki bit?
+24576 byte = 24576 / 1024 Ki byte = 24 Ki byte
+24 Ki byte = 24 x 8 Ki bit = 192 Ki bit
 
 
 11) Uma memória organizada a bytes, contém um valor de 16 bits que foi armazenado utilizando
 little endian, conforme mostrado abaixo. Qual o valor armazenado nessa memória?
+
+little endian
 posição 0 = 10000000
 posição 1 = 00000111
 0000.0111 1000.0000 = 1920
@@ -30,25 +38,70 @@ posição 1 = 00000111
 12) Um sistema possui uma variável X de 16 bits a qual contém o valor 516. Essa variável será
 armazenada em uma memória organizada a bytes. Mostre como fica essa memória se a ordem de
 armazenamento for big endian.
+516 =1000000100^2 = 00000010 00000100^2
+
+big endian
+posição 0 = 00000010
+posição 1 = 00000100
+
+
 Efetue as seguintes operações em binário (mostre o desenvolvimento):
-13) 101011 base 2 + 101110 base 2 =
-14) 100100 base 2 x 101 base 2 =
+13) 101011 base 2 + 101110 base 2 = 1011001
+
+14) 100100 base 2 x 101 base 2 = 10110100
 
 15) Considerando representação em complemento de 2 com 8 bits, qual é o valor decimal dos
 seguintes números:
 01000011 base 2 =
 10111001 base 2 =
 
+-128 64 32 16  8  4  2  1
+   0  1  0  0  0  0  1  1 = 64+2+1 = 67
+   1  0  1  1  1  0  0  1 = -128+32+16+8+1 = -71
+
 16) Considerando representação em complemento de 2 com 7 bits, qual é a representação binária
 dos números abaixo?
  29 =
 -37 =
+
+-64 32 16  8  4  2  1
+  0  0  1  1  1  0  1 = 29 = 16 + 8 + 4 + 1
+  1  0  1  1  0  1  1 = -37 = -64 + 27 = -64 + 16 + 8 + 2 + 1
+
+
 Considerando complemento de 2 com 6 bits, mostre as seguintes operações em binário:
 17) 5 - 19
+ando a tabela (complemento de 2 com 6 bits):
+ -32  16  8  4  2  1
+   1   0  1  1  0  1 = -19
+   0   0  0  1  0  1 = 5
+ -----------------
+   1   1  0  0  1  0 = -32 + 16 + 2 = -32 + 18 = -14
+
 18) -7 + (-13)
+-32  16  8  4  2  1
+  1   1  1  0  0  1 = -7 = -32 + 25 = -32 + 16 + 8 + 1
+  1   1  0  0  1  1 = -13 = -32 + 19 = -32 + 16 + 2 + 1
+ -----------------
+  1   0  1  1  0  0 = -20 = -32 + 8 + 4 = -32 + 12
+
+
 19) Converta o número abaixo para decimal (mostre o desenvolvimento):
 101,0010112 =
+4  2  1  1/2  1/4  1/8  1/16  1/32  1/64
+1  0  1   0    0    1    0     1     1
+4 + 1 + 0,125 + 0,03125 + 0,015625 = 5,171875
+
+
 20) Converta o número abaixo para binário (mostre o desenvolvimento):
 2,3 =
+2,3 = 10,010011...
+0,3 x 2 = 0,6
+0,6 x 2 = 1,2
+0,2 x 2 = 0,4
+0,4 x 2 = 0,8
+0,8 x 2 = 1,6
+0,6 x 2 = 1,2
+
 21 a 23: Questões que visam relacionar os conteúdos teóricos da disciplina com aspectos reais da
 área da computação.
