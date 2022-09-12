@@ -15,9 +15,9 @@ armazenamento e utiliza o formato binário puro. Diante disso, responda:
 
 2) Na linguagem de programação C o tipo de dado “unsigned short int” utiliza 16 bits para
 armazenamento e utiliza o formato binário puro. Diante disso, responda:
-2.1) Qual o maior valor possível decimal que se pode armazenar nesse tipo? 111111111111111 = 65535 = 2^16
-2.2) Qual o maior valor possível hexadecimal que se pode armazenar nesse tipo? FFFF = 
-2.3) Qual o maior valor possível octal que se pode armazenar nesse tipo? 77777
+2.1) Qual o maior valor possível decimal que se pode armazenar nesse tipo? 1111111111111111 = 65535 = 2^16
+2.2) Qual o maior valor possível hexadecimal que se pode armazenar nesse tipo? 1111.1111.1111.1111 = FFFF = 
+2.3) Qual o maior valor possível octal que se pode armazenar nesse tipo? 1.111.111.111.111.111 = 177777
 
 
 3) Na linguagem de programação C o tipo de dado “unsigned int” utiliza 32 bits para
