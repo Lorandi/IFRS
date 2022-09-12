@@ -24,8 +24,9 @@ mínima de dígitos binários (bits) para representar um número nesse dispositi
 
 6) Qual o maior número hexadecimal que pode ser representado em um sistema que utiliza
 representação binária com 6 bits? Qual o valor decimal desse número?
-268.435.455
-ffffff
+111111
+3F
+63
 
 7) Qual o maior número hexadecimal que pode ser representado em um sistema binário com 11
 bits? Qual o valor decimal desse número?
