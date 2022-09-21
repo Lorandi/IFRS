@@ -1,5 +1,5 @@
 .body{
-    background-color: rgba(200,200,200,0.3);
+    background-color: rgba(200,200,200,0.7);
     font-family: Arial, Helvetica, sans-serif;
     align-content: center; 
     margin: 0 10rem;
@@ -15,10 +15,72 @@ img#profile{
 	width: 100%;
 }
 
+.box{
+    padding: 3rem;
+    margin: auto;
+}
+
+.inside_box{
+    padding: 1rem;
+    margin: auto;
+    border-width: medium;
+    border-style: solid;
+    border-color: rgb(100, 100, 100);
+    background-color: rgba(200,200,200,0.7);
+}
+
 html{
     background: url('img/fundo.jpg') no-repeat center center fixed;
     -webkit-background-size: cover ;
     -moz-background-size: cover ;
     -moz-background-size: cover ;
     background-size: cover;
+}
+
+#navlist
+{
+background-color: rgb(200,200,200);
+font-size: 2rem;
+font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+padding-bottom: 3px;
+padding-top: 3px;
+margin: auto;
+}
+
+#navlist a, #navlist a:link, #navlist a:visited
+{
+padding: 1px;
+padding-left: 0.5em;
+padding-right: 0.5em;
+color: #000000;
+font-weight: bold;
+text-decoration: none;
+}
+
+#navlist a:hover, #navlist a:active, #navlist a:focus
+{
+padding: 1px;
+padding-left: 0.5em;
+padding-right: 0.5em;
+text-decoration: none;
+background-color: rgb(150,150,150);
+color: azure;
+}
+
+#navlist li
+{
+padding-right: 1px;
+display: inline;
+font-size: 0.6em;
+}
+
+#navlist ul
+{
+margin: 0px;
+padding: 0px;
+}
+
+#navlist #active a { 
+    background-color: rgb(100, 100, 100); 
+    color: azure;
 }
