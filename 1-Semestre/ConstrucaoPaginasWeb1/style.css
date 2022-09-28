@@ -16,11 +16,15 @@ img#profile{
 }
 
 .box{
-    padding: 3rem;
+    clear: both;
+    padding: 1rem 3rem;
     margin: auto;
 }
 
 .inside_box{
+    float: left;       
+    margin:auto;
+    position: relative;
     padding: 1rem;
     margin: auto;
     border-width: medium;
@@ -28,6 +32,64 @@ img#profile{
     border-color: rgb(100, 100, 100);
     background-color: rgba(200,200,200,0.7);
 }
+
+.section {
+	clear: both;
+	padding: 0px;
+	margin: 0px;
+}
+
+/*  COLUMN SETUP  */
+.col {
+	display: inline-block;	
+	margin: 2% 0 2% 2%;
+}
+.col:first-child { margin-left: 0; }
+
+/*  GRID OF TWO  */
+.span_2_of_2 {
+	width: 40%;
+}
+.span_1_of_2 {
+	width: 40%;
+}
+
+/*  GO FULL WIDTH AT LESS THAN 480 PIXELS */
+
+@media only screen and (max-width: 480px) {
+	.col { 
+		margin: 1% 0 1% 0%;
+	}
+}
+
+@media only screen and (max-width: 480px) {
+	.span_2_of_2, .span_1_of_2 { width: 100%; }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 html{
     background: url('img/fundo.jpg') no-repeat center center fixed;
