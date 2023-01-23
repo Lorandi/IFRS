@@ -1,0 +1,35 @@
+if (document.querySelector('[newRealesa-list]') != null){ const listNewRealease
+= (livros) => { return livros .filter(p => p.newRealease === 'true') .map((item)
+=> { return ( `
+<div class="item">
+  <img class="imglivro" src="${" item.img } alt="${" item.alt } />
+  <p class="nomelivro">${ item.name }</p>
+  <p class="dsclivro">${ item.writer }</p>
+  <p class="nomelivro">R$ ${ item.price }</p>
+  <a href="./carrinho.html"
+    ><input type="button" class="button" value="Comprar"
+  /></a>
+  <button onclick="openModal('dv-modal${ item.id }')" id="myBtn">
+    Descrição
+  </button>
+  <div id="dv-modal${ item.id }" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1>Descrição</h1>
+      </div>
+      <div class="modal-body">
+        <span>${ item.description }</span>
+      </div>
+      <div class="modal-footer">
+        <input
+          type="button"
+          value="Fechar"
+          id="myBtn"
+          onclick="closeModal('dv-modal${ item.id }')"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+` ) }).join('') } const newRealesa = document.querySelector('[newRealesa-list]')
+newRealesa.innerHTML = listNewRealease(livros) }
