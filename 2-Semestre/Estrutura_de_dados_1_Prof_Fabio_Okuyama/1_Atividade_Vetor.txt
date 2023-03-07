@@ -1,0 +1,82 @@
+Situação Problema: 
+
+Você precisa armazenar uma lista de códigos numéricos, a capacidade desta lista é de no máximo 20 posições.
+Os códigos numéricos são todos inteiros (positivos e negativos). Os códigos devem ser inseridos conforme informado pelo usuário.
+Seu programa deverá permitir:
+a - Consultar a posição (0 a 19); Imprimir o código numérico na tela.
+b - Inserção de um novo elemento na posição indicada pelo usuário; Se o usuário indicar uma posição ocupada, os elemento deve "andar" para o final; 
+Se o usuário indicar uma posição maior que o número de posições ocupadas, o item será inserido na última posição livre (se não estiver cheia).
+c - Retirar um elemento indicado pelo usuário; Se houver elementos posteriores, estes devem tomar a posição que ficou livre;
+d - Consultar a quantidade de elementos;
+
+Dicas: 	i. Usar um vetor de inteiros de 20 posições; 
+	ii. armazenar em um número inteiro a quantidade de elementos ocupados; se ocupados é igual a zero, significa que o vetor está vazio, 
+se ocupados é igual a 20 significa que a lista está cheia;
+
+Para a aula do dia 08/03 você deve:
+
+1 - descrever em Português o processo que deve acontecer em cada um dos itens (a,b,c,d);
+2 - descrever quais problemas podem ocorrer nos itens (a,b,c,d); (caso haja);
+3 - descrever (pelo menos) um caso de teste para cada item (a,b,c,d) que permitam saber se estes estão funcionando adequadamente;
+
+
+Solução:
+1 	a - O programa deve solicitar qual posição o usuário quer consultar, retornando o valor caso tenha algo armazenado ou vazio caso não tenha.
+	b - O programa deve perguntar em qual posição o novo elemento deve ser inserido, movendo em uma posição para o final todos os elementos que 
+estiverem após a posição escolhida e aumentando em 1 o valor da variável que guarda a quantidade de elementos no vetor.Caso a posição seja maior do 
+que a quantidade de elementos, a inserção deverá ser na posição seguinte ao total de elementos que já havia na lista e após aumentar em 1 o valor 
+da variável que guarda a quantidade de elementos no vetor. Caso o vetor esteja cheio, o programa deve informar que a lista está cheia e não permitir 
+a inserção de novos elementos.
+	c -  O programa deve perguntar de qual posição o novo elemento deve ser retirado, movendo em uma posição para o começo todos os elementos que 
+estiverem após a posição escolhida e subtraindo em 1 o valor da variável que guarda a quantidade de elementos no vetor.
+	d - Ao consultar a quantidade de elementos, o programa pode retornar o valor da variável que guarda a quantidade de elementos.
+
+
+2 	a - O usuário pode informar uma posição maior do que a quantidade de elementos no vetor;
+	b - Ao tentar adicionar um novo elemento, o vetor pode estar cheio;
+	c - Ao tentar retirar um elemento, a posição pode estar vazia caso seja maior do que a quantidade de elementos guardados;
+	d - Não vejo problema mas a quantidade pode ser zero.
+
+3 	a - Consultar posição	
+	vetor[20] = [1, 2, 3, 4, 5, 6, 7, 8];
+	var totalElementos = 8;
+        consultarPosicao(5);
+	return 6;
+
+	b - Inserir novo elemento	
+	vetor[20] = [1, 2, 3, 4, 5, 6, 7, 8];
+	var valor = 65;
+	var posicao = 3;
+	var totalElementos = 8;
+        adicionar(valor,posicao ){
+	  if(listaNãoCheia()){
+	  moveParaDireitaValoresPartindoDaPosicao(posicao);
+	  vetor[posicao] = valor;
+	  totalElementos++;  	
+	  }else{
+	  print("Lista cheia")	
+	}
+	print(vetor);// [1, 2, 3, 65, 4, 5, 6, 7, 8];
+        print(totalElemento); //9
+
+	c - Remover elemento	
+	vetor[20] = [1, 2, 3, 4, 5, 6, 7, 8];
+	var posicao = 3;
+	var totalElementos = 8;
+        remover(posicao ){
+	  if(listaNãoVazia() &&  posicaoEstaOcupada(posicao)){
+	  moveParaEsquerdaValoresPartindoDaPosicao(posicao);
+	  apagarPosicao(totalElementos - 1);
+	  totalElementos--;  	
+	  }else if(listaNãoVazia() &&  !posicaoEstaOcupada(posicao)){
+	  print("Sem valor na posicao escolhida")	
+	  } else{
+          print("Lista vazia");
+	  }
+	}
+        print(vetor);// [1, 2, 3, 5, 6, 7, 8]
+	print(totalElemento); //7
+
+	d - Consultar quantidade de elementos
+	vetor[20] = [1, 2, 3, 4, 5, 6, 7, 8];
+	print(totalElemento); //8
