@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CARRINHO | Livraria Manual - Livros Técnicos</title>
+    <meta
+      name="author"
+      content="João Fernando Hanzel Demetrio, Lucas Cunha dos Santos e Rodrigo Pedroso Lorandi"
+    />
+    <meta
+      name="description"
+      content="Página inicial da Livraria Manual - Livros Técnicos contendo os livros em destaque"
+    />
+    <meta name="keywords" content="livro tecnico" />
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <header>
+      <div class="header">
+        <div>
+          <a href="./index.html"
+            ><img
+              src="./img/livros-logo.png"
+              alt="logo-livraria-manual"
+              id="logo"
+          /></a>
+        </div>
+        <div>
+          <a
+            href="./index.html"
+            style="text-decoration: none"
+            id="titulo-principal"
+          >
+            Livraria Manual - Livros Técnicos
+          </a>
+        </div>
+
+        <div>
+          <input
+            type="search"
+            name="busca"
+            id="busca"
+            placeholder="Busque aqui..."
+          />
+        </div>
+        <div>
+          <a href="./carrinho.html"
+            ><img src="./img/carrinho.png" alt="carrinho" id="carrinho"
+          /></a>
+        </div>
+      </div>
+      <nav>
+        <div class="menu">
+          <ul>
+            <li class="dropdown">
+              <a href="javascript:void(0)" class="dropbtn">Categorias</a>
+              <div class="dropdown-content">
+                <a href="./medicina.html">Medicina</a>
+                <a href="./ti.html">Tecnologia da informação</a>
+                <a href="./direito.html">Direito</a>
+              </div>
+            </li>
+            <li><a href="./produtos.html">Produtos</a></li>
+            <li><a href="./lancamentos.html">Lançamentos</a></li>
+          </ul>
+        </div>
+        <div class="contain" onclick="menu(this)">
+          <div class="bar1"></div>
+          <div class="bar2"></div>
+          <div class="bar3"></div>
+          <div id="myLinks">
+            <ul>
+              <li class="dropdown">
+                <a href="javascript:void(0)" class="dropbtn">Categorias</a>
+                <div class="dropdown-content">
+                  <a href="./medicina.html">Medicina</a>
+                  <a href="./ti.html">Tecnologia da informação</a>
+                  <a href="./direito.html">Direito</a>
+                </div>
+              </li>
+              <li><a href="./produtos.html">Produtos</a></li>
+              <li><a href="./lancamentos.html">Lançamentos</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <section>
+      <div class="promo">
+        <h2>PROMOÇÃO DE FIM DE ANO!</h2>
+        <p>Clique e pegue seu cupom de desconto:</p>
+        <span id="dots">...</span><span id="more">15% de desconto</span>
+        <button onclick="promocao()" id="myBtn">Abrir</button>
+        <div><p id="pro"></p></div>
+      </div>
+      <div class="destaques">
+        <h3>CARRINHO</h3>        
+      </div>
+      <div class="container-carrinho" carrinho></div>      
+      <div id="dv-modal" class="modal">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1>Pagamento</h1>
+          </div>
+          <div class="modal-body">
+            <form id="form-pagamento" action="post">
+              <div id="pagamento-content">
+                <div class="inside_box">
+                  <label for="fname">Nome:</label><br />
+                  <input
+                    type="text"
+                    id="fname"
+                    name="fname"
+                    placeholder="John"
+                    required
+                    autofocus
+                  /><br />
+                  <br />
+                  <label for="email">Email:</label><br />
+                  <input
+                    type="text"
+                    id="email"
+                    name="email"
+                    placeholder="john@gmail.com"
+                    required
+                  /><br />
+                  <br />
+                  <label for="fone">Fone:</label><br />
+                  <input
+                    type="text"
+                    id="fone"
+                    name="fone"
+                    placeholder="(51) 99999.9999"
+                    required
+                  /><br /><br />
+                  <label for="cpf">CPF:</label><br />
+                  <input
+                    type="text"
+                    id="cpf"
+                    name="CPF"
+                    placeholder="999.999.999-99"
+                    required
+                  /><br />
+                  <br />
+                </div>
+                <div class="inside_box">
+                  <label for="cartao">Cartao:</label><br />
+                  <input
+                    type="text"
+                    id="cartao"
+                    name="cartao"
+                    placeholder="4545 4545 45454 4545"
+                    required
+                  /><br /><br />
+                  <label for="CVC">CVC:</label><br />
+                  <input
+                    type="text"
+                    id="CVC"
+                    name="CVC"
+                    placeholder="123"
+                    required
+                  /><br /><br />
+                  <label for="data">Validade:</label><br />
+                  <input
+                    type="text"
+                    id="data"
+                    name="validade"
+                    placeholder="03/2027"
+                    required
+                  /><br /><br />
+                  <label for="cupom">Cupom desconto:</label><br />
+                  <input
+                    type="text"
+                    id="cupom"
+                    name="cupom"
+                    placeholder="15% de desconto"
+                    required
+                  /><br />
+                  <br />
+                </div>
+              </div>
+              <div id="enviar-limpar">
+                <input
+                  type="button"
+                  value="Enviar"
+                  class="myBtn"
+                  onclick="openCloseModal('dv-modal','dv-modal-finalizada')"
+                />
+                <input type="reset" value="Limpar" class="myBtn" />
+              </div>
+            </form>
+          </div>
+
+          <div class="modal-footer">
+            <!-- <h1></h1> -->
+          </div>
+        </div>
+      </div>
+      <div id="dv-modal-finalizada" class="modal">
+        <div class="modal-content">
+          <div class="modal-header">
+            <!-- <h1></h1> -->
+          </div>
+          <div class="modal-body">
+            <h1>Compra realizada com sucesso!!!</h1>
+            <input
+              type="button"
+              value="Voltar"
+              class="myBtn"
+              onclick="closeModal('dv-modal-finalizada')"
+            />
+          </div>
+          <div class="modal-footer">
+            <!-- <h1></h1> -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>
+        Endereço: R. da Livraria Manual, 1000 - Floresta, Porto Alegre - RS.
+      </p>
+      <p>Telefone: (51) 9999-9999</p>
+      <p>E-mail: livrariamanual@livrariamanual.com.br</p>
+      <p>REDES SOCIAIS</p>
+      <div class="redesociais">
+        <a href="https://www.facebook.com/"
+          ><i
+            class="fa fa-facebook-square"
+            style="font-size: 36px; color: white"
+          ></i
+        ></a>
+        <a href="https://www.instagram.com/"
+          ><i class="fa fa-instagram" style="font-size: 36px; color: white"></i
+        ></a>
+        <a href="https://br.linkedin.com/"
+          ><i
+            class="fa fa-linkedin-square"
+            style="font-size: 36px; color: white"
+          ></i
+        ></a>
+      </div>
+    </footer>
+    <script src="script.js"></script>
+    <script src="listaLivros.js"></script>   
+  </body>
+</html>
