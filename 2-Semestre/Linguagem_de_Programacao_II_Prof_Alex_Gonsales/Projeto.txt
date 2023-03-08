@@ -1,0 +1,9 @@
+Criar um jogo baseado em decições financeiras que o usuário deve tomar.
+
+A ideia é replicar o mesmo projeto que será feito com paradigma funcional para a disciplina de CPW2 mas aqui com o paradigma orientado a objetos.
+
+Neste jogo, o usuário deverá decidir o que fazer com seu dinheiro, se deve investir, comprar um bem ou fazer algum curso. Deve decidir se procura um emprego ou 
+inicia um negócio. Se compra um produto que está em oferta ou espera que o jogo obrigue-o a comprar. Se vai pagar a vista ou parcelar a compra com juros.
+
+A mecânica do jogo deve gerar situações randômicas mas que aumentam a probabilidade de sucesso a medida que o usuário amplia suas skills.
+

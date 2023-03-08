@@ -1,0 +1,28 @@
+
+Objetos:
+	Usuario	
+	  idade;	
+          escolaridade;
+          
+	ContaCaixa
+	  valor;
+
+	ContaInvestimento
+	  valor;	
+	  reendimento;
+
+	Divida
+	  valor;
+	  juros;
+
+	Emprego
+	  escolaridadeExigida;
+	  horasDiarias;
+	  salario;
+
+	Bens
+	  tipo;
+	  valor;
+
+	 
+		    
