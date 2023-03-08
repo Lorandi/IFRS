@@ -1,7 +1,10 @@
+let x = 1;
+
 function load(){
-    let x = 1;
+     x++;
     document.write(x);
     execute();
+    x++;
 }
 
 function execute(){
