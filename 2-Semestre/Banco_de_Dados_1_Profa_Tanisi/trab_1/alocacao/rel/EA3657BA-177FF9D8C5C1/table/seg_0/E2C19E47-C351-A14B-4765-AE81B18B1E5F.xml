@@ -1,0 +1,120 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="E2C19E47-C351-A14B-4765-AE81B18B1E5F" name="Address">
+<createdBy>rodrigo.lorandi_sout</createdBy>
+<createdTime>2023-04-13 01:54:52 UTC</createdTime>
+<generatorID>0D7306AE-64A8-380D-33FA-A20EB6C5B91B</generatorID>
+<ownerDesignName>alocacao</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_address" id="227FAB0F-C35B-661F-1D07-EEB45EB94FD4">
+<createdBy>rodrigo.lorandi_sout</createdBy>
+<createdTime>2023-04-13 01:54:52 UTC</createdTime>
+<generatorID>3A87538F-9E83-AC39-73B7-93C6A2003FE0</generatorID>
+<ownerDesignName>alocacao</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="country" id="EAE2FB89-B8E9-F440-C78A-8C349527CCD9">
+<createdBy>rodrigo.lorandi_sout</createdBy>
+<createdTime>2023-04-13 01:54:52 UTC</createdTime>
+<generatorID>2ECA731C-D916-7B72-DBDD-BBA3995303DE</generatorID>
+<ownerDesignName>alocacao</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="state" id="7A675E5D-C7E8-59DC-B838-CA63D9A144D6">
+<createdBy>rodrigo.lorandi_sout</createdBy>
+<createdTime>2023-04-13 01:54:52 UTC</createdTime>
+<generatorID>02C1D636-4A0A-4BB7-DE68-EC345C0A048E</generatorID>
+<ownerDesignName>alocacao</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="city" id="C7AF470A-A43F-3AFD-FF43-E186FAF53E83">
+<createdBy>rodrigo.lorandi_sout</createdBy>
+<createdTime>2023-04-13 01:54:52 UTC</createdTime>
+<generatorID>937AA9A5-FA92-5D3B-D9F4-75E22090FFCD</generatorID>
+<ownerDesignName>alocacao</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="street" id="E5DD3677-2027-E3C4-4F41-178E0F6E912A">
+<createdBy>rodrigo.lorandi_sout</createdBy>
+<createdTime>2023-04-13 01:54:52 UTC</createdTime>
+<generatorID>274F2923-897B-FD02-27F1-15CD6EC72DE5</generatorID>
+<ownerDesignName>alocacao</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="number" id="8ECF5D81-E531-9108-AC82-3B427A6889EB">
+<createdBy>rodrigo.lorandi_sout</createdBy>
+<createdTime>2023-04-13 01:54:52 UTC</createdTime>
+<generatorID>E13A647D-0E19-2BCD-8A0B-BAC8C9A9AE67</generatorID>
+<ownerDesignName>alocacao</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="complement" id="80790F49-C829-432C-52E1-4BDF54498D48">
+<createdBy>rodrigo.lorandi_sout</createdBy>
+<createdTime>2023-04-13 01:54:52 UTC</createdTime>
+<generatorID>C35F051D-AED1-A119-BE4A-160930CDDB69</generatorID>
+<ownerDesignName>alocacao</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="zipcode" id="FAE50F04-81F7-9D80-0164-A37506DE4150">
+<createdBy>rodrigo.lorandi_sout</createdBy>
+<createdTime>2023-04-13 01:54:52 UTC</createdTime>
+<generatorID>516AFCEF-9815-72E6-8F83-1593031FE298</generatorID>
+<ownerDesignName>alocacao</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="02243DFE-C73B-19CE-5D9C-0C4765F5A3C0" name="Address_PK">
+<createdBy>rodrigo.lorandi_sout</createdBy>
+<createdTime>2023-04-13 01:54:52 UTC</createdTime>
+<generatorID>1DBBFD63-D75D-156A-4352-86856AFD9345</generatorID>
+<ownerDesignName>alocacao</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="227FAB0F-C35B-661F-1D07-EEB45EB94FD4"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

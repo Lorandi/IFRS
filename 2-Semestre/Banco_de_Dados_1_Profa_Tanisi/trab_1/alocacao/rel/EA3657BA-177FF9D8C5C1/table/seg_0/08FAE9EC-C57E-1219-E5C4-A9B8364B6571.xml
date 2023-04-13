@@ -1,0 +1,181 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="08FAE9EC-C57E-1219-E5C4-A9B8364B6571" name="Personal_info">
+<createdBy>rodrigo.lorandi_sout</createdBy>
+<createdTime>2023-04-13 01:54:52 UTC</createdTime>
+<generatorID>DA3ABE30-52BA-36F3-4B49-93F671E77BBF</generatorID>
+<ownerDesignName>alocacao</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_personal_info" id="4BA9F449-6B0A-C1EF-DC24-781F79DC345D">
+<createdBy>rodrigo.lorandi_sout</createdBy>
+<createdTime>2023-04-13 01:54:52 UTC</createdTime>
+<generatorID>2E7F07D9-D20A-CE3C-10AF-4F2022F5EF01</generatorID>
+<ownerDesignName>alocacao</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="marital_status" id="42AB81D2-2236-A4A2-020A-BF7E736E63EC">
+<createdBy>rodrigo.lorandi_sout</createdBy>
+<createdTime>2023-04-13 01:54:52 UTC</createdTime>
+<generatorID>8CC981E1-E547-AAE2-B5A8-F0B83DDBBD4F</generatorID>
+<ownerDesignName>alocacao</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="mother_name" id="69D5B053-4900-CD0A-97EE-6EC0D9BFD063">
+<createdBy>rodrigo.lorandi_sout</createdBy>
+<createdTime>2023-04-13 01:54:52 UTC</createdTime>
+<generatorID>9BA02095-2431-FFF8-1A12-58A061A240B6</generatorID>
+<ownerDesignName>alocacao</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="father_name" id="F5179F51-5B45-121A-FA7D-51E6EDEFD8D0">
+<createdBy>rodrigo.lorandi_sout</createdBy>
+<createdTime>2023-04-13 01:54:52 UTC</createdTime>
+<generatorID>8389F329-5F76-B8B9-D2A2-609F6FA82CFB</generatorID>
+<ownerDesignName>alocacao</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="natura_state" id="3F287117-60AE-88A4-FC0F-774FA512A69A">
+<createdBy>rodrigo.lorandi_sout</createdBy>
+<createdTime>2023-04-13 01:54:52 UTC</createdTime>
+<generatorID>45A1596B-E665-EF43-A03B-F3518E84912E</generatorID>
+<ownerDesignName>alocacao</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="natura_city" id="59F36278-4DD8-B4B8-F0B7-C0A27000BB2E">
+<createdBy>rodrigo.lorandi_sout</createdBy>
+<createdTime>2023-04-13 01:54:52 UTC</createdTime>
+<generatorID>39EF5782-FD3C-256D-49B4-61C704BD4EE9</generatorID>
+<ownerDesignName>alocacao</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="social_name" id="056DA5B6-BF0F-354D-65C9-FAF241AABD2B">
+<createdBy>rodrigo.lorandi_sout</createdBy>
+<createdTime>2023-04-13 01:54:52 UTC</createdTime>
+<generatorID>F30AA96E-D972-3256-9573-AF705D2A967E</generatorID>
+<ownerDesignName>alocacao</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Address_id_address" id="9F560EF1-A0C1-A51E-5C93-C6B94C5B65FD">
+<createdBy>rodrigo.lorandi_sout</createdBy>
+<createdTime>2023-04-13 01:54:52 UTC</createdTime>
+<generatorID>BBAEDA58-8757-DF3C-D0EF-DC96D7A1A8D9</generatorID>
+<ownerDesignName>alocacao</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="ECD16148-4F23-617A-09A4-8B40E16103FB" referredColumn="227FAB0F-C35B-661F-1D07-EEB45EB94FD4"/>
+</associations>
+</Column>
+<Column name="Professional_id_professional" id="14D8BC36-5F7B-4FEA-9FF1-D21551BD1EEF">
+<createdBy>rodrigo.lorandi_sout</createdBy>
+<createdTime>2023-04-13 01:54:52 UTC</createdTime>
+<generatorID>69AAE478-4237-620A-35B3-F5DC2ED2D9AC</generatorID>
+<ownerDesignName>alocacao</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="E8DD7A84-51A5-E768-94C8-244BC294DF5B" referredColumn="9E9CB6B8-64E1-D9FF-3658-EBB5D3533EDB"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="75F8004A-9BE8-AECE-194C-E44E722E8E76" name="Personal_info_PK">
+<createdBy>rodrigo.lorandi_sout</createdBy>
+<createdTime>2023-04-13 01:54:52 UTC</createdTime>
+<generatorID>5060CEDF-D89E-3A50-0C3F-BF3198E6DD30</generatorID>
+<ownerDesignName>alocacao</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="4BA9F449-6B0A-C1EF-DC24-781F79DC345D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="08D98A34-E540-2B41-CC7C-216F72AA0975" name="Personal_info__IDX">
+<createdBy>rodrigo.lorandi_sout</createdBy>
+<createdTime>2023-04-13 01:54:52 UTC</createdTime>
+<ownerDesignName>alocacao</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<relationGeneratorID>6CE264BA-D870-A116-2AF4-BBCE18ABFA7A</relationGeneratorID>
+<indexColumnUsage>
+<colUsage columnID="9F560EF1-A0C1-A51E-5C93-C6B94C5B65FD"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="CBC22454-6BDD-9381-1989-C58BB746C44A" name="Personal_info__IDXv1">
+<createdBy>rodrigo.lorandi_sout</createdBy>
+<createdTime>2023-04-13 01:54:52 UTC</createdTime>
+<ownerDesignName>alocacao</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<relationGeneratorID>D2C82CD7-C334-3C50-34CE-74BEBF0BBE3C</relationGeneratorID>
+<indexColumnUsage>
+<colUsage columnID="14D8BC36-5F7B-4FEA-9FF1-D21551BD1EEF"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="4DBA2BF2-0BB9-0B68-7E9D-7315E912E33E" name="Personal_info_Address_FK">
+<createdBy>rodrigo.lorandi_sout</createdBy>
+<createdTime>2023-04-13 01:54:52 UTC</createdTime>
+<generatorID>6CE264BA-D870-A116-2AF4-BBCE18ABFA7A</generatorID>
+<ownerDesignName>alocacao</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="9F560EF1-A0C1-A51E-5C93-C6B94C5B65FD"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="C5724E2E-FDD2-4CBB-F48A-47FA442BA3CA" name="Personal_info_Professional_FK">
+<createdBy>rodrigo.lorandi_sout</createdBy>
+<createdTime>2023-04-13 01:54:52 UTC</createdTime>
+<generatorID>D2C82CD7-C334-3C50-34CE-74BEBF0BBE3C</generatorID>
+<ownerDesignName>alocacao</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="14D8BC36-5F7B-4FEA-9FF1-D21551BD1EEF"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

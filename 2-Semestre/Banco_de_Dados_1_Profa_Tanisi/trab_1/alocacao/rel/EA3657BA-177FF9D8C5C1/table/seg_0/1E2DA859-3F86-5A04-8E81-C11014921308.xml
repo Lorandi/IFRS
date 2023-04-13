@@ -1,0 +1,107 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="1E2DA859-3F86-5A04-8E81-C11014921308" name="Client">
+<createdBy>rodrigo.lorandi_sout</createdBy>
+<createdTime>2023-04-13 01:54:52 UTC</createdTime>
+<generatorID>F7CF3615-EB7E-A770-4D1A-11C78CAC2C30</generatorID>
+<ownerDesignName>alocacao</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_client" id="66487F92-D559-2B17-C3FC-4D79CCAF0501">
+<createdBy>rodrigo.lorandi_sout</createdBy>
+<createdTime>2023-04-13 01:54:52 UTC</createdTime>
+<generatorID>E61651AD-4F79-66F2-8D06-6E32A13DB342</generatorID>
+<ownerDesignName>alocacao</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="name" id="AEA9F1F5-5625-1994-9FA8-8B1E61E7D611">
+<createdBy>rodrigo.lorandi_sout</createdBy>
+<createdTime>2023-04-13 01:54:52 UTC</createdTime>
+<generatorID>9BF277DC-F408-B26E-1AF7-101DCDC05AF2</generatorID>
+<ownerDesignName>alocacao</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="observation" id="868B2433-E382-38FF-43FF-D55F20188F0F">
+<createdBy>rodrigo.lorandi_sout</createdBy>
+<createdTime>2023-04-13 01:54:52 UTC</createdTime>
+<generatorID>6AB8E85E-C3F2-C85B-E6CC-8DEAAEBFEE37</generatorID>
+<ownerDesignName>alocacao</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Address_id_address" id="E31F3D8C-6B37-3DE2-05D7-8E13874A6E50">
+<createdBy>rodrigo.lorandi_sout</createdBy>
+<createdTime>2023-04-13 01:54:52 UTC</createdTime>
+<generatorID>6CDA04D5-D98F-C5AA-7E42-B569B2297984</generatorID>
+<ownerDesignName>alocacao</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="40FB518F-D32F-9463-8B32-FD9675E1F61F" referredColumn="227FAB0F-C35B-661F-1D07-EEB45EB94FD4"/>
+</associations>
+</Column>
+<Column name="phone" id="B34741D1-71F0-273D-5A9C-68BB26A6A11A">
+<createdBy>rodrigo.lorandi_sout</createdBy>
+<createdTime>2023-04-13 02:29:07 UTC</createdTime>
+<generatorID>643CE362-A817-CCF9-0295-3300B5436E4D</generatorID>
+<ownerDesignName>alocacao</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="D9BDB8DC-F1C7-7A9D-CC75-0922605A781A" name="Client_PK">
+<createdBy>rodrigo.lorandi_sout</createdBy>
+<createdTime>2023-04-13 01:54:52 UTC</createdTime>
+<generatorID>E6FBCABF-C984-D5A7-3F53-3B3A1F6486BD</generatorID>
+<ownerDesignName>alocacao</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="66487F92-D559-2B17-C3FC-4D79CCAF0501"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="6879C93D-4E4D-251E-5892-921F2114AA5C" name="Client__IDX">
+<createdBy>rodrigo.lorandi_sout</createdBy>
+<createdTime>2023-04-13 01:54:52 UTC</createdTime>
+<ownerDesignName>alocacao</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<relationGeneratorID>BA4717F3-40E2-B1A3-2911-3484F63A2769</relationGeneratorID>
+<indexColumnUsage>
+<colUsage columnID="E31F3D8C-6B37-3DE2-05D7-8E13874A6E50"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="BBECE511-5757-DA4F-CEC6-3A3DF037799D" name="Client_Address_FK">
+<createdBy>rodrigo.lorandi_sout</createdBy>
+<createdTime>2023-04-13 01:54:52 UTC</createdTime>
+<generatorID>BA4717F3-40E2-B1A3-2911-3484F63A2769</generatorID>
+<ownerDesignName>alocacao</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E31F3D8C-6B37-3DE2-05D7-8E13874A6E50"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

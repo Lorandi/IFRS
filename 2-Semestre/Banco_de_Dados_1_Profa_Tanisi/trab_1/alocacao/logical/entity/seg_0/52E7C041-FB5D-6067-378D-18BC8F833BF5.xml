@@ -1,0 +1,94 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="52E7C041-FB5D-6067-378D-18BC8F833BF5" name="Professional">
+<createdBy>rodrigo.lorandi_sout</createdBy>
+<createdTime>2023-04-12 22:53:31 UTC</createdTime>
+<ownerDesignName>alocacao</ownerDesignName>
+<engineerTo>
+<item key="EA3657BA-5619-7B94-88E8-177FF9D8C5C1" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id professional" id="D92F6C7D-8F61-F487-2F4B-127B1A47AF74">
+<createdBy>rodrigo.lorandi_sout</createdBy>
+<createdTime>2023-04-12 22:53:40 UTC</createdTime>
+<ownerDesignName>alocacao</ownerDesignName>
+<engineerTo>
+<item key="EA3657BA-5619-7B94-88E8-177FF9D8C5C1" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="name" id="4C0D517D-A52A-77EE-7AB7-78AB1D1D53AA">
+<createdBy>rodrigo.lorandi_sout</createdBy>
+<createdTime>2023-04-13 01:27:27 UTC</createdTime>
+<ownerDesignName>alocacao</ownerDesignName>
+<engineerTo>
+<item key="EA3657BA-5619-7B94-88E8-177FF9D8C5C1" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="corporate email" id="2D2DC46F-40B9-F975-ED97-E02B5D973F54">
+<createdBy>rodrigo.lorandi_sout</createdBy>
+<createdTime>2023-04-12 22:53:53 UTC</createdTime>
+<ownerDesignName>alocacao</ownerDesignName>
+<engineerTo>
+<item key="EA3657BA-5619-7B94-88E8-177FF9D8C5C1" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="professional status" id="D5CC1C01-0C9D-2413-8706-2B97F523D611">
+<createdBy>rodrigo.lorandi_sout</createdBy>
+<createdTime>2023-04-12 22:54:42 UTC</createdTime>
+<ownerDesignName>alocacao</ownerDesignName>
+<engineerTo>
+<item key="EA3657BA-5619-7B94-88E8-177FF9D8C5C1" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="phone" id="A02A6ED2-C68D-54AA-E9E5-3AAFE7BFF228">
+<createdBy>rodrigo.lorandi_sout</createdBy>
+<createdTime>2023-04-13 02:19:14 UTC</createdTime>
+<ownerDesignName>alocacao</ownerDesignName>
+<engineerTo>
+<item key="EA3657BA-5619-7B94-88E8-177FF9D8C5C1" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="B7444E12-8213-4A1A-F41E-52A1C273D1BF" name="Professional PK">
+<createdBy>rodrigo.lorandi_sout</createdBy>
+<createdTime>2023-04-12 22:53:48 UTC</createdTime>
+<ownerDesignName>alocacao</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="EA3657BA-5619-7B94-88E8-177FF9D8C5C1" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>D92F6C7D-8F61-F487-2F4B-127B1A47AF74</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

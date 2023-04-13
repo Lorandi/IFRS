@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Allocation Professional FK" directorySegmentName="seg_0" id="4818DA45-5DB7-1B94-FA5A-0577BF30295C">
+<createdBy>rodrigo.lorandi_sout</createdBy>
+<createdTime>2023-04-13 00:24:19 UTC</createdTime>
+<ownerDesignName>alocacao</ownerDesignName>
+<engineerTo>
+<item key="EA3657BA-5619-7B94-88E8-177FF9D8C5C1" value="true"/>
+</engineerTo>
+<sourcePk>B7444E12-8213-4A1A-F41E-52A1C273D1BF</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>52E7C041-FB5D-6067-378D-18BC8F833BF5</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>320C33F6-7E6B-CD7D-1A9E-B02AEC43B40E</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

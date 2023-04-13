@@ -1,0 +1,150 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="DA3ABE30-52BA-36F3-4B49-93F671E77BBF" name="Personal info">
+<createdBy>rodrigo.lorandi_sout</createdBy>
+<createdTime>2023-04-12 23:00:56 UTC</createdTime>
+<ownerDesignName>alocacao</ownerDesignName>
+<engineerTo>
+<item key="EA3657BA-5619-7B94-88E8-177FF9D8C5C1" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id personal info" id="2E7F07D9-D20A-CE3C-10AF-4F2022F5EF01">
+<createdBy>rodrigo.lorandi_sout</createdBy>
+<createdTime>2023-04-12 23:08:27 UTC</createdTime>
+<ownerDesignName>alocacao</ownerDesignName>
+<engineerTo>
+<item key="EA3657BA-5619-7B94-88E8-177FF9D8C5C1" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="marital status" id="8CC981E1-E547-AAE2-B5A8-F0B83DDBBD4F">
+<createdBy>rodrigo.lorandi_sout</createdBy>
+<createdTime>2023-04-12 23:10:06 UTC</createdTime>
+<ownerDesignName>alocacao</ownerDesignName>
+<engineerTo>
+<item key="EA3657BA-5619-7B94-88E8-177FF9D8C5C1" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="mother name" id="9BA02095-2431-FFF8-1A12-58A061A240B6">
+<createdBy>rodrigo.lorandi_sout</createdBy>
+<createdTime>2023-04-12 23:10:54 UTC</createdTime>
+<ownerDesignName>alocacao</ownerDesignName>
+<engineerTo>
+<item key="EA3657BA-5619-7B94-88E8-177FF9D8C5C1" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="father name" id="8389F329-5F76-B8B9-D2A2-609F6FA82CFB">
+<createdBy>rodrigo.lorandi_sout</createdBy>
+<createdTime>2023-04-12 23:32:55 UTC</createdTime>
+<ownerDesignName>alocacao</ownerDesignName>
+<engineerTo>
+<item key="EA3657BA-5619-7B94-88E8-177FF9D8C5C1" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="natura state" id="45A1596B-E665-EF43-A03B-F3518E84912E">
+<createdBy>rodrigo.lorandi_sout</createdBy>
+<createdTime>2023-04-12 23:33:25 UTC</createdTime>
+<ownerDesignName>alocacao</ownerDesignName>
+<engineerTo>
+<item key="EA3657BA-5619-7B94-88E8-177FF9D8C5C1" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="natura city" id="39EF5782-FD3C-256D-49B4-61C704BD4EE9">
+<createdBy>rodrigo.lorandi_sout</createdBy>
+<createdTime>2023-04-12 23:33:27 UTC</createdTime>
+<ownerDesignName>alocacao</ownerDesignName>
+<engineerTo>
+<item key="EA3657BA-5619-7B94-88E8-177FF9D8C5C1" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="social name" id="F30AA96E-D972-3256-9573-AF705D2A967E">
+<createdBy>rodrigo.lorandi_sout</createdBy>
+<createdTime>2023-04-12 23:33:28 UTC</createdTime>
+<ownerDesignName>alocacao</ownerDesignName>
+<engineerTo>
+<item key="EA3657BA-5619-7B94-88E8-177FF9D8C5C1" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Address id address" id="BBAEDA58-8757-DF3C-D0EF-DC96D7A1A8D9">
+<createdBy>rodrigo.lorandi_sout</createdBy>
+<createdTime>2023-04-13 00:17:02 UTC</createdTime>
+<generatorID>6CE264BA-D870-A116-2AF4-BBCE18ABFA7A</generatorID>
+<ownerDesignName>alocacao</ownerDesignName>
+<engineerTo>
+<item key="EA3657BA-5619-7B94-88E8-177FF9D8C5C1" value="true"/>
+</engineerTo>
+<referedAttribute>3A87538F-9E83-AC39-73B7-93C6A2003FE0</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id professional" id="69AAE478-4237-620A-35B3-F5DC2ED2D9AC">
+<createdBy>rodrigo.lorandi_sout</createdBy>
+<createdTime>2023-04-13 01:33:01 UTC</createdTime>
+<generatorID>D2C82CD7-C334-3C50-34CE-74BEBF0BBE3C</generatorID>
+<ownerDesignName>alocacao</ownerDesignName>
+<engineerTo>
+<item key="EA3657BA-5619-7B94-88E8-177FF9D8C5C1" value="true"/>
+</engineerTo>
+<referedAttribute>D92F6C7D-8F61-F487-2F4B-127B1A47AF74</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="5060CEDF-D89E-3A50-0C3F-BF3198E6DD30" name="Personal_info_PK">
+<createdBy>rodrigo.lorandi_sout</createdBy>
+<createdTime>2023-04-12 23:08:44 UTC</createdTime>
+<ownerDesignName>alocacao</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="EA3657BA-5619-7B94-88E8-177FF9D8C5C1" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>2E7F07D9-D20A-CE3C-10AF-4F2022F5EF01</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

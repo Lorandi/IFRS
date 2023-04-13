@@ -1,0 +1,107 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="1C2CA0B2-93A4-EBFE-A97B-42D26B6E618C" name="Professional_info">
+<createdBy>rodrigo.lorandi_sout</createdBy>
+<createdTime>2023-04-13 01:54:52 UTC</createdTime>
+<generatorID>25033D51-39B4-976D-F3E1-4AD54656F12E</generatorID>
+<ownerDesignName>alocacao</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_professional_info" id="9FA4F2C5-039D-C8F7-0E72-97F7E535D74A">
+<createdBy>rodrigo.lorandi_sout</createdBy>
+<createdTime>2023-04-13 01:54:52 UTC</createdTime>
+<generatorID>2B7FEBC7-7B9B-66CA-C8B7-37799B2313F1</generatorID>
+<ownerDesignName>alocacao</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="hire_format" id="ABF92CAE-32D5-3CEB-647C-D6AD2105F83C">
+<createdBy>rodrigo.lorandi_sout</createdBy>
+<createdTime>2023-04-13 01:54:52 UTC</createdTime>
+<generatorID>00265874-B2A2-10E1-CDC7-BD494FCDF630</generatorID>
+<ownerDesignName>alocacao</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="salary_value" id="D99DEFEB-1A65-92FE-D2A4-A6923CEE22A2">
+<createdBy>rodrigo.lorandi_sout</createdBy>
+<createdTime>2023-04-13 01:54:52 UTC</createdTime>
+<generatorID>90401E30-E8AC-A5EF-AA16-4EE26D8A1899</generatorID>
+<ownerDesignName>alocacao</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="payday" id="E28636DD-D069-2866-DDB1-CB735A3C9E7E">
+<createdBy>rodrigo.lorandi_sout</createdBy>
+<createdTime>2023-04-13 01:54:52 UTC</createdTime>
+<generatorID>3A2C2A4A-5D89-5C3B-E6DB-197451F32FB4</generatorID>
+<ownerDesignName>alocacao</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Professional_id_professional" id="37B44447-0D3C-18BC-C6CC-3EE5FBBA81A4">
+<createdBy>rodrigo.lorandi_sout</createdBy>
+<createdTime>2023-04-13 01:54:52 UTC</createdTime>
+<generatorID>BE2FEBA5-7DC2-AA77-1121-76CF0C14E8D6</generatorID>
+<ownerDesignName>alocacao</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="CB7B55BA-CD0B-7A17-E828-B9EDD9FAF584" referredColumn="9E9CB6B8-64E1-D9FF-3658-EBB5D3533EDB"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="32A4D00B-3967-946D-040F-F42B41A0A951" name="Professional_info_PK">
+<createdBy>rodrigo.lorandi_sout</createdBy>
+<createdTime>2023-04-13 01:54:52 UTC</createdTime>
+<generatorID>76AE7067-5E9E-D102-C1A3-DD012ADBE294</generatorID>
+<ownerDesignName>alocacao</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="9FA4F2C5-039D-C8F7-0E72-97F7E535D74A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="438A4BE9-65DD-0143-0865-3C077CEDE7BA" name="Professional_info__IDX">
+<createdBy>rodrigo.lorandi_sout</createdBy>
+<createdTime>2023-04-13 01:54:52 UTC</createdTime>
+<ownerDesignName>alocacao</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<relationGeneratorID>9857CE0A-A714-83C4-E817-2CE141EF0F6A</relationGeneratorID>
+<indexColumnUsage>
+<colUsage columnID="37B44447-0D3C-18BC-C6CC-3EE5FBBA81A4"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="F43F290C-336D-836A-A20E-F75B1AB9EA22" name="Professional_info_Professional_FK">
+<createdBy>rodrigo.lorandi_sout</createdBy>
+<createdTime>2023-04-13 01:54:52 UTC</createdTime>
+<generatorID>9857CE0A-A714-83C4-E817-2CE141EF0F6A</generatorID>
+<ownerDesignName>alocacao</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="37B44447-0D3C-18BC-C6CC-3EE5FBBA81A4"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

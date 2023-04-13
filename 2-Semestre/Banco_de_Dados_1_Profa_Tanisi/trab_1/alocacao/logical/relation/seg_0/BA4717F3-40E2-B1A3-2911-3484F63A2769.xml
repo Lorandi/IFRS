@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Client Address FK" directorySegmentName="seg_0" id="BA4717F3-40E2-B1A3-2911-3484F63A2769">
+<createdBy>rodrigo.lorandi_sout</createdBy>
+<createdTime>2023-04-13 00:34:00 UTC</createdTime>
+<ownerDesignName>alocacao</ownerDesignName>
+<engineerTo>
+<item key="EA3657BA-5619-7B94-88E8-177FF9D8C5C1" value="true"/>
+</engineerTo>
+<sourcePk>1DBBFD63-D75D-156A-4352-86856AFD9345</sourcePk>
+<targetPk>E6FBCABF-C984-D5A7-3F53-3B3A1F6486BD</targetPk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>0D7306AE-64A8-380D-33FA-A20EB6C5B91B</sourceEntity>
+<targetCardinalityString>1</targetCardinalityString>
+<targetEntity>F7CF3615-EB7E-A770-4D1A-11C78CAC2C30</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

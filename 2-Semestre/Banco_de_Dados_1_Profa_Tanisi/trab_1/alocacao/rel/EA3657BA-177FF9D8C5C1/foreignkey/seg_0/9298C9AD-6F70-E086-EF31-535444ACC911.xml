@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="9298C9AD-6F70-E086-EF31-535444ACC911" containerWithKeyObject="5F1B4096-782A-C7DE-C601-EAEBE7102FC2" localFKIndex="1960EA06-0B4A-0FA5-F5E8-15C2363815BD" name="Allocation_Professional_FK">
+<createdBy>rodrigo.lorandi_sout</createdBy>
+<createdTime>2023-04-13 01:54:52 UTC</createdTime>
+<generatorID>4818DA45-5DB7-1B94-FA5A-0577BF30295C</generatorID>
+<ownerDesignName>alocacao</ownerDesignName>
+<referredTableLongName>Professional</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>E50EF0EC-36F0-B0FA-C5AC-901A786869B3</referredTableID>
+<keyObject>DF6206D5-C864-7EEB-2B2C-F1B5D8F59130</keyObject>
+<referredKeyID>DF6206D5-C864-7EEB-2B2C-F1B5D8F59130</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>id_professional</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>
