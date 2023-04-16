@@ -60,7 +60,7 @@ int main(int argc, char *argv[]) {
     }
     
     printf("Bytes ocupados pelo vetor alunos: %lu bytes\n", sizeof(alunos));
-    printf("Bytes ocupados por uma vartiavel do tipo aluno: %lu bytes\n", sizeof(aluno));
+    printf("Bytes ocupados por uma variável do tipo aluno: %lu bytes\n", sizeof(aluno));
     printf("Quanto de memória (em bytes) foi alocado para este programa: %lu bytes\n",(MAX * sizeof(aluno)) + sizeof(alunos));
     
     /*
