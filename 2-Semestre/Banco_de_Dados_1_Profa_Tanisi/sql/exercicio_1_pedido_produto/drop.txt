@@ -1,0 +1,13 @@
+drop table pedido_produto;
+
+drop table pedido;
+
+drop table produto cascade constraints;
+
+drop table cliente;
+
+drop sequence s_produto;
+
+drop sequence s_cliente;
+
+drop sequence s_pedido;
