@@ -58,4 +58,5 @@ on pe.id_cliente = c.id_cliente
 inner join pedido_produto pp
 on pp.id_pedido = pe.id_pedido
 inner join produto prod
-on pp.id_produto = prod.id_produto;
+on pp.id_produto = prod.id_produto
+order by pe.id_pedido, prod.nome;
