@@ -1,4 +1,3 @@
-
 --1
 select nome 
 from produto
@@ -10,7 +9,7 @@ from produto
 where quantidade_estoque > 50 or preco <  10;
 
 --3
-select p.id_pedido, p.data_pedido, c.nome as nome do cliente
+select p.id_pedido, p.data_pedido, c.nome    
 from pedido p inner join cliente c
 on p.id_cliente = c.id_cliente;
 
@@ -44,3 +43,19 @@ on pedido_produto.id_pedido = pe.id_pedido
 inner join produto 
 on pedido_produto.id_produto = produto.id_produto
 and produto.nome = 'mesa';
+
+
+--8
+select pe.id_pedido, c.nome,  pe.data_pedido
+from pedido pe inner join cliente c
+on pe.id_cliente = c.id_cliente
+and pe.data_entrega is null;
+
+--9
+select pe.id_pedido, c.nome as "cliente", prod.nome as "produto", pp.quantidade * pp.valor_venda as "total produto"
+from pedido pe inner join cliente c
+on pe.id_cliente = c.id_cliente
+inner join pedido_produto pp
+on pp.id_pedido = pe.id_pedido
+inner join produto prod
+on pp.id_produto = prod.id_produto;
