@@ -4,7 +4,7 @@ order by nome asc;
 
 select nome, quantidade_estoque, preco
 from produto
-where quantidade_estoque  50 and preco  10;
+where quantidade_estoque  50 or preco  10;
 
 select p.id_pedido, p.data_pedido, c.nome as nome do cliente
 from pedido p inner join cliente c
