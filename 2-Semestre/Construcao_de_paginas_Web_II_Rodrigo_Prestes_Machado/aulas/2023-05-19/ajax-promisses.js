@@ -6,6 +6,7 @@ function myrequest(method, url) {
 
         //Tratamento do retorno
         xhr.onreadystatechange = () => {
+            console.log(xhr.readyState);
             if (xhr.readyState == 4 && xhr.status == 200) {
                 resolve(JSON.parse(xhr.responseText));
             } 
@@ -26,14 +27,13 @@ function myrequest(method, url) {
 async function main() {
     try {
         let images = await myrequest('GET', 'images.json');
-        console.log(images);
-        var divImages =document.getElementById('images');
+        var div =document.getElementById('images');
         images = shuffle(images);
 
         for(const image of images){
             let img = document.createElement('img');
-            img.src = image.imagemUrl;
-            divImages.appendChild(img);
+            img.src = image.url;
+            div.appendChild(img);
         }
     } catch (error) {
         console.log(error);
@@ -53,3 +53,4 @@ window.onscroll = function(ev) {
         main();
     }
 }
+
