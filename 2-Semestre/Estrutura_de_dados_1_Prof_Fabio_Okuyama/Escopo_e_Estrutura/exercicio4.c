@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 #define TOTAL 3
 
 typedef struct{
@@ -22,23 +23,29 @@ int main()
         for(int i=0;i<TOTAL;i++){
             p = &pessoas[i];
             
-            printf("\n");
-            printf("Insira os dados do contato %d: \n", i + 1);
-            printf("Nome: ");
-            fgets(p->nome, 50, stdin);
-            
-            printf("Telefone fixo: ");
-            fgets(p->telefoneFixo, 15, stdin);
-            
-            printf("Celular: ");
-            fgets(p->celular, 15, stdin);
-            
-            printf("Endereco: ");
-            fgets(p->endereco, 50, stdin);
-            
-            printf("Aniversário: ");
-            fgets(p->aniversario, 10, stdin);
-            printf("\n");
+        printf("\n");
+        printf("Insira os dados do contato %d:\n", i + 1);
+        printf("Nome: ");
+        fgets(p->nome, 50, stdin);
+        p->nome[strcspn(p->nome, "\n")] = '\0'; // Remover quebra de linha
+
+        printf("Telefone fixo: ");
+        fgets(p->telefoneFixo, 15, stdin);
+        p->telefoneFixo[strcspn(p->telefoneFixo, "\n")] = '\0'; // Remover quebra de linha
+
+        printf("Celular: ");
+        fgets(p->celular, 15, stdin);
+        p->celular[strcspn(p->celular, "\n")] = '\0'; // Remover quebra de linha
+
+        printf("Endereco: ");
+        fgets(p->endereco, 50, stdin);
+        p->endereco[strcspn(p->endereco, "\n")] = '\0'; // Remover quebra de linha
+
+        printf("Aniversário: ");
+        fgets(p->aniversario, 10, stdin);
+        p->aniversario[strcspn(p->aniversario, "\n")] = '\0'; // Remover quebra de linha
+
+        printf("\n");
         }
         
         do{
