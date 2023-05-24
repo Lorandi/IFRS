@@ -1,0 +1,33 @@
+Operações de inserção e remoção na fila:
+
+Uma fila é uma estrutura de dados em que o primeiro elemento a entrar é o primeiro a sair (FIFO - First-In-First-Out). 
+
+As principais operações em uma fila são a inserção (push) de elementos no final da fila e a remoção (pop) do elemento do início da fila.
+
+Push: insere um novo elemento no final da fila. Se a fila estiver cheia, essa operação não poderá ser realizada.
+
+Pop: remove o elemento do início da fila. Se a fila estiver vazia, essa operação não poderá ser realizada.
+
+ 
+
+Operações PUSH e POP na pilha:
+
+Uma pilha é uma estrutura de dados em que o último elemento a entrar é o primeiro a sair (LIFO - Last-In-First-Out).
+
+As principais operações em uma pilha são a inserção (push) de elementos no topo da pilha e a remoção (pop) do elemento do topo da pilha.
+
+Push: insere um novo elemento no topo da pilha. Se a pilha estiver cheia, essa operação não poderá ser realizada e ocorrerá um erro de "stack overflow".
+
+Pop: remove o elemento do topo da pilha. Se a pilha estiver vazia, essa operação não poderá ser realizada e ocorrerá um erro de "stack underflow".
+
+ 
+
+O problema da fila cheia vazia acontece após adicionar a quantidade total que a fila permite e em seguida ir removendo totos os elementos ,
+ incrementando o valor da variável início até que este indique uma posição posterior ao máximo permitido. Para resolver isso, é necessário ir
+ incrementando a variável inicio com o resto da divisão de inicio pelo máximo que a fila permite.
+
+ 
+
+Stack Overflow e Stack Underflow: Stack Overflow ocorre quando uma pilha atinge o seu limite máximo de armazenamento e a operação de inserção 
+(push) tenta adicionar mais elementos à pilha. Esse erro geralmente causa uma falha no programa ou no sistema. Já o Stack Underflow ocorre 
+quando a pilha está vazia e a operação de remoção (pop) é solicitada. Esse erro também causa uma falha no programa ou no sistema.
