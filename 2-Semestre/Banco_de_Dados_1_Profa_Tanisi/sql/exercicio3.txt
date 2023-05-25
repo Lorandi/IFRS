@@ -1,0 +1,26 @@
+--10. Apresentar o id_cliente, o mês e quantidade de pedidos por mês.
+SELECT id_cliente, to_char(data_pedido,'mm') AS "Mês", COUNT(*) AS quantidade_pedidos
+FROM pedido
+GROUP BY id_cliente, to_char(data_pedido,'mm');
+
+
+--11. Apresentar o valor médio dos produtos.
+SELECT avg(preco)
+FROM produto;
+
+--12. Apresentar o valor médio dos pedidos.
+select avg(sum(quantidade * valor_venda)) as "Média_pedidos"
+from pedido_produto
+group by id_pedido;
+
+--13. Apresentar o nome do cliente e a quantidade de pedidos deste cliente. (Se o cliente não fez pedidos ele não precisa aparecer no resultado)
+select nome, count(*) as quantidade_pedido
+from cliente inner join pedido on pedido.id_cliente = cliente.id_cliente
+group by nome;
+
+--14. Apresentar o id do pedido e o valor total do pedido para os pedidos entre 01/01/2018 a 10/02/2018.
+select pedido_produto.id_pedido , sum(quantidade * valor_venda) as total_pedido
+from pedido_produto inner join pedido on pedido_produto.id_pedido = pedido.id_pedido
+Where data_pedido >= to_date('01/06/2018','dd/mm/yyyy')
+and data_pedido < to_date('08/06/2018','dd/mm/yyyy')
+group by pedido_produto.id_pedido;
