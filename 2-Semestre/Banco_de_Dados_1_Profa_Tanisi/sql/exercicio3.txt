@@ -24,3 +24,17 @@ from pedido_produto inner join pedido on pedido_produto.id_pedido = pedido.id_pe
 Where data_pedido >= to_date('01/06/2018','dd/mm/yyyy')
 and data_pedido < to_date('08/06/2018','dd/mm/yyyy')
 group by pedido_produto.id_pedido;
+
+--15. Apresentar o código do pedido, nome do cliente e o total a ser pago para cada pedido. Ordenar pelo código do pedido.
+SELECT ped.id_pedido, cli.nome, sum(quantidade * valor_venda) as "total pago"
+from pedido ped 
+inner join cliente cli on ped.id_cliente = cli.id_cliente
+inner join pedido_produto pp on ped.id_pedido = pp.id_pedido
+group by ped.id_pedido, cli.nome
+order by ped.id_pedido;
+
+--16. Apresentar o id dos pedidos somente para os pedidos com 2 ou  mais produtos diferentes.
+select id_pedido
+from pedido_produto
+having  count(id_produto) >= 2
+group by id_pedido;
