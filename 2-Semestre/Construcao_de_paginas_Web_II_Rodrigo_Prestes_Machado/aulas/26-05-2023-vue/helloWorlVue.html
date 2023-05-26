@@ -19,8 +19,11 @@
     The message is taken from 'data' inside the Vue instance by writing {{
     message }} inside the div with id="app".
   </p>
-  <div id="app">{{ message }} --- {{ name }}
-    <button v-on:click="changeMessage()">Mudar mensagem</button>
+  <div id="app" >
+    <input type="checkbox" v-model="show" />
+    <input type="text" v-model="message" />
+    {{ message }} --- {{ name }}
+    <button v-on:click="changeMessage()" >Mudar mensagem</button>
     <button v-on:click="changeName()">Mudar nome</button>
     <button v-on:click="addImage()">Adicionar Image</button>
     <div v-if="totalClicks >= 0">
