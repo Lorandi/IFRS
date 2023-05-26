@@ -21,7 +21,16 @@
   </p>
   <div id="app">{{ message }} --- {{ name }}
     <button v-on:click="changeMessage()">Mudar mensagem</button>
-    <button v-on:click="changeName">Mudar nome</button>
+    <button v-on:click="changeName()">Mudar nome</button>
+    <button v-on:click="addImage()">Adicionar Image</button>
+    <div v-if="totalClicks >= 0">
+      <p>Cliques totais: {{ totalClicks }}</p>
+    </div>
+    <ol>
+      <p v-for="image in images" v-show="show">
+        <img v-bind:src="image.src" v-bind:alt="image.id" />
+      </p>
+    </ol>
 
   </div>
 
@@ -31,18 +40,49 @@
       data() {
         return {
           message: "Hello World!",
-          name: "Rodrigo"
+          name: "Rodrigo",
+          countClickMessage: 0,
+          countClickName: 0,
+          totalClicks: 0,
+          images: [
+            { id: 1, src: "https://picsum.photos/400/400" }
+          ],
+          show : true
         };
       },
       methods: {
         changeName() {
-          this.name = "Mudou o nome";
+          if (this.countClickName == 0) {
+            this.countClickName++;
+            this.totalClicks++;
+            this.name = "Mudou o nome";
+          }
+          else {
+            this.totalClicks++;
+            this.countClickName = 0;
+            this.name = "Rodrigo";
+          }
         },
         changeMessage() {
-          this.message = "Mudou a mensagem";
+          if (this.countClickMessage == 0) {
+            this.totalClicks++;
+            this.countClickMessage++;
+            this.message = "Mudou a mensagem";
+          }
+          else {
+            this.totalClicks++;
+            this.countClickMessage = 0;
+            this.message = "Hello World!";
+          }
+        },
+        addImage() {    
+          this.totalClicks++; 
+          var imageSixe = 400 + this.totalClicks;   
+          this.images.push({ id: 2, src: `https://picsum.photos/${imageSixe}/${imageSixe}` });
         }
       }
-    });
+    }
+    );
 
     app.mount("#app");
 
