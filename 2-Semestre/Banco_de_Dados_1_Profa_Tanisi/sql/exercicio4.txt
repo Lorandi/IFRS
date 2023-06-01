@@ -1,0 +1,130 @@
+
+--agencia (id_agencia, nome); 
+--pk:id_agencia
+create table agencia 
+(id_agencia NUMBER constraint pk_agencia PRIMARY KEY,
+nome VARCHAR2(15));
+
+insert into agencia(id_agencia,nome) values (01, 'Banco do Brasil');
+insert into agencia(id_agencia,nome) values (02, 'Itau');
+insert into agencia(id_agencia,nome) values (03, 'Bradesco');
+insert into agencia(id_agencia,nome) values (04, 'Santander');
+
+--cliente_cc(id_cliente,nome,endereco,id_agencia);  
+--pk: id_cliente
+--id_agencia referencia agencia
+create table cliente_cc
+(id_cliente NUMBER constraint pk_cliente_cc PRIMARY KEY,
+nome VARCHAR2(15),
+endereco VARCHAR2(15),
+id_agencia NUMBER);
+
+ALTER TABLE cliente_cc add constraint FK_id_agencia 
+FOREIGN KEY (id_agencia)
+references agencia;
+
+insert into cliente_cc(id_cliente, nome,endereco, id_agencia ) values (01, 'Paula', 'Praia', 1);
+insert into cliente_cc(id_cliente, nome,endereco, id_agencia ) values (02, 'Jose', 'Campo', 1);
+insert into cliente_cc(id_cliente, nome,endereco, id_agencia ) values (03, 'Ricardo', 'Cidade', 2);
+insert into cliente_cc(id_cliente, nome,endereco, id_agencia ) values (04, 'Jon', 'Campo', 2);
+insert into cliente_cc(id_cliente, nome,endereco, id_agencia ) values (05, 'Rick', 'Praia', 3);
+insert into cliente_cc(id_cliente, nome,endereco, id_agencia ) values (06, 'Joana', 'Cidade', 3);
+
+
+--Conta (numero_conta,tipo, saldo, id_cliente);
+--pk: numero_conta
+--id_cliente referencia cliente 
+--tipo Check CC ou P
+create table conta 
+(numero_conta NUMBER constraint pk_conta primary key,
+tipo VARCHAR(5),
+saldo NUMBER,
+id_cliente NUMBER,
+constraint ck_tipo CHECK (tipo IN ('CC','P')));
+
+ALTER TABLE conta add constraint FK_cliente 
+FOREIGN KEY (id_cliente)
+references cliente_cc;
+
+insert into conta(numero_conta, tipo,saldo, id_cliente ) values (01, 'CC', 5000, 1);
+insert into conta(numero_conta, tipo,saldo, id_cliente ) values (02, 'CC', 4000, 2);
+insert into conta(numero_conta, tipo,saldo, id_cliente ) values (03, 'CC', 3000, 3);
+insert into conta(numero_conta, tipo,saldo, id_cliente ) values (04, 'P', 2000, 4);
+insert into conta(numero_conta, tipo,saldo, id_cliente ) values (05, 'P', 1000, 1);
+insert into conta(numero_conta, tipo,saldo, id_cliente ) values (06, 'P', 500, 2);
+insert into conta(numero_conta, tipo,saldo, id_cliente ) values (07, 'P', 50, 3);
+
+
+--emprestimo(id_emprestimo, valor, data_emprestimo, id_cliente);
+--pk:id_emprestimo
+--id_cliente referencia cliente
+create table emprestimo
+(id_emprestimo NUMBER constraint pk_emprestimo primary key,
+valor NUMBER,
+data_emprestimo DATE,
+id_cliente NUMBER);
+
+alter table emprestimo
+add constraint fk_cliente_cc
+foreign key (id_cliente)
+references cliente_cc;
+
+insert into emprestimo(id_emprestimo, valor,data_emprestimo, id_cliente ) values (01, 150, to_date('01/06/2018 11:00','dd/mm/yyyy hh24:mi'), 1);
+insert into emprestimo(id_emprestimo, valor,data_emprestimo, id_cliente ) values (02, 100, to_date('02/06/2018 11:00','dd/mm/yyyy hh24:mi'), 2);
+insert into emprestimo(id_emprestimo, valor,data_emprestimo, id_cliente ) values (03, 1700, to_date('03/06/2018 11:00','dd/mm/yyyy hh24:mi'), 6);
+insert into emprestimo(id_emprestimo, valor,data_emprestimo, id_cliente ) values (04, 3400, to_date('04/06/2018 11:00','dd/mm/yyyy hh24:mi'), 5);
+insert into emprestimo(id_emprestimo, valor,data_emprestimo, id_cliente ) values (05, 30, to_date('05/06/2018 11:00','dd/mm/yyyy hh24:mi'), 4);
+
+
+--1. Recuperar o nome do cliente, o nome da agencia, o numero da conta, tipo (poupança ou Conta Corrente) e o saldo.
+select c.nome, a.nome , co.numero_conta, co.tipo, co.saldo
+from cliente_cc c inner join agencia a on c.id_agencia = a.id_agencia
+inner join conta co on c.id_cliente = co.id_cliente;
+
+
+-- 2. Recuperar o nome do cliente, e os dados dos seus emprestimos
+select c.nome, emp.*
+from cliente_cc c inner join emprestimo emp on c.id_cliente = emp.id_cliente;
+
+
+--3. Recuperar o total de clientes da agencia Banco do Brasil.
+select count(*)
+from cliente_cc c inner join agencia a on c.id_agencia = a.id_agencia
+where a.nome = 'Banco do Brasil';
+
+
+--4. Recuperar o nome da agencia e o total de clientes.
+select a.nome, count(*)
+from cliente_cc c inner join agencia a on c.id_agencia = a.id_agencia
+group by a.nome;
+
+
+--5.Recuperar o nome dos cliente da agencia Banco do Brasil e o somatorio dos seus emprestimos
+select c.nome, sum(valor)
+from cliente_cc c inner join agencia a on c.id_agencia = a.id_agencia
+inner join emprestimo emp on c.id_cliente = emp.id_cliente
+where a.nome = 'Banco do Brasil'
+group by c.nome;
+
+--6.Recuperar o nome dos clientes que realizaram mais de dois emprestimos no ano de 2019 com valor superior a R$ 10.000,00.
+SELECT c.nome
+FROM cliente_cc c
+JOIN emprestimo e ON c.id_cliente = e.id_cliente
+Where e.data_emprestimo >= to_date('01/01/2019','dd/mm/yyyy')
+and e.data_emprestimo < to_date('01/01/2020','dd/mm/yyyy')
+and e.valor > 10000
+GROUP BY c.nome
+HAVING COUNT(e.id_emprestimo) > 2;
+
+
+--7.Recuperar o nome da agencia e o total de emprestimos.
+select a.nome, sum(valor)
+from agencia a inner join cliente_cc c on a.id_agencia = c.id_agencia
+inner join emprestimo em on em.id_cliente = c.id_cliente
+group by a.nome;
+
+
+--8. Recuperar o nome dos clientes cuja quantidade de emprestimos no ano de 2019 foi maior que a quantidade de empréstimos que ele realizou em 2020. 
+
+
+
