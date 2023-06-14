@@ -281,15 +281,15 @@ VALUES (s_professional_info.NEXTVAL, 'CLT', 8000, TO_DATE('2023-05-24', 'YYYY-MM
 
 --TRAINING
 INSERT INTO training (id_training, name, duration, description)
-VALUES (s_training.NEXTVAL, 'Introdução à Programação', '40 horas', 'Curso introdutório sobre programação');
+VALUES (s_training.NEXTVAL, 'Introdução à Programação', 40, 'Curso introdutório sobre programação');
 INSERT INTO training (id_training, name, duration, description)
-VALUES (s_training.NEXTVAL, 'Desenvolvimento Web', '80 horas', 'Curso avançado de desenvolvimento web');
+VALUES (s_training.NEXTVAL, 'Desenvolvimento Web', 80, 'Curso avançado de desenvolvimento web');
 INSERT INTO training (id_training, name, duration, description)
-VALUES (s_training.NEXTVAL, 'Banco de Dados SQL', '60 horas', 'Curso abordando o uso de bancos de dados SQL');
+VALUES (s_training.NEXTVAL, 'Banco de Dados SQL', 60, 'Curso abordando o uso de bancos de dados SQL');
 INSERT INTO training (id_training, name, duration, description)
-VALUES (s_training.NEXTVAL, 'Machine Learning', '120 horas', 'Curso sobre técnicas de Machine Learning');
+VALUES (s_training.NEXTVAL, 'Machine Learning', 120, 'Curso sobre técnicas de Machine Learning');
 INSERT INTO training (id_training, name, duration, description)
-VALUES (s_training.NEXTVAL, 'Redes de Computadores', '80 horas', 'Curso abrangendo redes de computadores');
+VALUES (s_training.NEXTVAL, 'Redes de Computadores', 80, 'Curso abrangendo redes de computadores');
 
 
 --PROFESSIONAL_TRAINING

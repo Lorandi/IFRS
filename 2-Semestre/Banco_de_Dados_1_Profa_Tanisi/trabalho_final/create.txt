@@ -96,7 +96,7 @@ ALTER TABLE professional_info
 CREATE TABLE training (
     id_training NUMBER NOT NULL,
     name        VARCHAR2(50) NOT NULL,
-    duration    VARCHAR2(50),
+    duration    NUMBER,
     description VARCHAR2(50)
 );
 ALTER TABLE training ADD CONSTRAINT training_pk PRIMARY KEY ( id_training );

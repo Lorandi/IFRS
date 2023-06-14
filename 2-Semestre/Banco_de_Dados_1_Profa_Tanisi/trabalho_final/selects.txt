@@ -1,0 +1,51 @@
+--1.Recuperar o nome do funcionário e a empresa em que está alocado ordernado pelo nome da empresa;
+SELECT p.name, c.name 
+FROM PROFESSIONAL p INNER JOIN ALLOCATION a 
+ON  p.ID_PROFESSIONAL = a.ID_PROFESSIONAL 
+INNER JOIN CLIENT c ON a.ID_CLIENT = c.ID_CLIENT
+ORDER  BY c.name;
+
+
+--2.Recuperar quantos cursos cada profissional fez, com o total de horas, ordenado descendente pelo total de horas 
+SELECT p.name, count(*) AS "total cursos", sum(duration) AS "total horas"
+FROM PROFESSIONAL p INNER JOIN PROFESSIONAL_TRAINING pt 
+ON p.ID_PROFESSIONAL = pt.ID_PROFESSIONAL 
+INNER JOIN TRAINING t ON t.ID_TRAINING = pt.ID_TRAINING 
+GROUP BY p.name ORDER BY sum(duration) DESC ;
+
+
+--3. Recuperar o nome dos funcionários solteiros que trabalham remotamente 
+SELECT DISTINCT p.name 
+FROM PROFESSIONAL p INNER JOIN PERSONAL_INFO pi2
+ON p.ID_PROFESSIONAL = pi2.ID_PROFESSIONAL 
+INNER JOIN ALLOCATION a ON p.ID_PROFESSIONAL = a.ID_PROFESSIONAL 
+WHERE pi2.MARITAL_STATUS = 'SINGLE' AND a.WORK_MODEL = 'REMOTE';
+
+
+--4 Recuperar o nome do profissional e o nome da empresa e nome da cidade que estão na mesma cidade, ordenado pelo nome da cidade
+SELECT p.name, c.name, a.city
+FROM PROFESSIONAL p INNER JOIN PERSONAL_INFO pi2
+ON p.ID_PROFESSIONAL = pi2.ID_PROFESSIONAL 
+INNER JOIN ADDRESS a ON a.ID_ADDRESS = pi2.ID_ADDRESS 
+INNER JOIN CLIENT c ON c.ID_ADDRESS = pi2.ID_ADDRESS 
+GROUP BY p.name, c.name, a.city
+ORDER BY a.city;
+
+
+--5. Recuperar o nome dos profissionais,do pai, da mãe e da empresa dos profissionais em que o nome do pai começam com J.
+SELECT p.name, pi2.MOTHER_NAME , pi2.FATHER_NAME, c.NAME 
+FROM PROFESSIONAL p INNER JOIN PERSONAL_INFO pi2
+ON p.ID_PROFESSIONAL = pi2.ID_PROFESSIONAL
+INNER JOIN ALLOCATION a 
+ON  p.ID_PROFESSIONAL = a.ID_PROFESSIONAL 
+INNER JOIN CLIENT c ON a.ID_CLIENT = c.ID_CLIENT
+WHERE pi2.FATHER_NAME  LIKE 'J%';
+
+
+--6.Recuperar o nome das empresa, nome dos funcionários e a data de fim das alocaçãos irão acabar depois de 20-06-2023
+SELECT c.NAME , p.name, a.ALLOCATION_END_DATE 
+FROM PROFESSIONAL p INNER JOIN ALLOCATION a 
+ON p.ID_PROFESSIONAL = a.ID_PROFESSIONAL 
+INNER JOIN CLIENT c ON c.ID_CLIENT = a.ID_CLIENT 
+WHERE a.ALLOCATION_END_DATE > to_date('23/06/2023','dd/mm/yyyy');
+
