@@ -1,0 +1,22 @@
+drop table address cascade constraints;
+drop table allocation cascade constraints;
+drop table client cascade constraints;
+drop table personal_info cascade constraints;
+drop table professional cascade constraints;
+drop table professional_info cascade constraints;
+drop table professional_training cascade constraints;
+drop table training cascade constraints;
+
+drop SEQUENCE s_address;
+drop SEQUENCE s_allocation ;
+drop SEQUENCE s_client;
+drop SEQUENCE s_personal_info;
+drop SEQUENCE s_professional;
+drop SEQUENCE s_professional_info;
+drop SEQUENCE s_training;
+
+
+
+
+
+

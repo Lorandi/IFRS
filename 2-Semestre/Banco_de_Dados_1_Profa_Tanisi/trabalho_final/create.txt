@@ -1,16 +1,41 @@
-
 CREATE TABLE address (
-    id_address NUMBER NOT NULL,
-    country    VARCHAR2(50),
-    state      VARCHAR2(50),
-    city       VARCHAR2(50),
-    street     VARCHAR2(50),
-    "number"   VARCHAR2(50),
-    complement VARCHAR2(50),
-    zipcode    VARCHAR2(50) NOT NULL
+    id_address 		NUMBER NOT NULL,
+    country    		VARCHAR2(50),
+    state      		VARCHAR2(50),
+    city       		VARCHAR2(50),
+    street     		VARCHAR2(50),
+    "number"   		VARCHAR2(50),
+    complement 		VARCHAR2(50),
+    zipcode    		VARCHAR2(50) NOT NULL
 );
-
 ALTER TABLE address ADD CONSTRAINT address_pk PRIMARY KEY ( id_address );
+
+
+
+CREATE TABLE professional (
+    id_professional     NUMBER NOT NULL,
+    name                VARCHAR2(50) NOT NULL,
+    corporate_email     VARCHAR2(50) NOT NULL,
+    professional_status VARCHAR2(50) NOT NULL,
+    phone               VARCHAR2(50) NOT NULL
+);
+ALTER TABLE professional ADD CONSTRAINT professional_pk PRIMARY KEY ( id_professional );
+
+
+
+CREATE TABLE client (
+    id_client          NUMBER NOT NULL,
+    name               VARCHAR2(50) NOT NULL,
+    observation        VARCHAR2(50),
+    id_address	       NUMBER NOT NULL,
+    phone              VARCHAR2(50)
+);
+ALTER TABLE client ADD CONSTRAINT client_pk PRIMARY KEY ( id_client );
+ALTER TABLE client
+    ADD CONSTRAINT client_address_fk FOREIGN KEY ( id_address )
+        REFERENCES address ( id_address );
+
+
 
 CREATE TABLE allocation (
     id_allocation                NUMBER NOT NULL,
@@ -18,23 +43,19 @@ CREATE TABLE allocation (
     allocation_end_date          DATE,
     allocation_status            VARCHAR2(50) NOT NULL,
     work_model                   VARCHAR2(50),
-    professional_id_professional NUMBER NOT NULL,
-    client_id_client             NUMBER NOT NULL,
+    id_professional 		 NUMBER NOT NULL,
+    id_client             	 NUMBER NOT NULL,
     description                  VARCHAR2(50)
 );
-
 ALTER TABLE allocation ADD CONSTRAINT allocation_pk PRIMARY KEY ( id_allocation );
-
-CREATE TABLE client (
-    id_client          NUMBER NOT NULL,
-    name               VARCHAR2(50) NOT NULL,
-    observation        VARCHAR2(50),
-    address_id_address NUMBER NOT NULL,
-    phone              VARCHAR2(50)
-);
+ALTER TABLE allocation
+    ADD CONSTRAINT allocation_client_fk FOREIGN KEY ( id_client )
+        REFERENCES client ( id_client );
+ALTER TABLE allocation
+    ADD CONSTRAINT allocation_professional_fk FOREIGN KEY ( id_professional )
+        REFERENCES professional ( id_professional );
 
 
-ALTER TABLE client ADD CONSTRAINT client_pk PRIMARY KEY ( id_client );
 
 CREATE TABLE personal_info (
     id_personal_info             VARCHAR2(50) NOT NULL,
@@ -44,40 +65,33 @@ CREATE TABLE personal_info (
     natura_state                 VARCHAR2(50),
     natura_city                  VARCHAR2(50),
     social_name                  VARCHAR2(50),
-    address_id_address           NUMBER NOT NULL,
-    professional_id_professional NUMBER NOT NULL
+    id_address           	 NUMBER NOT NULL,
+    id_professional 		 NUMBER NOT NULL
 );
-
 ALTER TABLE personal_info ADD CONSTRAINT personal_info_pk PRIMARY KEY ( id_personal_info );
+ALTER TABLE personal_info
+    ADD CONSTRAINT personal_info_address_fk FOREIGN KEY ( id_address )
+        REFERENCES address ( id_address );
 
-CREATE TABLE professional (
-    id_professional     NUMBER NOT NULL,
-    name                VARCHAR2(50) NOT NULL,
-    corporate_email     VARCHAR2(50) NOT NULL,
-    professional_status VARCHAR2(50) NOT NULL,
-    phone               VARCHAR2(50) NOT NULL
-);
+ALTER TABLE personal_info
+    ADD CONSTRAINT personal_info_professional_fk FOREIGN KEY ( id_professional )
+        REFERENCES professional ( id_professional );
 
-ALTER TABLE professional ADD CONSTRAINT professional_pk PRIMARY KEY ( id_professional );
+
 
 CREATE TABLE professional_info (
     id_professional_info         NUMBER NOT NULL,
     hire_format                  VARCHAR2(50) NOT NULL,
     salary_value                 NUMBER NOT NULL,
     payday                       DATE NOT NULL,
-    professional_id_professional NUMBER NOT NULL
+    id_professional		 NUMBER NOT NULL
 );
-
-
 ALTER TABLE professional_info ADD CONSTRAINT professional_info_pk PRIMARY KEY ( id_professional_info );
+ALTER TABLE professional_info
+    ADD CONSTRAINT professional_info_professional_fk FOREIGN KEY ( id_professional )
+        REFERENCES professional ( id_professional );
 
-CREATE TABLE professional_trainning (
-    professional_id_professional NUMBER NOT NULL,
-    training_id_training         NUMBER NOT NULL
-);
 
-ALTER TABLE professional_trainning ADD CONSTRAINT professional_trainning_pk PRIMARY KEY ( professional_id_professional,
-                                                                    training_id_training );
 
 CREATE TABLE training (
     id_training NUMBER NOT NULL,
@@ -85,40 +99,34 @@ CREATE TABLE training (
     duration    VARCHAR2(50),
     description VARCHAR2(50)
 );
-
 ALTER TABLE training ADD CONSTRAINT training_pk PRIMARY KEY ( id_training );
 
-ALTER TABLE allocation
-    ADD CONSTRAINT allocation_client_fk FOREIGN KEY ( client_id_client )
-        REFERENCES client ( id_client );
 
-ALTER TABLE allocation
-    ADD CONSTRAINT allocation_professional_fk FOREIGN KEY ( professional_id_professional )
+
+CREATE TABLE professional_training (
+    id_professional 	NUMBER NOT NULL,
+    id_training         NUMBER NOT NULL
+);
+ALTER TABLE professional_training ADD CONSTRAINT professional_training_pk 
+	PRIMARY KEY ( id_professional, id_training );
+ALTER TABLE professional_training 
+    ADD CONSTRAINT professional_training_professional_fk FOREIGN KEY ( id_professional )
         REFERENCES professional ( id_professional );
-
-ALTER TABLE client
-    ADD CONSTRAINT client_address_fk FOREIGN KEY ( address_id_address )
-        REFERENCES address ( id_address );
-
-ALTER TABLE personal_info
-    ADD CONSTRAINT personal_info_address_fk FOREIGN KEY ( address_id_address )
-        REFERENCES address ( id_address );
-
-ALTER TABLE personal_info
-    ADD CONSTRAINT personal_info_professional_fk FOREIGN KEY ( professional_id_professional )
-        REFERENCES professional ( id_professional );
- 
-ALTER TABLE professional_info
-    ADD CONSTRAINT professional_info_professional_fk FOREIGN KEY ( professional_id_professional )
-        REFERENCES professional ( id_professional );
-
-ALTER TABLE professional_trainning
-    ADD CONSTRAINT relation_14_professional_fk FOREIGN KEY ( professional_id_professional )
-        REFERENCES professional ( id_professional );
-
-ALTER TABLE professional_trainning
-    ADD CONSTRAINT relation_14_training_fk FOREIGN KEY ( training_id_training )
+ALTER TABLE professional_training
+    ADD CONSTRAINT professional_training_training_fk FOREIGN KEY ( id_training )
         REFERENCES training ( id_training );
+
+
+
+
+CREATE SEQUENCE s_address;
+CREATE SEQUENCE s_allocation ;
+CREATE SEQUENCE s_client;
+CREATE SEQUENCE s_personal_info;
+CREATE SEQUENCE s_professional;
+CREATE SEQUENCE s_professional_info;
+CREATE SEQUENCE s_training;
+
 
 
 
