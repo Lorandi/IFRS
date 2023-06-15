@@ -1,4 +1,4 @@
---1.Recuperar o nome do funcionário e a empresa em que está alocado ordernado pelo nome da empresa;
+--1.Recuperar o nome do funcionário e o cliente em que está alocado ordernado pelo nome do cliente;
 SELECT p.name, c.name 
 FROM PROFESSIONAL p INNER JOIN ALLOCATION a 
 ON  p.ID_PROFESSIONAL = a.ID_PROFESSIONAL 
@@ -22,7 +22,7 @@ INNER JOIN ALLOCATION a ON p.ID_PROFESSIONAL = a.ID_PROFESSIONAL
 WHERE pi2.MARITAL_STATUS = 'SINGLE' AND a.WORK_MODEL = 'REMOTE';
 
 
---4 Recuperar o nome do profissional e o nome da empresa e nome da cidade que estão na mesma cidade, ordenado pelo nome da cidade
+--4 Recuperar o nome do profissional e o nome do cliente e nome da cidade que estão na mesma cidade, ordenado pelo nome da cidade
 SELECT p.name, c.name, a.city
 FROM PROFESSIONAL p INNER JOIN PERSONAL_INFO pi2
 ON p.ID_PROFESSIONAL = pi2.ID_PROFESSIONAL 
@@ -32,7 +32,7 @@ GROUP BY p.name, c.name, a.city
 ORDER BY a.city;
 
 
---5. Recuperar o nome dos profissionais,do pai, da mãe e da empresa dos profissionais em que o nome do pai começam com J.
+--5. Recuperar o nome dos profissionais,do pai, da mãe e do cliente dos profissionais em que o nome do pai começam com J.
 SELECT p.name, pi2.MOTHER_NAME , pi2.FATHER_NAME, c.NAME 
 FROM PROFESSIONAL p INNER JOIN PERSONAL_INFO pi2
 ON p.ID_PROFESSIONAL = pi2.ID_PROFESSIONAL
@@ -42,10 +42,76 @@ INNER JOIN CLIENT c ON a.ID_CLIENT = c.ID_CLIENT
 WHERE pi2.FATHER_NAME  LIKE 'J%';
 
 
---6.Recuperar o nome das empresa, nome dos funcionários e a data de fim das alocaçãos irão acabar depois de 20-06-2023
+--6.Recuperar o nome das cliente, nome dos funcionários e a data de fim das alocaçãos irão acabar depois de 23-06-2023
 SELECT c.NAME , p.name, a.ALLOCATION_END_DATE 
 FROM PROFESSIONAL p INNER JOIN ALLOCATION a 
 ON p.ID_PROFESSIONAL = a.ID_PROFESSIONAL 
 INNER JOIN CLIENT c ON c.ID_CLIENT = a.ID_CLIENT 
 WHERE a.ALLOCATION_END_DATE > to_date('23/06/2023','dd/mm/yyyy');
+
+
+--7.Recuperar o nome das clientes com mais de 2 alocações, com o total de alocações
+SELECT c.name, count(*)
+FROM client c INNER JOIN ALLOCATION a ON c.ID_CLIENT = a.ID_CLIENT 
+GROUP BY c.NAME
+HAVING count(*) > 2;
+
+--8.Recuperar o total de horas de treinamentodos profissionais em cada cliente
+SELECT c.name, sum(duration)
+FROM client c INNER JOIN ALLOCATION a ON c.ID_CLIENT = a.ID_CLIENT 
+INNER JOIN PROFESSIONAL p ON p.ID_PROFESSIONAL = a.ID_PROFESSIONAL 
+INNER JOIN PROFESSIONAL_TRAINING pt ON pt.ID_PROFESSIONAL = p.ID_PROFESSIONAL 
+INNER JOIN TRAINING t ON t.ID_TRAINING = pt.ID_TRAINING 
+GROUP BY c.name;
+
+
+--9.Recuperar o tipo de professional_status e quantos profissionais estção em cada situação;
+SELECT DISTINCT p.PROFESSIONAL_STATUS, count(*) 
+FROM PROFESSIONAL p
+GROUP BY p.PROFESSIONAL_STATUS ;
+
+
+--10. Recuperar o valor que cada cliente está gastando mensalmente com salários ordenado pelo total mensal
+SELECT c.name, sum(pi2.SALARY_VALUE)
+FROM client c INNER JOIN ALLOCATION a ON c.ID_CLIENT = a.ID_CLIENT 
+INNER JOIN PROFESSIONAL p ON p.ID_PROFESSIONAL = a.ID_PROFESSIONAL 
+INNER JOIN PROFESSIONAL_INFO pi2 ON p.ID_PROFESSIONAL = pi2.ID_PROFESSIONAL
+GROUP BY c.name
+ORDER BY sum(pi2.SALARY_VALUE);
+
+
+--11. Recuperar o nome dos profissionais, clientes e id da alocação que tem alocações sem data definida de término
+SELECT p.name, c.name, a.ID_ALLOCATION  
+FROM PROFESSIONAL p INNER JOIN ALLOCATION a ON p.ID_PROFESSIONAL = a.ID_PROFESSIONAL 
+INNER JOIN CLIENT c ON c.ID_CLIENT = a.ID_CLIENT 
+WHERE a.ALLOCATION_END_DATE IS NULL;
+
+
+--12 Recuperar o nome do profissinal, cidade de nascimento, cidade que mora dor profissionais que não moram na cidade que nasceram
+SELECT p.name, pi2.NATURA_CITY , a.city
+FROM PROFESSIONAL p INNER JOIN PERSONAL_INFO pi2 ON p.ID_PROFESSIONAL = pi2.ID_PROFESSIONAL 
+INNER JOIN ADDRESS a ON pi2.ID_ADDRESS = a.ID_ADDRESS 
+WHERE pi2.NATURA_CITY <> a.CITY;
+
+
+--13 Recuperar a média de salário de cada empresa, arrendodado para até 2 casas decimais, ordenado pelo valor médio descendente
+SELECT c.name, round(avg(pi2.SALARY_VALUE),2)
+FROM client c INNER JOIN ALLOCATION a ON c.ID_CLIENT = a.ID_CLIENT 
+INNER JOIN PROFESSIONAL p ON p.ID_PROFESSIONAL = a.ID_PROFESSIONAL 
+INNER JOIN PROFESSIONAL_INFO pi2 ON p.ID_PROFESSIONAL = pi2.ID_PROFESSIONAL
+GROUP BY c.name
+ORDER BY sum(pi2.SALARY_VALUE) desc;
+
+--14 Recuperar o nome dos profissionais com mais de 2 cursos e o total de cursos
+SELECT p.name, count(*) AS "total cursos"
+FROM PROFESSIONAL p INNER JOIN PROFESSIONAL_TRAINING pt ON p.ID_PROFESSIONAL = pt.ID_PROFESSIONAL
+GROUP BY p.name
+HAVING count(*)  > 2;
+
+--15 Recuperar o total de profissionais em cada cliente em que tenha menos de 3 alocações
+SELECT c.name, count(*) AS "total alocações"
+FROM CLIENT c INNER JOIN ALLOCATION a ON a.ID_CLIENT = c.ID_CLIENT 
+GROUP BY c.name
+HAVING count(*) < 3;
+
 
