@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Quiz Game</h1>
+    <h1 v-html="this.questions"></h1>
 
     <input type="radio" name="options" value="True" />
     <label>True</label><br>
@@ -14,7 +14,26 @@
 
 <script>
 export default{
-  name: 'App'
+  name: 'App',
+
+  data(){
+    return{
+      questions: undefined,
+      incorrectAnswers: undefined,
+      correctAnswers: undefined
+    }
+  },
+
+  created(){
+    this.axios
+    .get("https://opentdb.com/api.php?amount=1&category=18")
+    .then((response) => {
+      this.questions = response.data.results[0].question
+      this.incorrectAnswers = response.data.results[0].incorrect_answers
+      this.correctAnswers = response.data.results[0].correct_answer
+  console.log(response.data.results[0])
+})
+  }
 
 }
 //https://opentdb.com/api.php?amount=1&category=18
