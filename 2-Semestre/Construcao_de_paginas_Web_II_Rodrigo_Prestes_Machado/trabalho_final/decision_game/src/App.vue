@@ -71,6 +71,7 @@ export default {
   created() {
     this.$store.dispatch("loadJobs");
     this.$store.dispatch("loadCosts");
+    this.$store.dispatch("loadStudies");
   },
   computed: mapState([
     'receita',

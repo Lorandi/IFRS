@@ -3,6 +3,7 @@ import Home from "../views/HomePage.vue";
 import Products from "../views/ProductsPage.vue";
 import Trabalho from "../views/WorkPage.vue";
 import Custos from "../views/CostsPage.vue";
+import Estudos from "../views/StudyPage.vue";
 
 const routes = [
   {
@@ -20,7 +21,7 @@ const routes = [
   {
     path: "/estudo",
     name: "Estudo",
-    component: Home,
+    component: Estudos,
   },
 
   {

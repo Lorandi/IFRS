@@ -1,6 +1,7 @@
 import { createStore } from 'vuex'
 import jobs from './jsons/jobs.json';
 import costs from './jsons/costs.json';
+import studies from './jsons/studies.json';
 
 
 export default createStore({
@@ -9,6 +10,7 @@ export default createStore({
     productsInBag: [],
     jobs: [],
     costs: [],
+    studies: [],
     receita:0,
     despesa:0,
     conta:0,
@@ -48,10 +50,20 @@ export default createStore({
     loadCosts(state, costs){
       console.log(costs);
       state.costs = costs;
+    },
+
+    loadStudies(state, studies){
+      console.log(studies);
+      state.studies = studies;
     }
     
   },
   actions: {
+
+    loadStudies({ commit }) {
+      commit('loadStudies', studies);
+    },
+
     loadJobs({ commit }) {
       commit('loadJobs', jobs);
     },

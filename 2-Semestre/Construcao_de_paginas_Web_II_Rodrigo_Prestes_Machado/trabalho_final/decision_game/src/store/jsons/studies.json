@@ -1,0 +1,209 @@
+[
+  {
+    "id": 1,
+    "name": "Lógica de programação",
+    "value": 200,
+    "hoursToComplete": 100,
+    "prerequisites": null,
+    "skillAfterCourse": "logicaDeProgramacao",
+    "seniority": "Begginer",
+    "active": false
+  },
+  {
+    "id": 2,
+    "name": "Linguagens de programação I",
+    "value": 200,
+    "hoursToComplete": 100,
+    "prerequisites": "logicaDeProgramacao",
+    "skillAfterCourse": "linguagensDeProgramacao1",
+    "seniority": "Begginer",
+    "active": false
+  },
+  {
+    "id": 3,
+    "name": "Linguagens de programação II",
+    "value": 200,
+    "hoursToComplete": 100,
+    "prerequisites": "linguagensDeProgramacao1",
+    "skillAfterCourse": "logicaDeProgramacao2",
+    "seniority": "Begginer",
+    "active": false
+  },
+  {
+    "id": 4,
+    "name": "Estrutura de dados",
+    "value": 200,
+    "hoursToComplete": 100,
+    "prerequisites": "logicaDeProgramacao2",
+    "skillAfterCourse": "estruturaDeDados",
+    "seniority": "Begginer",
+    "active": false
+  },
+  {
+    "id": 5,
+    "name": "Construção de páginas web",
+    "value": 200,
+    "hoursToComplete": 100,
+    "prerequisites": "estruturaDeDados",
+    "skillAfterCourse": "construcaoDePaginasWeb",
+    "seniority": "Begginer",
+    "active": false
+  },
+  {
+    "id": 6,
+    "name": "Programação orientada a objetos",
+    "value": 200,
+    "hoursToComplete": 100,
+    "prerequisites": "construcaoDePaginasWeb",
+    "skillAfterCourse": "programacaoOrientadaAObjetos",
+    "seniority": "Begginer",
+    "active": false
+  },
+  {
+    "id": 7,
+    "name": "Banco de dados",
+    "value": 200,
+    "hoursToComplete": 100,
+    "prerequisites": "programacaoOrientadaAObjetos",
+    "skillAfterCourse": "bancoDeDados",
+    "seniority": "Begginer",
+    "active": false
+  },
+  {
+    "id": 8,
+    "name": "Testes de software",
+    "value": 200,
+    "hoursToComplete": 100,
+    "prerequisites": "bancoDeDados",
+    "skillAfterCourse": "testesDeSoftware",
+    "seniority": "Begginer",
+    "active": false
+  },
+  {
+    "id": 9,
+    "name": "Qualidade de software",
+    "value": 200,
+    "hoursToComplete": 100,
+    "prerequisites": "testesDeSoftware",
+    "skillAfterCourse": "qualidadeDeSoftware",
+    "seniority": "Begginer",
+    "active": false
+  },
+  {
+    "id": 10,
+    "name": "Engenharia de software",
+    "value": 200,
+    "hoursToComplete": 100,
+    "prerequisites": "qualidadeDeSoftware",
+    "skillAfterCourse": "engenhariaDeSoftware",
+    "seniority": "Begginer",
+    "active": false
+  },
+  {
+    "id": 11,
+    "name": "Programação web",
+    "value": 200,
+    "hoursToComplete": 100,
+    "prerequisites": "engenhariaDeSoftware",
+    "skillAfterCourse": "programacaoWeb",
+    "seniority": "Begginer",
+    "active": false
+  },
+  {
+    "id": 12,
+    "name": "Sistemas Operacionas",
+    "value": 200,
+    "hoursToComplete": 100,
+    "prerequisites": "programacaoWeb",
+    "skillAfterCourse": "programacaoDeSistemas",
+    "seniority": "Begginer",
+    "active": false
+  },
+  {
+    "id": 13,
+    "name": "Formação back-end",
+    "value": 1000,
+    "hoursToComplete": 500,
+    "prerequisites": "programacaoDeSistemas",
+    "skillAfterCourse": "formacaoBackend",
+    "seniority": "Junior",
+    "active": false
+  },
+
+  {
+    "id": 14,
+    "name": "Formação front-end",
+    "value": 1000,
+    "hoursToComplete": 500,
+    "prerequisites": "programacaoDeSistemas",
+    "skillAfterCourse": "programadorFrontEnd",
+    "seniority": "Junior",
+    "active": false
+  },
+
+  {
+    "id": 15,
+    "name": "Especialização Java",
+    "value": 2000,
+    "hoursToComplete": 400,
+    "prerequisites": "formacaoBackend",
+    "skillAfterCourse": "Java",
+    "seniority": "Junior",
+    "active": false
+  },
+  {
+    "id": 16,
+    "name": "Especialização Veu",
+    "value": 2000,
+    "hoursToComplete": 400,
+    "prerequisites": "programadorFrontEnd",
+    "skillAfterCourse": "Vue",
+    "seniority": "Junior",
+    "active": false
+  },
+
+  {
+    "id": 17,
+    "name": "Especialização Java II",
+    "value": 3000,
+    "hoursToComplete": 400,
+    "prerequisites": "Java",
+    "skillAfterCourse": "Java2",
+    "seniority": "Pleno",
+    "active": false
+  },
+  {
+    "id": 18,
+    "name": "Especialização Veu II",
+    "value": 3000,
+    "hoursToComplete": 400,
+    "prerequisites": "Vue",
+    "skillAfterCourse": "Vue2",
+    "seniority": "Pleno",
+    "active": false
+  },
+
+  {
+    "id": 17,
+    "name": "Especialização Java III",
+    "value": 5000,
+    "hoursToComplete": 400,
+    "prerequisites": "java2",
+    "skillAfterCourse": "Java3",
+    "seniority": "Senior",
+    "active": false
+  },
+  {
+    "id": 18,
+    "name": "Especialização Veu III",
+    "value": 3000,
+    "hoursToComplete": 400,
+    "prerequisites": "Vue2",
+    "skillAfterCourse": "Vue3",
+    "seniority": "Senior",
+    "active": false
+  }
+  
+  
+  
+]
