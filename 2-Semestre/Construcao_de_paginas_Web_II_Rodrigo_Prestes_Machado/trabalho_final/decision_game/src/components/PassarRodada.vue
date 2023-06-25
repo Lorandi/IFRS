@@ -1,6 +1,6 @@
 <template>
     <div class="container">
-      <button @click="contarCliques(rodada)" class="botao-azul">Passar Rodada</button>
+      <button @click="passarRodada(rodada)" class="botao-azul">Passar Rodada</button>
     </div>
   </template>
   
@@ -13,13 +13,26 @@
   data() {
     return {};
   },
-  computed: mapState(["receita", "conta", "rodada"]),
+  computed: mapState(["receita", "conta", "rodada", "despesa"]),
 
     methods: {
-      contarCliques(rodada) { 
-        rodada++;  
-        var guardar = (parseFloat( this.$store.state.receita) + parseFloat(this.$store.state.conta)).toFixed(2);
-        this.$store.dispatch("receitaNaConta", guardar);
+      passarRodada(rodada) { 
+        rodada++; 
+        var receita =  parseFloat(this.$store.state.receita);
+        var despesa =  parseFloat(this.$store.state.despesa);
+        var conta =  parseFloat(this.$store.state.conta);
+        var saldo =  receita - despesa ;
+
+        if(conta<0){
+          console.log("entrou no cheque especial?");
+          console.log(conta);
+          //juros 10% cheque especial
+          conta = conta * 1.1;
+          console.log("saindo");
+          console.log(conta)          
+        }            
+               
+        this.$store.dispatch("balancoConta", (parseFloat(saldo) + parseFloat(conta)).toFixed(2));
         this.$store.dispatch("addRodada", rodada);
       },      
     }

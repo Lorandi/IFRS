@@ -1,67 +1,67 @@
 import { createStore } from 'vuex'
-import axios from "axios";
 import jobs from './jsons/jobs.json';
+import costs from './jsons/costs.json';
+
 
 export default createStore({
   state: {
     products: [],
     productsInBag: [],
     jobs: [],
+    costs: [],
     receita:0,
-    despesas:0,
+    despesa:0,
     conta:0,
     cartao: 0,
     dividas: 0,
     horasOcupadas: 0,
     rodada: 1    
   },
-  mutations: {
-
-    loadProducts(state, products){
-      console.log(products);
-      state.products = products;
-    },
-
-    addToBag(state, product){
-      state.productsInBag.push(product);
-      localStorage.setItem('productsInBag', JSON.stringify(state.productsInBag));
-    },
-
-    removeFromBag(state, productId){
-      state.productsInBag = state.productsInBag.filter(product => product.id !== productId);
-      localStorage.setItem('productsInBag', JSON.stringify(state.productsInBag));
-    },
-    
-    loadBag(state, products){
-      state.productsInBag = products;
-    },
+  mutations: {    
 
     addRodada(state, rodada){
       state.rodada = rodada;
-    },
-
-    loadJobs(state, jobs){
-      console.log(jobs);
-      state.jobs = jobs;
     },
 
     addReceita(state, receita){
       state.receita = receita;
     },
 
+    addDespesa(state, despesa){
+      state.despesa = despesa;
+    },
+
     addHorasOcupadas(state, horasOcupadas){
       state.horasOcupadas = horasOcupadas;
     },
 
-    receitaNaConta(state, conta){
+    balancoConta(state, conta){
       state.conta = conta;
+    }
+    ,
+
+    loadJobs(state, jobs){
+      console.log(jobs);
+      state.jobs = jobs;
+    },
+
+    loadCosts(state, costs){
+      console.log(costs);
+      state.costs = costs;
     }
     
   },
   actions: {
-    receitaNaConta({ commit }, receita){
-      console.log(receita); 
-      commit('receitaNaConta', receita);
+    loadJobs({ commit }) {
+      commit('loadJobs', jobs);
+    },
+
+    loadCosts({ commit }) {     
+      commit('loadCosts', costs);
+    },
+
+    balancoConta({ commit },saldo){            
+      commit('balancoConta',saldo);
     },
 
     addHorasOcupadas({commit}, horasOcupadas){
@@ -72,39 +72,16 @@ export default createStore({
       commit('addReceita', receita);
     },
 
+    addDespesa({commit}, despesa){
+      commit('addDespesa', despesa);
+    },
+
     addRodada({commit},  rodada){  
       commit('addRodada', rodada);
     },
 
-    loadJobs({ commit }) {
-      commit('loadJobs', jobs);
-    },
-
-    loadProducts({commit}){
-      axios
-      .get("https://fakestoreapi.com/products")
-      .then((response) => {
-        commit('loadProducts',response.data); 
-      })
-    },
-
-    loadBag({commit}){     
-      if(localStorage.getItem('productsInBag')){
-        let productsInBag = JSON.parse(localStorage.getItem('productsInBag'));
-        commit('loadBag', productsInBag);
-      }     
-    },
-
-    addToBag({commit}, product){
-      commit('addToBag', product);
-    },
-
-    removeFromBag({commit}, productId){
-      if(confirm("Are you sure you want to remove this item?")){
-            commit('removeFromBag', productId);
-      }
-  
-    }
+    
+    
   },  
   modules: {
   }

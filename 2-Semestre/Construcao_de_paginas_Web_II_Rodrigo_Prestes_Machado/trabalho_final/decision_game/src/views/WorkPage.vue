@@ -14,7 +14,7 @@
           <button v-if="job.hours < 12 && horasOcupadas < 12"
             @click.stop="job.hours++; somarHoras(horasOcupadas)">+</button>
           <button v-else @click.stop=alertaLimites()>+</button>
-
+          <p class="salaryPerHour">R$ {{ (job.hours * job.salaryPerHour * 22).toFixed(2) }} /mês</p>
         </div>
         <!-- <button class="selecionar" v-if="job.active">
           Selecionar
@@ -33,7 +33,7 @@
             <tr>
               <th>Job</th>
               <th class="center">Horas</th>
-              <th class="center">Total</th>
+              <th class="center">Total/mês</th>
             </tr>
           </thead>
           <tbody>
@@ -41,14 +41,14 @@
               <template v-if="job.active">
                 <td> {{ job.name }} </td>
                 <td class="center"> {{ job.hours }} </td>
-                <td class="center"> {{ (job.hours * job.salaryPerHour).toFixed(2) }} </td>
+                <td class="center"> R$ {{ (job.hours * job.salaryPerHour * 22).toFixed(2) }} </td>
               </template>
             </tr>
 
             <tr>
               <th>Total</th>
               <th class="center">{{ totalHours(horasOcupadas) }}</th>
-              <th class="center">{{ total() }}</th>
+              <th class="center">R$ {{ total() }}</th>
             </tr>
           </tbody>
         </table>
@@ -78,7 +78,7 @@ export default {
       let total = 0;
       this.jobs.forEach(job => {
         if (job.active) {
-          total += job.hours * job.salaryPerHour;
+          total += job.hours * job.salaryPerHour * 22;
         }
       });
 
@@ -113,28 +113,28 @@ export default {
           this.subtrairHoras(this.horasOcupadas)
         }
         job.hours = 0;
-      }else {
-      this.subtrairHoras(horasOcupadas);
-    }
-  },
+      } else {
+        this.subtrairHoras(horasOcupadas);
+      }
+    },
 
-  somarHoras(horasOcupadas) {
-    if (horasOcupadas >= 12) {
-      // Limite de horas alcançado, exibir alerta
-      alert("Limite máximo de horas alcançado!");
-      return;
-    }
-    horasOcupadas++;
-    this.$store.dispatch("addHorasOcupadas", horasOcupadas);
-  },
+    somarHoras(horasOcupadas) {
+      if (horasOcupadas >= 12) {
+        // Limite de horas alcançado, exibir alerta
+        alert("Limite máximo de horas alcançado!");
+        return;
+      }
+      horasOcupadas++;
+      this.$store.dispatch("addHorasOcupadas", horasOcupadas);
+    },
 
-  subtrairHoras(horasOcupadas) {
-    horasOcupadas--;
-    this.$store.dispatch("addHorasOcupadas", horasOcupadas);
+    subtrairHoras(horasOcupadas) {
+      horasOcupadas--;
+      this.$store.dispatch("addHorasOcupadas", horasOcupadas);
+    }
+
+
   }
-
-
-}
 };
 </script>
 
@@ -155,7 +155,10 @@ export default {
     border: 1px solid lightgrey;
     padding: 20px;
     max-width: 800px;
-    min-width: 500px;
+    min-width: 400px;
+    flex-direction: row;
+    align-content: space-around;
+    justify-content: space-between;
 
 
     h4 {
@@ -267,7 +270,7 @@ export default {
   .summary {
     background-color: rgb(245, 245, 245);
     padding: 20px;
-    min-width: 300px;
+    min-width: 350px;
     text-align: left;
 
     table {
@@ -282,8 +285,6 @@ export default {
       }
     }
   }
-
-
 
   .center {
     text-align: center;
