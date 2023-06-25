@@ -2,30 +2,27 @@
   <main class="home">
     <section class="costs">
       <h4>Custos</h4>
-      <div v-for="(category, index) in  categories " :key="index" class="category"
-        @click="category.active = !category.active">
+      <div v-for="(category, index) in  categories " :key="index" class="category">
         <div class="categorias">
           <h4> {{ category.name }}</h4>
-          <div v-for=" (cost, index) in category.products" :key=" index " class="cost"
-            :class=" { selected: cost.active } ">
-            <div class="cost-image" :style=" { backgroundImage: 'url(' + cost.image + ')' } "></div>
+          <div v-for=" (cost, index) in category.products" :key="index" class="cost" @click="cost.active = !cost.active" :class="{ selected: cost.active }">
+            
+            <div class="cost-image" :style="{ backgroundImage: 'url(' + cost.image + ')' }"></div>
             <h4>{{ cost.name }}</h4>
             <p class="salaryPerHour">R$ {{ (cost.cost).toFixed(2) }} /mês</p>
-            <div class="hours-area" v-if=" cost.active ">
+            <div class="hours-area" v-if="cost.active">
               <p class="salaryPerHour">Contratado</p>
             </div>
           </div>
         </div>
       </div>
-
     </section>
-
     <section class="summary">
       <strong>Contratos</strong>
-      <span v-if=" total() <= 0 ">
+      <span v-if="total() <= 0">
         Não há contratos ativos
       </span>
-      <div v-if=" total() > 0 ">
+      <div v-if="total() > 0">
         <table>
           <thead>
             <tr>
@@ -34,16 +31,16 @@
             </tr>
           </thead>
           <tbody>
-            <tr v-for="( cost, index ) in  this.costs " :key=" index ">
-              <template v-if=" cost.active ">
+            <tr v-for="( cost, index ) in  this.costs " :key="index">
+              <template v-if="cost.active">
                 <td> {{ cost.name }} </td>
-                <td class="center"> R$ {{ (cost.cost).toFixed(2) }} </td>
+                <td > R$ {{ (cost.cost).toFixed(2) }} </td>
               </template>
             </tr>
 
             <tr>
               <th>Total</th>
-              <th class="center">R$ {{ total() }}</th>
+              <th >R$ {{ total() }}</th>
             </tr>
           </tbody>
         </table>
@@ -65,7 +62,6 @@ export default {
         if (!categories[cost.category]) {
           categories[cost.category] = {
             name: cost.category,
-            open: false, // Adicionado a propriedade "open" para controlar o estado de abertura da categoria
             products: [],
           };
         }
@@ -112,7 +108,7 @@ export default {
     border: 1px solid lightgrey;
     padding: 20px;
     max-width: 800px;
-    min-width: 400px;
+    min-width: 600px;
     flex-direction: row;
     align-content: space-around;
     justify-content: space-between;
@@ -152,6 +148,7 @@ export default {
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
       }
 
       h4 {
