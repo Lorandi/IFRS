@@ -1,0 +1,63 @@
+[
+  {
+    "id": 1,
+    "name": "Desenvolvedor Front-end",
+    "image": "https://prodaly.com.br/wp-content/uploads/2022/09/Capa-programador.png",
+    "salaryPerHour": 30,
+    "skill": "HTML, CSS, JavaScript",
+    "seniority": "Júnior",
+    "active": false,
+    "hours": 1
+  },
+  {
+    "id": 2,
+    "name": "Desenvolvedor Back-end",
+    "image": "https://acadtec.com.br/storage/posts/pictures/ntVKoNURQUQhP9ghaf06607dcbf590338.jpg",
+    "salaryPerHour": 32,
+    "skill": "Java, Spring Boot",
+    "seniority": "Pleno",
+    "active": false,
+    "hours": 1
+  },
+  {
+    "id": 3,
+    "name": "Desenvolvedor Full-stack",
+    "image": "https://www.locaweb.com.br/blog/wp-content/uploads/2021/04/nomade-digital-esse-estilo-de-vida-combina-com-um-programador-como-voce.jpg",
+    "salaryPerHour": 35,
+    "skill": "Node.js, React, MongoDB",
+    "seniority": "Sênior",
+    "active": false,
+    "hours": 1
+  },
+  {
+    "id": 4,
+    "name": "Desenvolvedor Android",
+    "image": "https://img.freepik.com/fotos-gratis/programador-sorridente-de-tiro-medio-segurando-o-telefone_23-2149101155.jpg?w=1380&t=st=1687656578~exp=1687657178~hmac=13520014b155af15bfcc772e79afc6a2627810c937824510ece29d01cb5de4be",
+    "salaryPerHour": 37,
+    "skill": "React Native, Flutter",
+    "seniority": "Pleno",
+    "active": false,
+    "hours": 1
+  },
+  {
+    "id": 5,
+    "name": "Desenvolvedor IOS",
+    "image": "https://img.freepik.com/fotos-gratis/engenheiro-de-ti-afro-americano-programando-interface-de-codigo-binario-usando-script-css-html-e-criptografia-no-computador-servidor-de-seguranca-de-codificacao-freelancer-masculino-com-aplicativo-de-desenvolvedor-de-software_482257-49186.jpg?w=1380&t=st=1687656627~exp=1687657227~hmac=ddcb169f74da19d90d3bdb5a4556472ca840f2ca81ffb35f76a8a217c0306173",
+    "salaryPerHour": 39,
+    "skill": "React Native, Flutter",
+    "seniority": "Pleno",
+    "active": false,
+    "hours": 1
+  },
+  {
+    "id": 6,
+    "name": "Desenvolvedor RPA",
+    "image": "https://blog.django.pro.br/wp-content/uploads/2020/05/woman-coding-on-computer-3861958-medium-752x440.jpg",
+    "salaryPerHour": 40,
+    "skill": "React Native, Flutter",
+    "seniority": "Pleno",
+    "active": false,
+    "hours": 1
+  }
+
+]
