@@ -2,17 +2,20 @@
   <main class="home">
     <section class="studies">
       <h4>Cursos</h4>
-      <div v-for="(study, index) in this.studies" :key="index" class="study"  @click="toggleStudyActive(study, horasOcupadas)"
+      <div v-for="(study, index) in this.studies" :key="index" class="study"  
         :class="{ selected: study.active }">        
         <h3>{{ study.name }}</h3>
         <h4>Custo: R${{ study.value.toFixed(2) }} </h4>
         <h4>Duração: {{study.hoursToComplete }} horas</h4>
+        <button v-if="!isInMyStudies(study)" @click.stop="addToMyStudies(study), toggleStudyActive(study, horasOcupadas)">
+          Iniciar curso
+        </button>
         <h4>Senioridade: {{ study.seniority }}</h4>      
-        <div class="hours-area" v-if="study.active">
-          <button @click.stop="study.hours--, subtrairHoras(horasOcupadas)" :disabled="study.hours <= 1">-</button>
+        <div class="hours-area" v-if="study.active && isInMyStudies(study)">
+          <button @click.stop="study.hours--, subtrairHoras(study, horasOcupadas)" :disabled="study.hours <= 1">-</button>
           <span class="hours"> {{ study.hours }} horas </span>
           <button v-if="study.hours < 12 && horasOcupadas < 12"
-            @click.stop="study.hours++; somarHoras(horasOcupadas)">+</button>
+            @click.stop="study.hours++; somarHoras(study, horasOcupadas)">+</button>
           <button v-else @click.stop=alertaLimites()>+</button>          
         </div>
 
@@ -20,36 +23,47 @@
     </section>
 
     <section class="summary">
-      <strong>Contratos</strong>
-      <span v-if="total() <= 0">
-        Não há contratos ativos
-      </span>
-      <div v-if="total() > 0">
+      <strong>Cursos</strong>  
         <table>
           <thead>
             <tr>
-              <th>study</th>
+              <th>Em andamento</th>
               <th class="center">Horas</th>
-              <th class="center">Total/mês</th>
             </tr>
           </thead>
           <tbody>
-            <tr v-for="(study, index) in this.studies" :key="index">
-              <template v-if="study.active">
+            <tr v-for="(study, index) in this.myStudies" :key="index">
+              <template v-if="study.active && study.status != 'completed'">
                 <td> {{ study.name }} </td>
-                <td class="center"> {{ study.hours }} </td>
-                <td class="center"> R$ {{ (study.hours * study.salaryPerHour * 22).toFixed(2) }} </td>
+                <td class="center"> {{ study.hoursCompleted}} / {{ study.hoursToComplete }}</td>
               </template>
-            </tr>
-
-            <tr>
-              <th>Total</th>
-              <th class="center">{{ totalHours(horasOcupadas) }}</th>
-              <th class="center">R$ {{ total() }}</th>
-            </tr>
+            </tr>   
           </tbody>
-        </table>
-      </div>
+        </table>  
+        <table>
+          <thead>
+            <tr>
+              <th>Finalizados</th>
+              <th class="center">Horas</th>
+            </tr>
+          </thead>
+          <tbody>
+            <template v-if="myStudies.length === 0">
+              <tr>
+                
+              </tr>
+            </template>
+            <tr v-for="(study, index) in this.myStudies" :key="index">
+              <template v-if="study.status === 'completed'">
+                <td> {{ study.name }} </td>
+                <td class="center"> {{ study.hoursToComplete }}</td>
+              </template>
+              <template v-else>
+                <td>Nenhum curso finalizado</td>
+              </template>
+            </tr> 
+          </tbody>
+        </table> 
     </section>
 
   </main>
@@ -64,24 +78,21 @@ export default {
     return {};
   },
 
-  computed: mapState(["studies", "receita", "horasOcupadas", "study"]),
+  computed: mapState(["studies", "receita", "horasOcupadas", "myStudies"]),
 
   methods: {
 
+    isInMyStudies(study){
+      return this.myStudies.find((item) => item.id === study.id);
+    },
+
+    addToMyStudies(study) {
+      console.log(study);
+      this.$store.dispatch("addToMyStudies", study);
+    },
+
     alertaLimites: function () {
       alert("Limite de horas alcançado! Você não pode selecionar mais trabalhos ou horas.");
-    },
-    total: function () {
-      let total = 0;
-      this.studies.forEach(study => {
-        if (study.active) {
-          total += study.hours * study.salaryPerHour * 22;
-        }
-      });
-
-      this.$store.dispatch("addReceita", total.toFixed(2));
-
-      return total.toFixed(2);
     },
 
     totalHours() {
@@ -100,10 +111,12 @@ export default {
         alert("Limite de horas alcançado! Você não pode selecionar mais trabalhos.");
         return;
       }
-      study.active = !study.active;
+
+      if (this.isInMyStudies(study)){
+        study.active = !study.active;
       if (study.active) {
-        study.hours = 1;
-        this.somarHoras(horasOcupadas);
+        study.hours = 0;
+  
       } else if (!study.active) {
         var loops = study.hours;
         for (let i = 0; i < loops; i++) {
@@ -113,20 +126,26 @@ export default {
       } else {
         this.subtrairHoras(horasOcupadas);
       }
+      }
+      
     },
 
-    somarHoras(horasOcupadas) {
+    somarHoras(study, horasOcupadas) {
       if (horasOcupadas >= 12) {
         // Limite de horas alcançado, exibir alerta
         alert("Limite máximo de horas alcançado!");
         return;
-      }
+      }      
       horasOcupadas++;
+      var myStudies = this.isInMyStudies(study);      
+      myStudies.tempHour++;
       this.$store.dispatch("addHorasOcupadas", horasOcupadas);
     },
 
-    subtrairHoras(horasOcupadas) {
+    subtrairHoras(study, horasOcupadas) {
       horasOcupadas--;
+      var myStudies = this.isInMyStudies(study);      
+      myStudies.tempHour--;
       this.$store.dispatch("addHorasOcupadas", horasOcupadas);
     }
 

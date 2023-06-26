@@ -1,0 +1,11 @@
+1. Elaborar dois diagramas de atividades e um diagrama e classe para cada uma das descrições apresentadas:
+
+A. “O sistema tem por objetivo gerenciar o processo de doações em comunidades carentes. O sistema possui três usuários, 
+todos precisam realizar o cadastro no sistema. A autenticação no sistema pode ser através do login e senha cadastrados ou 
+pela API do Google. Os usuários que necessitam de doações precisam selecionar o tipo de doação: alimentação, higiene pessoal, 
+limpeza, vestuário e/ou calçados. Os doadores podem visualizar a lista de doações necessárias. O usuário representante da comunidade deve registrar as doações que foram realizadas.”
+
+B. “A aplicação tem por objetivo auxiliar os professores no acompanhamento do desempenho dos alunos na realização das atividades. 
+Os professores precisam acompanhar o desempenho de todos os alunos que realizam as atividades, podendo visualizar, se desejarem, 
+a quantidade de acertos e erros de cada aluno. É necessário que o aluno também possa ter acesso ao seu desempenho. Alunos e professores precisam estar autenticados para realizar as ações na aplicação.
+ Para se autenticar, alunos e professores antes precisam estar cadastrados no sistema. O professor realiza o próprio cadastro e o cadastro dos seus alunos.”

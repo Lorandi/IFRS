@@ -1,8 +1,7 @@
-import { createStore } from 'vuex'
-import jobs from './jsons/jobs.json';
-import costs from './jsons/costs.json';
-import studies from './jsons/studies.json';
-
+import { createStore } from "vuex";
+import jobs from "./jsons/jobs.json";
+import costs from "./jsons/costs.json";
+import studies from "./jsons/studies.json";
 
 export default createStore({
   state: {
@@ -11,90 +10,95 @@ export default createStore({
     jobs: [],
     costs: [],
     studies: [],
-    receita:0,
-    despesa:0,
-    conta:0,
+    myStudies: [],
+    receita: 0,
+    despesa: 0,
+    conta: 0,
     cartao: 0,
     dividas: 0,
     horasOcupadas: 0,
-    rodada: 1    
+    rodada: 1,
   },
-  mutations: {    
-
-    addRodada(state, rodada){
+  mutations: {
+    addRodada(state, rodada) {
       state.rodada = rodada;
     },
 
-    addReceita(state, receita){
+    addReceita(state, receita) {
       state.receita = receita;
     },
 
-    addDespesa(state, despesa){
+    addDespesa(state, despesa) {
       state.despesa = despesa;
     },
 
-    addHorasOcupadas(state, horasOcupadas){
+    addHorasOcupadas(state, horasOcupadas) {
       state.horasOcupadas = horasOcupadas;
     },
 
-    balancoConta(state, conta){
+    balancoConta(state, conta) {
       state.conta = conta;
-    }
-    ,
-
-    loadJobs(state, jobs){
+    },
+    loadJobs(state, jobs) {
       console.log(jobs);
       state.jobs = jobs;
     },
 
-    loadCosts(state, costs){
+    loadCosts(state, costs) {
       console.log(costs);
       state.costs = costs;
     },
 
-    loadStudies(state, studies){
+    loadStudies(state, studies) {
       console.log(studies);
       state.studies = studies;
-    }
-    
+    },
+
+    addToMyStudies(state, course) {
+      state.myStudies.push(course);
+    },
   },
+
+
+  
   actions: {
+    addToMyStudies({ commit }, course) {
+      if (confirm("Você realmente quer começar este curso?")) {
+        commit("addToMyStudies", course);
+      }
+    },
 
     loadStudies({ commit }) {
-      commit('loadStudies', studies);
+      commit("loadStudies", studies);
     },
 
     loadJobs({ commit }) {
-      commit('loadJobs', jobs);
+      commit("loadJobs", jobs);
     },
 
-    loadCosts({ commit }) {     
-      commit('loadCosts', costs);
+    loadCosts({ commit }) {
+      commit("loadCosts", costs);
     },
 
-    balancoConta({ commit },saldo){            
-      commit('balancoConta',saldo);
+    balancoConta({ commit }, saldo) {
+      commit("balancoConta", saldo);
     },
 
-    addHorasOcupadas({commit}, horasOcupadas){
-      commit('addHorasOcupadas', horasOcupadas);
-    },    
-
-    addReceita({commit}, receita){
-      commit('addReceita', receita);
+    addHorasOcupadas({ commit }, horasOcupadas) {
+      commit("addHorasOcupadas", horasOcupadas);
     },
 
-    addDespesa({commit}, despesa){
-      commit('addDespesa', despesa);
+    addReceita({ commit }, receita) {
+      commit("addReceita", receita);
     },
 
-    addRodada({commit},  rodada){  
-      commit('addRodada', rodada);
+    addDespesa({ commit }, despesa) {
+      commit("addDespesa", despesa);
     },
 
-    
-    
-  },  
-  modules: {
-  }
-})
+    addRodada({ commit }, rodada) {
+      commit("addRodada", rodada);
+    },
+  },
+  modules: {},
+});
