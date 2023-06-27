@@ -9,8 +9,7 @@ export default createStore({
     productsInBag: [],
     jobs: [],
     costs: [],
-    studies: [],
-    myStudies: [],
+    studies: [],   
     receita: 0,
     despesa: 0,
     conta: 0,
@@ -20,6 +19,7 @@ export default createStore({
     rodada: 1,
   },
   mutations: {
+    
     addRodada(state, rodada) {
       state.rodada = rodada;
     },
@@ -53,21 +53,16 @@ export default createStore({
       console.log(studies);
       state.studies = studies;
     },
-
-    addToMyStudies(state, course) {
-      state.myStudies.push(course);
+    addConta(state, conta) {
+      state.conta = conta;
     },
   },
-
-
   
   actions: {
-    addToMyStudies({ commit }, course) {
-      if (confirm("Você realmente quer começar este curso?")) {
-        commit("addToMyStudies", course);
-      }
+    addConta({ commit }, conta) {
+      commit("addConta", conta);
     },
-
+    
     loadStudies({ commit }) {
       commit("loadStudies", studies);
     },

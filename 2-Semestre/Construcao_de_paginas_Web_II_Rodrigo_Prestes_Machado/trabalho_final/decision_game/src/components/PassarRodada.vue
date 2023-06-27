@@ -13,11 +13,15 @@ export default {
   data() {
     return {};
   },
-  computed: mapState(["receita", "conta", "rodada", "despesa", "myStudies"]),
+  computed: mapState(["receita", "conta", "rodada", "despesa", "studies", "horasOcupadas"]),
 
   methods: {
     passarRodada(rodada) {
-      this.somarHorasDeEstudo()
+
+      var horasOcupadas = this.$store.state.horasOcupadas;
+      var studies = this.$store.state.studies;
+      this.somarHorasDeEstudo(studies, horasOcupadas);
+
       rodada++;
       var receita = parseFloat(this.$store.state.receita);
       var despesa = parseFloat(this.$store.state.despesa);
@@ -25,36 +29,31 @@ export default {
       var saldo = receita - despesa;
 
       if (conta < 0) {
-        console.log("entrou no cheque especial?");
-        console.log(conta);
         //juros 10% cheque especial
-        conta = conta * 1.1;
-        console.log("saindo");
-        console.log(conta)
+        conta = conta * 1.1;    
       }
 
       this.$store.dispatch("balancoConta", (parseFloat(saldo) + parseFloat(conta)).toFixed(2));
       this.$store.dispatch("addRodada", rodada);
     },
 
-    somarHorasDeEstudo() {
-      console.log("somando horas de estudo")
-      var estudos = this.$store.state.myStudies; 
-      console.log(estudos);     
-      for(var i = 0; i < estudos.length; i++) {
-        if(estudos[i].active) {
-          var hoursCompleted = parseInt(estudos[i].hoursCompleted);
-          var tempHour = parseInt(estudos[i].tempHour);
-          var hoursToComplete = parseInt(estudos[i].hoursToComplete);
+    somarHorasDeEstudo(studies, horasOcupadas) {
+      
+      for (var i = 0; i < studies.length; i++) {
+        if (studies[i].active) {
+          var hoursCompleted = parseInt(studies[i].hoursCompleted);
+          var tempHour = parseInt(studies[i].tempHour);
+          var hoursToComplete = parseInt(studies[i].hoursToComplete);
 
           hoursCompleted += tempHour;
-          estudos[i].hoursCompleted = hoursCompleted;  
-          if(hoursCompleted >= hoursToComplete) {
-            estudos[i].status = "completed";            
+          studies[i].hoursCompleted = hoursCompleted;
+          if (hoursCompleted >= hoursToComplete) {
+            studies[i].status = "completed";
+            studies[i].active = false;
+            this.$store.dispatch("addHorasOcupadas", parseInt(horasOcupadas) - parseInt(studies[i].tempHour));
           }
         }
-
-      }     
+      }
     },
   }
 };

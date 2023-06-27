@@ -2,68 +2,69 @@
   <main class="home">
     <section class="studies">
       <h4>Cursos</h4>
-      <div v-for="(study, index) in this.studies" :key="index" class="study"  
-        :class="{ selected: study.active }">        
+      <div v-for="(study, index) in this.studies" :key="index" class="study" :class="{ selected: study.active }">
         <h3>{{ study.name }}</h3>
         <h4>Custo: R${{ study.value.toFixed(2) }} </h4>
-        <h4>Duração: {{study.hoursToComplete }} horas</h4>
-        <button v-if="!isInMyStudies(study)" @click.stop="addToMyStudies(study), toggleStudyActive(study, horasOcupadas)">
+        <h4>Duração: {{ study.hoursToComplete }} horas</h4>       
+        <h4>Senioridade: {{ study.seniority }}</h4>
+        <div class="hours-area" v-if="study.active && study.status === 'started'">
+          <button @click.stop="study.tempHour--, subtrairHoras(horasOcupadas)" :disabled="study.tempHour <= 0">-</button>
+          <span class="hours"> {{ study.tempHour }} horas </span>
+          <button v-if="study.tempHour < 12 && horasOcupadas < 12"
+            @click.stop="study.tempHour++; somarHoras(horasOcupadas)">+</button>
+          <button v-else @click.stop=alertaLimites()>+</button>
+        </div>
+        <button v-if="study.status === 'notStarted'" @click.stop="toggleStudyActive(study, horasOcupadas)">
           Iniciar curso
         </button>
-        <h4>Senioridade: {{ study.seniority }}</h4>      
-        <div class="hours-area" v-if="study.active && isInMyStudies(study)">
-          <button @click.stop="study.hours--, subtrairHoras(study, horasOcupadas)" :disabled="study.hours <= 1">-</button>
-          <span class="hours"> {{ study.hours }} horas </span>
-          <button v-if="study.hours < 12 && horasOcupadas < 12"
-            @click.stop="study.hours++; somarHoras(study, horasOcupadas)">+</button>
-          <button v-else @click.stop=alertaLimites()>+</button>          
-        </div>
+        <button class="finalizado" v-if="study.status === 'completed'" >
+          Concluído
+        </button>
 
       </div>
     </section>
 
     <section class="summary">
-      <strong>Cursos</strong>  
-        <table>
-          <thead>
-            <tr>
-              <th>Em andamento</th>
-              <th class="center">Horas</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr v-for="(study, index) in this.myStudies" :key="index">
-              <template v-if="study.active && study.status != 'completed'">
-                <td> {{ study.name }} </td>
-                <td class="center"> {{ study.hoursCompleted}} / {{ study.hoursToComplete }}</td>
-              </template>
-            </tr>   
-          </tbody>
-        </table>  
-        <table>
-          <thead>
-            <tr>
-              <th>Finalizados</th>
-              <th class="center">Horas</th>
-            </tr>
-          </thead>
-          <tbody>
-            <template v-if="myStudies.length === 0">
-              <tr>
-                
-              </tr>
+      <strong>Cursos</strong>
+      <table>
+        <thead>
+          <tr>
+            <th>Em andamento</th>
+            <th class="center">Horas</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="(study, index) in this.studies" :key="index">
+            <template v-if="study.active && study.status != 'completed'">
+              <td> {{ study.name }} </td>
+              <td class="center"> {{ study.hoursCompleted }} / {{ study.hoursToComplete }}</td>
             </template>
-            <tr v-for="(study, index) in this.myStudies" :key="index">
+          </tr>
+        </tbody>
+      </table>
+      <table>
+        <thead>
+          <tr>
+            <th>Finalizados</th>
+            <th class="center">Horas</th>
+          </tr>
+        </thead>
+        <tbody>
+          <template v-if="hasCompletedStudies()">
+            <tr v-for="(study, index) in this.studies" :key="index">
               <template v-if="study.status === 'completed'">
-                <td> {{ study.name }} </td>
-                <td class="center"> {{ study.hoursToComplete }}</td>
+                <td>{{ study.name }}</td>
+                <td class="center">{{ study.hoursToComplete }}</td>
               </template>
-              <template v-else>
-                <td>Nenhum curso finalizado</td>
-              </template>
-            </tr> 
-          </tbody>
-        </table> 
+            </tr>
+          </template>
+          <template v-else>
+            <tr>
+              <td>Nenhum curso finalizado</td>
+            </tr>
+          </template>
+        </tbody>
+      </table>
     </section>
 
   </main>
@@ -78,77 +79,52 @@ export default {
     return {};
   },
 
-  computed: mapState(["studies", "receita", "horasOcupadas", "myStudies"]),
+  computed: mapState(["studies", "receita", "horasOcupadas", "conta"]),
 
   methods: {
-
-    isInMyStudies(study){
-      return this.myStudies.find((item) => item.id === study.id);
-    },
-
-    addToMyStudies(study) {
-      console.log(study);
-      this.$store.dispatch("addToMyStudies", study);
+    hasCompletedStudies() {
+      return this.studies.some(study => study.status === 'completed');
     },
 
     alertaLimites: function () {
       alert("Limite de horas alcançado! Você não pode selecionar mais trabalhos ou horas.");
-    },
+    },    
 
-    totalHours() {
-      let hours = 0;
-      this.studies.forEach(study => {
-        if (study.active) {
-          hours += study.hours
-        }
+    toggleStudyActive(study) {
+            var conta = parseFloat(this.$store.state.conta);
+      console.log("conta" + conta)
 
-      });
-      return hours
-    },
-
-    toggleStudyActive(study, horasOcupadas) {
+      if(conta < -1000 || (conta - study.value ) < -1000 ){
+        alert("Você não tem saldo suficiente para iniciar um curso!");
+        return;
+      }
       if (this.horasOcupadas >= 12 && !study.active) {
         alert("Limite de horas alcançado! Você não pode selecionar mais trabalhos.");
         return;
       }
-
-      if (this.isInMyStudies(study)){
+      if (study.status === 'notStarted' && confirm(`Você realmente quer começar este curso? O valor é de R$ ${study.value.toFixed(2)}`)) {
+        study.status = 'started'; 
         study.active = !study.active;
-      if (study.active) {
-        study.hours = 0;
-  
-      } else if (!study.active) {
-        var loops = study.hours;
-        for (let i = 0; i < loops; i++) {
-          this.subtrairHoras(this.horasOcupadas)
-        }
-        study.hours = 0;
-      } else {
-        this.subtrairHoras(horasOcupadas);
+
+        this.$store.dispatch("addConta", conta - study.value.toFixed(2));
+
       }
-      }
-      
     },
 
-    somarHoras(study, horasOcupadas) {
+    somarHoras(horasOcupadas) {
       if (horasOcupadas >= 12) {
         // Limite de horas alcançado, exibir alerta
         alert("Limite máximo de horas alcançado!");
         return;
-      }      
-      horasOcupadas++;
-      var myStudies = this.isInMyStudies(study);      
-      myStudies.tempHour++;
+      }
+      horasOcupadas++;     
       this.$store.dispatch("addHorasOcupadas", horasOcupadas);
     },
 
-    subtrairHoras(study, horasOcupadas) {
-      horasOcupadas--;
-      var myStudies = this.isInMyStudies(study);      
-      myStudies.tempHour--;
+    subtrairHoras(horasOcupadas) {
+      horasOcupadas--;      
       this.$store.dispatch("addHorasOcupadas", horasOcupadas);
-    }
-
+    },
 
   }
 };
@@ -253,10 +229,36 @@ export default {
           text-decoration: underline;
         }
       }
+
+      button.finalizado {
+        color: #fff;
+        background-color: #ee0000;
+        border: 1px solid #ff0000;
+        border-radius: 50px;
+        font-weight: 700;
+        text-align: center;
+        padding: 8px 16px;
+        cursor: pointer;       
+
+        &.sair {
+          background-color: transparent;
+          border: none;
+          color: black;
+          text-decoration: underline;
+        }
+      }
+
+
+
+      
     }
 
     .study.selected {
       border: 2px solid rgb(29, 134, 233);
+    }
+
+    .study.finalizados {
+      border: 2px solid rgb(255, 000, 000);
     }
 
     .hours-area {

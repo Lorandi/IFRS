@@ -11,7 +11,7 @@
 
     <div class="encapsula">
       <span class="left-span"> Conta: </span>
-      <span class="right-span"> R$ {{ this.$store.state.conta }} </span>
+      <span class="right-span"> R$ {{ parseFloat(this.$store.state.conta).toFixed(2) }} </span>
     </div>
     <div class="encapsula">
       <span class="left-span"> Cartão </span>
