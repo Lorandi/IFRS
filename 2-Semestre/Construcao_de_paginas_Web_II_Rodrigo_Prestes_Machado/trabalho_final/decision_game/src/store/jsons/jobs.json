@@ -1,63 +1,125 @@
-[
+[{
+  "id": 1,
+  "name": "Atendimento ao cliente",
+  "image": "https://cdn.jd1noticias.com/upload/dn_arquivo/2022/09/aente.jpg",
+  "salaryPerHour": 8,
+  "skills": [],
+  "seniority": 1,
+  "active": false,
+  "hours": 8,
+  "minWorkTime": 8,
+  "maxWorkTime": 10
+},
+{
+  "id": 2,
+  "name": "Auxiliar Administrativo",
+  "image": "http://2.bp.blogspot.com/-tYLLzL_IC3k/T2vo0e_n6uI/AAAAAAAALxw/EuWoJgy64Jo/s1600/office+boy.jpg",
+  "salaryPerHour": 10,
+  "skills": [],
+  "seniority": 1,
+  "active": false,
+  "hours": 8,
+  "minWorkTime": 8,
+  "maxWorkTime": 10
+},
+  
+  
   {
-    "id": 1,
+  "id": 11,
+  "name": "Estágio Programação",
+  "image": "https://www.unip.br/assets/img/home/jovem-sorrindo-computador.webp",
+  "salaryPerHour": 10,
+  "skills": ["Lógica de programação"],
+  "seniority": 1,
+  "active": false,
+  "hours": 6,
+  "minWorkTime": 6,
+  "maxWorkTime": 6
+},
+{
+  "id": 12,
+  "name": "Trainee Programação",
+  "image": "https://st2.depositphotos.com/1518767/8443/i/450/depositphotos_84432086-stock-photo-creative-team-using-laptop.jpg",
+  "salaryPerHour": 15,
+  "skills": ["Banco de dados", "Estágio Programação"],
+  "seniority": 1,
+  "active": false,
+  "hours": 6,
+  "minWorkTime": 6,
+  "maxWorkTime": 8
+},
+
+  {
+    "id": 101,
     "name": "Desenvolvedor Front-end",
     "image": "https://prodaly.com.br/wp-content/uploads/2022/09/Capa-programador.png",
-    "salaryPerHour": 30,
-    "skill": "HTML, CSS, JavaScript",
-    "seniority": "Júnior",
+    "salaryPerHour": 25,
+    "skills": ["Formação front-end", "Trainee Programação"],
+    "seniority": 2,
     "active": false,
-    "hours": 1
+    "hours": 8,
+    "minWorkTime": 8,
+    "maxWorkTime": 10
   },
   {
-    "id": 2,
+    "id": 102,
     "name": "Desenvolvedor Back-end",
     "image": "https://acadtec.com.br/storage/posts/pictures/ntVKoNURQUQhP9ghaf06607dcbf590338.jpg",
-    "salaryPerHour": 32,
-    "skill": "Java, Spring Boot",
-    "seniority": "Pleno",
+    "salaryPerHour": 25,
+    "skills": ["Formação back-end", "Trainee Programação"],
+    "seniority": 2,
     "active": false,
-    "hours": 1
+    "hours": 8,
+    "minWorkTime": 8,
+    "maxWorkTime": 10
   },
   {
-    "id": 3,
-    "name": "Desenvolvedor Full-stack",
+    "id": 103,
+    "name": "Desenvolvedor Back-end Java - Pleno",
     "image": "https://www.locaweb.com.br/blog/wp-content/uploads/2021/04/nomade-digital-esse-estilo-de-vida-combina-com-um-programador-como-voce.jpg",
-    "salaryPerHour": 35,
-    "skill": "Node.js, React, MongoDB",
-    "seniority": "Sênior",
-    "active": false,
-    "hours": 1
-  },
-  {
-    "id": 4,
-    "name": "Desenvolvedor Android",
-    "image": "https://img.freepik.com/fotos-gratis/programador-sorridente-de-tiro-medio-segurando-o-telefone_23-2149101155.jpg?w=1380&t=st=1687656578~exp=1687657178~hmac=13520014b155af15bfcc772e79afc6a2627810c937824510ece29d01cb5de4be",
-    "salaryPerHour": 37,
-    "skill": "React Native, Flutter",
-    "seniority": "Pleno",
-    "active": false,
-    "hours": 1
-  },
-  {
-    "id": 5,
-    "name": "Desenvolvedor IOS",
-    "image": "https://img.freepik.com/fotos-gratis/engenheiro-de-ti-afro-americano-programando-interface-de-codigo-binario-usando-script-css-html-e-criptografia-no-computador-servidor-de-seguranca-de-codificacao-freelancer-masculino-com-aplicativo-de-desenvolvedor-de-software_482257-49186.jpg?w=1380&t=st=1687656627~exp=1687657227~hmac=ddcb169f74da19d90d3bdb5a4556472ca840f2ca81ffb35f76a8a217c0306173",
-    "salaryPerHour": 39,
-    "skill": "React Native, Flutter",
-    "seniority": "Pleno",
-    "active": false,
-    "hours": 1
-  },
-  {
-    "id": 6,
-    "name": "Desenvolvedor RPA",
-    "image": "https://blog.django.pro.br/wp-content/uploads/2020/05/woman-coding-on-computer-3861958-medium-752x440.jpg",
     "salaryPerHour": 40,
-    "skill": "React Native, Flutter",
-    "seniority": "Pleno",
+    "skills": ["Especialização Java", "Desenvolvedor Back-end"],
+    "seniority": 3,
     "active": false,
-    "hours": 1
+    "hours": 8,
+    "minWorkTime": 8,
+    "maxWorkTime": 10
+  },
+  {
+    "id": 104,
+    "name": "Desenvolvedor  Front-end Veu - Pleno",
+    "image": "https://img.freepik.com/fotos-gratis/programador-sorridente-de-tiro-medio-segurando-o-telefone_23-2149101155.jpg?w=1380&t=st=1687656578~exp=1687657178~hmac=13520014b155af15bfcc772e79afc6a2627810c937824510ece29d01cb5de4be",
+    "salaryPerHour": 40,
+    "skills": ["Especialização Vue", "Desenvolvedor Front-end"],
+    "seniority": 3,
+    "active": false,
+    "hours": 8,
+    "minWorkTime": 8,
+    "maxWorkTime": 10
+  },
+  {
+    "id": 105,
+    "name": "Desenvolvedor Back-end Java - Senior",
+    "image": "https://img.freepik.com/fotos-gratis/engenheiro-de-ti-afro-americano-programando-interface-de-codigo-binario-usando-script-css-html-e-criptografia-no-computador-servidor-de-seguranca-de-codificacao-freelancer-masculino-com-aplicativo-de-desenvolvedor-de-software_482257-49186.jpg?w=1380&t=st=1687656627~exp=1687657227~hmac=ddcb169f74da19d90d3bdb5a4556472ca840f2ca81ffb35f76a8a217c0306173",
+    "salaryPerHour": 60,
+    "skills": ["Especialização Java II", "Desenvolvedor Back-end Java - Pleno"],
+    "seniority": 4,
+    "active": false,
+    "hours": 8,
+    "minWorkTime": 8,
+    "maxWorkTime": 10
+  },
+  {
+    "id": 106,
+    "name": "Desenvolvedor Front-end Veu - Senior",
+    "image": "https://blog.django.pro.br/wp-content/uploads/2020/05/woman-coding-on-computer-3861958-medium-752x440.jpg",
+    "salaryPerHour": 60,
+    "skills": ["Especialização Veu II", "Desenvolvedor  Front-end Veu - Pleno"],
+    "seniority": 4,
+    "active": false,
+    "hours": 8,
+    "minWorkTime": 8,
+    "maxWorkTime": 10
   }
 
 ]

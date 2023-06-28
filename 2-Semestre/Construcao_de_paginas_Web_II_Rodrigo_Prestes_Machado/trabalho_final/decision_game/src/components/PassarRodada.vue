@@ -45,12 +45,15 @@ export default {
           var tempHour = parseInt(studies[i].tempHour);
           var hoursToComplete = parseInt(studies[i].hoursToComplete);
 
-          hoursCompleted += tempHour;
+          hoursCompleted += tempHour*22;
           studies[i].hoursCompleted = hoursCompleted;
           if (hoursCompleted >= hoursToComplete) {
             studies[i].status = "completed";
             studies[i].active = false;
-            this.$store.dispatch("addHorasOcupadas", parseInt(horasOcupadas) - parseInt(studies[i].tempHour));
+            this.$store.dispatch("addHorasOcupadas", parseInt(horasOcupadas) - parseInt(studies[i].tempHour))
+            console.log("skills na passar rodada" + studies[i].skillAfterCourse)
+            
+            this.$store.dispatch("addSkills", studies[i].skillAfterCourse);
           }
         }
       }

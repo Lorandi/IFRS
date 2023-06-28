@@ -5,7 +5,7 @@
       <div v-for="(study, index) in this.studies" :key="index" class="study" :class="{ selected: study.active }">
         <h3>{{ study.name }}</h3>
         <h4>Custo: R${{ study.value.toFixed(2) }} </h4>
-        <h4>Duração: {{ study.hoursToComplete }} horas</h4>       
+        <h4>Duração: {{ study.hoursToComplete }} horas</h4>
         <h4>Senioridade: {{ study.seniority }}</h4>
         <div class="hours-area" v-if="study.active && study.status === 'started'">
           <button @click.stop="study.tempHour--, subtrairHoras(horasOcupadas)" :disabled="study.tempHour <= 0">-</button>
@@ -13,11 +13,13 @@
           <button v-if="study.tempHour < 12 && horasOcupadas < 12"
             @click.stop="study.tempHour++; somarHoras(horasOcupadas)">+</button>
           <button v-else @click.stop=alertaLimites()>+</button>
+          <h5>{{ calculaRodadas(study) }}</h5>
         </div>
+        
         <button v-if="study.status === 'notStarted'" @click.stop="toggleStudyActive(study, horasOcupadas)">
           Iniciar curso
         </button>
-        <button class="finalizado" v-if="study.status === 'completed'" >
+        <button class="finalizado" v-if="study.status === 'completed'">
           Concluído
         </button>
 
@@ -79,22 +81,43 @@ export default {
     return {};
   },
 
-  computed: mapState(["studies", "receita", "horasOcupadas", "conta"]),
+  computed: mapState(["studies", "receita", "horasOcupadas", "conta", "life"]),
 
   methods: {
+
+    calculaRodadas(study){
+      // console.log(study.hoursToComplete);
+      var rodadas =  Math.ceil(study.hoursToComplete/(study.tempHour*22));
+      if(rodadas <= study.hoursToComplete){
+        return "Curso acaba em " +rodadas+ " rodadas";
+      }else{
+        return "";
+      }
+
+    },
+     
+    
     hasCompletedStudies() {
       return this.studies.some(study => study.status === 'completed');
     },
 
     alertaLimites: function () {
       alert("Limite de horas alcançado! Você não pode selecionar mais trabalhos ou horas.");
-    },    
+    },
 
     toggleStudyActive(study) {
-            var conta = parseFloat(this.$store.state.conta);
-      console.log("conta" + conta)
+      var conta = parseFloat(this.$store.state.conta);
+      var skills = this.$store.state.life.skills;
+      // var seniority = this.$store.state.life.seniority;
+      var prerequisites = study.prerequisites;
 
-      if(conta < -1000 || (conta - study.value ) < -1000 ){
+      if (!skills.includes(prerequisites)) {
+        alert("Esse curso tem o pré-requisito " + prerequisites + " que você não possui!");
+        return;
+      }
+
+
+      if (conta < -1000 || (conta - study.value) < -1000) {
         alert("Você não tem saldo suficiente para iniciar um curso!");
         return;
       }
@@ -103,11 +126,10 @@ export default {
         return;
       }
       if (study.status === 'notStarted' && confirm(`Você realmente quer começar este curso? O valor é de R$ ${study.value.toFixed(2)}`)) {
-        study.status = 'started'; 
+        study.status = 'started';
         study.active = !study.active;
 
-        this.$store.dispatch("addConta", conta - study.value.toFixed(2));
-
+        this.$store.dispatch("addConta", conta - study.value.toFixed(2));  
       }
     },
 
@@ -117,12 +139,12 @@ export default {
         alert("Limite máximo de horas alcançado!");
         return;
       }
-      horasOcupadas++;     
+      horasOcupadas++;
       this.$store.dispatch("addHorasOcupadas", horasOcupadas);
     },
 
     subtrairHoras(horasOcupadas) {
-      horasOcupadas--;      
+      horasOcupadas--;
       this.$store.dispatch("addHorasOcupadas", horasOcupadas);
     },
 
@@ -238,7 +260,7 @@ export default {
         font-weight: 700;
         text-align: center;
         padding: 8px 16px;
-        cursor: pointer;       
+        cursor: pointer;
 
         &.sair {
           background-color: transparent;
@@ -250,7 +272,7 @@ export default {
 
 
 
-      
+
     }
 
     .study.selected {

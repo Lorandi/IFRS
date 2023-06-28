@@ -9,16 +9,20 @@
         <h4>{{ job.name }}</h4>
         <p class="salaryPerHour">R$ {{ job.salaryPerHour.toFixed(2) }}/hora</p>
         <div class="hours-area" v-if="job.active">
-          <button @click.stop="job.hours--, subtrairHoras(horasOcupadas)" :disabled="job.hours <= 1">-</button>
+          <button @click.stop="job.hours--, subtrairHoras(horasOcupadas)" :disabled="job.hours <= job.minWorkTime">-</button>
           <span class="hours"> {{ job.hours }} horas </span>
           <button v-if="job.hours < 12 && horasOcupadas < 12"
-            @click.stop="job.hours++; somarHoras(horasOcupadas)">+</button>
+            @click.stop="job.hours++; somarHoras(horasOcupadas)" :disabled="job.hours >= job.maxWorkTime">+</button>
           <button v-else @click.stop=alertaLimites()>+</button>
           <p class="salaryPerHour">R$ {{ (job.hours * job.salaryPerHour * 22).toFixed(2) }} /mês</p>
         </div>
-        <!-- <button class="selecionar" v-if="job.active">
-          Selecionar
-        </button> -->
+        <div v-if="!job.active">
+        <span>Mínimo:{{ job.minWorkTime }} horas</span>
+        <br>
+        <span>Máximo:{{ job.maxWorkTime }} horas</span> 
+        </div >
+        
+        
       </div>
     </section>
 
@@ -67,7 +71,7 @@ export default {
     return {};
   },
 
-  computed: mapState(["jobs", "receita", "horasOcupadas"]),
+  computed: mapState(["jobs", "receita", "horasOcupadas", "life"]),
 
   methods: {
 
@@ -98,24 +102,49 @@ export default {
       return hours
     },
 
-    toggleJobActive(job, horasOcupadas) {
+    toggleJobActive(job ) {
       if (this.horasOcupadas >= 12 && !job.active) {
         alert("Limite de horas alcançado! Você não pode selecionar mais trabalhos.");
         return;
       }
+
+      if(this.horasOcupadas + job.hours > 12 && !job.active){
+        alert("Incluir esse trabalho excederia o limite de horas diárias!");
+        return;
+      }
+
+      var jobSkills = job.skills;
+      var lifeSkills = this.$store.state.life.skills;
+
+      var haveAllSkils = jobSkills.every(function (elemento) {
+        return lifeSkills.includes(elemento);
+      });
+
+      if (!haveAllSkils) {
+        alert("Esse trabalho exigem skills que você não possui!");
+        return;
+      }
+
+
+      var loops = job.hours;
+
       job.active = !job.active;
       if (job.active) {
-        job.hours = 1;
-        this.somarHoras(horasOcupadas);
-      } else if (!job.active) {
-        var loops = job.hours;
+        for (let i = 0; i < loops; i++) {          
+          this.somarHoras(this.horasOcupadas)
+        }  
+        
+      } else if (!job.active) {        
         for (let i = 0; i < loops; i++) {
           this.subtrairHoras(this.horasOcupadas)
-        }
-        job.hours = 0;
-      } else {
-        this.subtrairHoras(horasOcupadas);
+        }        
       }
+      
+      if(!lifeSkills.includes(job.name)){
+        this.$store.dispatch("addSkills", job.name);
+      }
+
+      console.log(this.$store.state.life.skills)
     },
 
     somarHoras(horasOcupadas) {

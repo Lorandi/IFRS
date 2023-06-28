@@ -34,13 +34,13 @@
             <tr v-for="( cost, index ) in  this.costs " :key="index">
               <template v-if="cost.active">
                 <td> {{ cost.name }} </td>
-                <td > R$ {{ (cost.cost).toFixed(2) }} </td>
+                <td class="center"> R$ {{ cost.cost.toFixed(2) }} </td>
               </template>
             </tr>
 
             <tr>
               <th>Total</th>
-              <th >R$ {{ total() }}</th>
+              <th class="center" >R$ {{ total() }}</th>
             </tr>
           </tbody>
         </table>

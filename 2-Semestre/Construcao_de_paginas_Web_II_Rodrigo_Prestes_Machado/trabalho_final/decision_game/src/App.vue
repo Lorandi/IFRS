@@ -80,7 +80,11 @@ export default {
     'cartao',
     'dividas',
     'horasOcupadas',
-    'rodada']),
+    'rodada',
+    'jobs',
+    'studies',
+    'costs',
+    "life"]),
   components: { PassarRodada }
 }
 

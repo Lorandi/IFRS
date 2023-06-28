@@ -9,7 +9,8 @@ export default createStore({
     productsInBag: [],
     jobs: [],
     costs: [],
-    studies: [],   
+    studies: [],
+    seniority:[],
     receita: 0,
     despesa: 0,
     conta: 0,
@@ -17,6 +18,15 @@ export default createStore({
     dividas: 0,
     horasOcupadas: 0,
     rodada: 1,
+    life:{
+      health: 100,
+      workedHours: 0,
+      studiedHours: 0,
+      satisfaction: 100,
+      energy: 100,    
+      seniority: null,
+      skills:[null]   
+    }
   },
   mutations: {
     
@@ -56,9 +66,27 @@ export default createStore({
     addConta(state, conta) {
       state.conta = conta;
     },
+
+    addSeniority(state, seniority) {
+      state.life.seniority = seniority;
+    },
+
+    addSkills(state, skills) {
+      state.life.skills.push(skills);
+    }
+
   },
   
   actions: {
+
+    addSkills({ commit }, skills) {
+      commit("addSkills", skills);
+    },
+
+    addSeiority({ commit }, seniority) {    
+      commit("addSeniority", seniority);
+    },
+
     addConta({ commit }, conta) {
       commit("addConta", conta);
     },
