@@ -25,7 +25,8 @@ export default createStore({
       satisfaction: 100,
       energy: 100,    
       seniority: null,
-      skills:[null]   
+      skills:["Alfabetizado"],
+      workExpirience: ["Nenhuma"],   
     }
   },
   mutations: {
@@ -73,11 +74,19 @@ export default createStore({
 
     addSkills(state, skills) {
       state.life.skills.push(skills);
+    },
+
+    addWorkExpirience(state, workExpirience) {
+      state.life.workExpirience.push(workExpirience);
     }
+
 
   },
   
   actions: {
+    addWorkExpirience({ commit }, workExpirience) {
+      commit("addWorkExpirience", workExpirience);
+    },
 
     addSkills({ commit }, skills) {
       commit("addSkills", skills);

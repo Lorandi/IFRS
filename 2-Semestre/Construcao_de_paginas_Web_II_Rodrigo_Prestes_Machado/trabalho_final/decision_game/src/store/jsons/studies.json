@@ -4,7 +4,7 @@
     "name": "Lógica de programação",
     "value": 200,
     "hoursToComplete": 100,
-    "prerequisites": null,
+    "prerequisites": "Alfabetizado",
     "skillAfterCourse": "Lógica de programação",
     "seniority": 1,
     "active": false,

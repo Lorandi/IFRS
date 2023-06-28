@@ -114,17 +114,28 @@ export default {
       }
 
       var jobSkills = job.skills;
-      var lifeSkills = this.$store.state.life.skills;
+      var lifeSkills = this.$store.state.life.skills;      
 
-      var haveAllSkils = jobSkills.every(function (elemento) {
+      var haveAllSkills = jobSkills.every(function (elemento) {
         return lifeSkills.includes(elemento);
-      });
+      });     
 
-      if (!haveAllSkils) {
+      if (!haveAllSkills) {
         alert("Esse trabalho exigem skills que você não possui!");
         return;
       }
 
+      var jobExpirience = job.workExpirience;
+      var workExpirience = this.$store.state.life.workExpirience;     
+
+      var haveAllWorkExpirience = jobExpirience.every(function (elemento) {
+        return workExpirience.includes(elemento);
+      });
+
+      if(!haveAllWorkExpirience){
+        alert("Esse trabalho exigem experiência pregressa que você não possui!");
+        return;
+      }
 
       var loops = job.hours;
 
@@ -140,11 +151,11 @@ export default {
         }        
       }
       
-      if(!lifeSkills.includes(job.name)){
-        this.$store.dispatch("addSkills", job.name);
+      if(!workExpirience.includes(job.name)){
+        this.$store.dispatch("addWorkExpirience", job.name);
       }
 
-      console.log(this.$store.state.life.skills)
+   
     },
 
     somarHoras(horasOcupadas) {

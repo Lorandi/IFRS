@@ -8,7 +8,8 @@
   "active": false,
   "hours": 8,
   "minWorkTime": 8,
-  "maxWorkTime": 10
+  "maxWorkTime": 10,
+  "workExpirience": ["Nenhuma"]
 },
 {
   "id": 2,
@@ -20,7 +21,8 @@
   "active": false,
   "hours": 8,
   "minWorkTime": 8,
-  "maxWorkTime": 10
+  "maxWorkTime": 10,  
+  "workExpirience": ["Nenhuma"]
 },
   
   
@@ -34,19 +36,21 @@
   "active": false,
   "hours": 6,
   "minWorkTime": 6,
-  "maxWorkTime": 6
+  "maxWorkTime": 6,
+  "workExpirience": ["Nenhuma"]
 },
 {
   "id": 12,
   "name": "Trainee Programação",
   "image": "https://st2.depositphotos.com/1518767/8443/i/450/depositphotos_84432086-stock-photo-creative-team-using-laptop.jpg",
   "salaryPerHour": 15,
-  "skills": ["Banco de dados", "Estágio Programação"],
+  "skills": ["Banco de dados"],
   "seniority": 1,
   "active": false,
   "hours": 6,
   "minWorkTime": 6,
-  "maxWorkTime": 8
+  "maxWorkTime": 8,
+  "workExpirience": ["Estágio Programação"]
 },
 
   {
@@ -54,72 +58,78 @@
     "name": "Desenvolvedor Front-end",
     "image": "https://prodaly.com.br/wp-content/uploads/2022/09/Capa-programador.png",
     "salaryPerHour": 25,
-    "skills": ["Formação front-end", "Trainee Programação"],
+    "skills": ["Formação front-end"],
     "seniority": 2,
     "active": false,
     "hours": 8,
     "minWorkTime": 8,
-    "maxWorkTime": 10
+    "maxWorkTime": 10,
+    "workExpirience": ["Trainee Programação"]
   },
   {
     "id": 102,
     "name": "Desenvolvedor Back-end",
     "image": "https://acadtec.com.br/storage/posts/pictures/ntVKoNURQUQhP9ghaf06607dcbf590338.jpg",
     "salaryPerHour": 25,
-    "skills": ["Formação back-end", "Trainee Programação"],
+    "skills": ["Formação back-end"],
     "seniority": 2,
     "active": false,
     "hours": 8,
     "minWorkTime": 8,
-    "maxWorkTime": 10
+    "maxWorkTime": 10,
+    "workExpirience": ["Trainee Programação"]
   },
   {
     "id": 103,
     "name": "Desenvolvedor Back-end Java - Pleno",
     "image": "https://www.locaweb.com.br/blog/wp-content/uploads/2021/04/nomade-digital-esse-estilo-de-vida-combina-com-um-programador-como-voce.jpg",
     "salaryPerHour": 40,
-    "skills": ["Especialização Java", "Desenvolvedor Back-end"],
+    "skills": ["Especialização Java"],
     "seniority": 3,
     "active": false,
     "hours": 8,
     "minWorkTime": 8,
-    "maxWorkTime": 10
+    "maxWorkTime": 10,
+    "workExpirience": ["Desenvolvedor Back-end"]
   },
   {
     "id": 104,
     "name": "Desenvolvedor  Front-end Veu - Pleno",
     "image": "https://img.freepik.com/fotos-gratis/programador-sorridente-de-tiro-medio-segurando-o-telefone_23-2149101155.jpg?w=1380&t=st=1687656578~exp=1687657178~hmac=13520014b155af15bfcc772e79afc6a2627810c937824510ece29d01cb5de4be",
     "salaryPerHour": 40,
-    "skills": ["Especialização Vue", "Desenvolvedor Front-end"],
+    "skills": ["Especialização Vue"],
     "seniority": 3,
     "active": false,
     "hours": 8,
     "minWorkTime": 8,
-    "maxWorkTime": 10
+    "maxWorkTime": 10,
+    "workExpirience": ["Desenvolvedor Front-end"]
   },
   {
     "id": 105,
     "name": "Desenvolvedor Back-end Java - Senior",
     "image": "https://img.freepik.com/fotos-gratis/engenheiro-de-ti-afro-americano-programando-interface-de-codigo-binario-usando-script-css-html-e-criptografia-no-computador-servidor-de-seguranca-de-codificacao-freelancer-masculino-com-aplicativo-de-desenvolvedor-de-software_482257-49186.jpg?w=1380&t=st=1687656627~exp=1687657227~hmac=ddcb169f74da19d90d3bdb5a4556472ca840f2ca81ffb35f76a8a217c0306173",
     "salaryPerHour": 60,
-    "skills": ["Especialização Java II", "Desenvolvedor Back-end Java - Pleno"],
+    "skills": ["Especialização Java II"],
     "seniority": 4,
     "active": false,
     "hours": 8,
     "minWorkTime": 8,
-    "maxWorkTime": 10
+    "maxWorkTime": 10,
+    "workExpirience": ["NenDesenvolvedor Back-end Java - Plenohuma"]
   },
   {
     "id": 106,
     "name": "Desenvolvedor Front-end Veu - Senior",
     "image": "https://blog.django.pro.br/wp-content/uploads/2020/05/woman-coding-on-computer-3861958-medium-752x440.jpg",
     "salaryPerHour": 60,
-    "skills": ["Especialização Veu II", "Desenvolvedor  Front-end Veu - Pleno"],
+    "skills": ["Especialização Veu II"],
     "seniority": 4,
     "active": false,
     "hours": 8,
     "minWorkTime": 8,
-    "maxWorkTime": 10
+    "maxWorkTime": 10,
+    "workExpirience": ["Desenvolvedor  Front-end Veu - Pleno"]
   }
 
 ]
