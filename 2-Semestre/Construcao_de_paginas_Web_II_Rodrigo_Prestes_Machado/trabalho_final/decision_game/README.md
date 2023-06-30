@@ -1,4 +1,4 @@
-# new-shopping-bag
+# Jogo Vida Real
 
 ## Project setup
 ```
