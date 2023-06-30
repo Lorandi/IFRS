@@ -85,25 +85,22 @@ export default {
     },
 
     toggle(cost) {
-      cost.active = !cost.active
+      
       var horas = this.horasOcupadas;     
 
       if (this.horasOcupadas >= 12 && !cost.active && cost.timeToPrepare > 0) {
         alert("Limite de horas alcançado!");
         return;
       }
-      
 
+      cost.active = !cost.active     
       if (cost.active) {
         horas += cost.timeToPrepare;   
       } else {
-        horas -= cost.timeToPrepare;       
-
+        horas -= cost.timeToPrepare;  
       }      
-      this.$store.dispatch("addHorasOcupadas", horas);       
-
-      
-
+      this.$store.dispatch("addHorasOcupadas", horas);     
+     
     },
   },
 };

@@ -2,7 +2,6 @@
   <main class="home">
     <section class="jobs">
       <h4>Oportunidades</h4>
-
       <div v-for="(job, index) in this.jobs" :key="index" class="job" @click="toggleJobActive(job, horasOcupadas)"
         :class="{ selected: job.active }">
         <div class="job-image" :style="{ backgroundImage: 'url(' + job.image + ')' }"></div>
@@ -179,7 +178,7 @@ export default {
 <style lang="scss">
 .home {
 
-  .jobs {
+  .jobs {     
     display: flex;
     flex-wrap: wrap;
     border: 1px solid lightgrey;
@@ -188,10 +187,8 @@ export default {
     min-width: 400px;
     flex-direction: row;
     align-content: space-around;
-    justify-content: space-between;
+    justify-content: space-between; 
     background-color: #bbbbbb;
-    
-
 
     h4 {
       text-align: center;
@@ -305,6 +302,7 @@ export default {
     padding: 20px;
     min-width: 350px;
     text-align: left;
+    width: auto;
 
     table {
       width: 100%;

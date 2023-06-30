@@ -113,10 +113,20 @@ export default createStore({
       if(state.life.satisfaction < 0){
         state.life.satisfaction = 0;
       }
+    },
+
+    reset() {
+      if(confirm("Você tem certeza que deseja reiniciar o jogo?")){
+        location.reload();
+      }    
     }
   },
 
   actions: {
+
+    reset({ commit }){
+      commit("reset");
+    },
 
     addSatisfaction({ commit }, satisfaction) {
       commit("addSatisfaction", satisfaction);
