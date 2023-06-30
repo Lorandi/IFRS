@@ -153,9 +153,7 @@ export default {
       
       if(!workExpirience.includes(job.name)){
         this.$store.dispatch("addWorkExpirience", job.name);
-      }
-
-   
+      }   
     },
 
     somarHoras(horasOcupadas) {
@@ -180,14 +178,6 @@ export default {
 
 <style lang="scss">
 .home {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  flex-wrap: wrap;
-  padding-top: 50px;
-  justify-content: flex-start;
-  flex-direction: row;
-
 
   .jobs {
     display: flex;
@@ -199,6 +189,8 @@ export default {
     flex-direction: row;
     align-content: space-around;
     justify-content: space-between;
+    background-color: #bbbbbb;
+    
 
 
     h4 {
@@ -214,6 +206,7 @@ export default {
       padding: 16px;
       margin: 8px;
       height: 330px;
+      background-color: #ffffff;
 
       @media only screen and (max-width: 769px) {
         flex: 0 0 40%;

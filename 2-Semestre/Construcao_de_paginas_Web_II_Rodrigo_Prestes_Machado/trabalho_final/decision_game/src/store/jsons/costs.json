@@ -6,7 +6,9 @@
     "cost": 0,
     "active": false,
     "satisfaction": -5,
-    "category": "Moradia"
+    "category": "Moradia",
+    "health": 0,
+    "timeToPrepare" : 0
   },
   {
     "id": 2,
@@ -15,7 +17,9 @@
     "cost": 800,
     "active": false,
     "satisfaction": -2,
-    "category": "Moradia"
+    "category": "Moradia",
+    "health": 0,
+    "timeToPrepare" : 0
   },
   {
     "id": 3,
@@ -24,7 +28,9 @@
     "cost": 1300,
     "active": false,
     "satisfaction": 0,
-    "category": "Moradia"
+    "category": "Moradia",
+    "health": 0,
+    "timeToPrepare" : 0
   },
   {
     "id": 4,
@@ -33,7 +39,9 @@
     "cost": 1900,
     "active": false,
     "satisfaction": 2,
-    "category": "Moradia"
+    "category": "Moradia",
+    "health": 0,
+    "timeToPrepare" : 0
   },
   {
     "id": 5,
@@ -42,7 +50,9 @@
     "cost": 2500,
     "active": false,
     "satisfaction": 4,
-    "category": "Moradia"
+    "category": "Moradia",
+    "health": 0,
+    "timeToPrepare" : 0
   },
   {
     "id": 6,
@@ -51,7 +61,9 @@
     "cost": 3500,
     "active": false,
     "satisfaction": 8,
-    "category": "Moradia"
+    "category": "Moradia",
+    "health": 0,
+    "timeToPrepare" : 0
   },
   {
     "id": 7,
@@ -60,7 +72,9 @@
     "cost": 99,
     "active": false,
     "satisfaction": 1,
-    "category": "Comunicação"
+    "category": "Internet",
+    "health": 0,
+    "timeToPrepare" : 0
   },
   {
     "id": 8,
@@ -69,7 +83,9 @@
     "cost": 299,
     "active": false,
     "satisfaction": 2,
-    "category": "Comunicação"
+    "category": "Internet",
+    "health": 0,
+    "timeToPrepare" : 0
   },
   {
     "id": 9,
@@ -78,7 +94,9 @@
     "cost": 39,
     "active": false,
     "satisfaction": 1,
-    "category": "Comunicação"
+    "category": "Comunicação",
+    "health": 0,
+    "timeToPrepare" : 0
   },
   {
     "id": 10,
@@ -87,7 +105,9 @@
     "cost": 199,
     "active": false,
     "satisfaction": 2,
-    "category": "Comunicação"
+    "category": "Comunicação",
+    "health": 0,
+    "timeToPrepare" : 0
   },
   {
     "id": 11,
@@ -96,7 +116,9 @@
     "cost": 59.90,
     "active": false,
     "satisfaction": 1,
-    "category": "Streaming"
+    "category": "Streaming",
+    "health": 0,
+    "timeToPrepare" : 0
   },
   {
     "id": 12,
@@ -105,7 +127,9 @@
     "cost": 20.90,
     "active": false,
     "satisfaction": 1,
-    "category": "Streaming"
+    "category": "Streaming",
+    "health": 0,
+    "timeToPrepare" : 0
   },
 
   {
@@ -115,7 +139,103 @@
     "cost": 39.90,
     "active": false,
     "satisfaction": 1,    
-    "category": "Streaming"
-  }
+    "category": "Streaming",
+    "health": 0,
+    "timeToPrepare" : 0
+  },
+
+  {
+    "id": 14,
+    "name": "Lanche em casa",
+    "image": "https://diariodocomercio.com.br/wp-content/uploads/2023/01/Pao-com-Ovo.jpg",
+    "cost": 300,
+    "active": false,
+    "satisfaction": -2,    
+    "category": "Alimentação",
+    "health": -2,
+    "timeToPrepare" : 1
+  },
+
+  {
+    "id": 15,
+    "name": "Lanche delivery ",
+    "image": "https://images.rappi.com.br/restaurants_background/hamburguesas27-1663693314097.jpg?e=webp&d=200x200&q=50",
+    "cost": 1000,
+    "active": false,
+    "satisfaction": 3,    
+    "category": "Alimentação",
+    "health": -5,
+    "timeToPrepare" : 0
+  },
+
+  {
+    "id": 15,
+    "name": "Comida congelada em casa ",
+    "image": "https://octoshop.sfo2.digitaloceanspaces.com/lojas/juliettecongelados/uploads_produto/frango-parmegiana-450g-6143aaa44d4e8.jpg",
+    "cost": 700,
+    "active": false,
+    "satisfaction": 2,    
+    "category": "Alimentação",
+    "health": 0,
+    "timeToPrepare" : 0
+  },
+
+  {
+    "id": 16,
+    "name": "Comida comum preparada em casa ",
+    "image": "https://i0.wp.com/pat.feldman.com.br/wp-content/uploads/2012/01/comida-caseira.jpg?resize=800%2C540&ssl=1",
+    "cost": 600,
+    "active": false,
+    "satisfaction": 2,    
+    "category": "Alimentação",
+    "health": 2,
+    "timeToPrepare" : 2
+  },
+
+  {
+    "id": 17,
+    "name": "Comida saudáve preparada em casa ",
+    "image": "https://www.rbsdirect.com.br/filestore/3/8/0/8/7/3/4_e8085e74f04a106/4378083_d3167a7e9e51cfc.jpg?w=700",
+    "cost": 900,
+    "active": false,
+    "satisfaction": 5,    
+    "category": "Alimentação",
+    "health": 5,
+    "timeToPrepare" : 2
+  },  
+  {
+    "id": 17,
+    "name": "Restaurante comum",
+    "image": "http://www.apcefpr.com.br/portal/data/files/B1/C7/E7/4A/0F69E7107D4AC5E7403A91A8/Buffetsemana_restauranteAPCEF.22.1.jpg",
+    "cost": 1000,
+    "active": false,
+    "satisfaction": 2,    
+    "category": "Alimentação",
+    "health": 0,
+    "timeToPrepare" : 1
+  },  
+  {
+    "id": 17,
+    "name": "Restaurante executivo",
+    "image": "https://leiaecocentral.com.br/wp-content/uploads/2018/06/Almoc%CC%A7o-executivo-Rayon-4.jpg",
+    "cost": 1500,
+    "active": false,
+    "satisfaction": 5,    
+    "category": "Alimentação",
+    "health": 2,
+    "timeToPrepare" : 1
+  },  
+  {
+    "id": 17,
+    "name": "Restaurante Top",
+    "image": "https://skydriver.com.br/img/cms/Topo-do-mundo-03.jpg",
+    "cost": 3000,
+    "active": false,
+    "satisfaction": 10,    
+    "category": "Alimentação",
+    "health": 2,
+    "timeToPrepare" : 1
+  } 
+
 
 ]

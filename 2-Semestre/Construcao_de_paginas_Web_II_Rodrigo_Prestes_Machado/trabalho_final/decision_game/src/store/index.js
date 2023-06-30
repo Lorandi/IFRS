@@ -10,7 +10,7 @@ export default createStore({
     jobs: [],
     costs: [],
     studies: [],
-    seniority:[],
+    seniority: [],
     receita: 0,
     despesa: 0,
     conta: 0,
@@ -18,19 +18,18 @@ export default createStore({
     dividas: 0,
     horasOcupadas: 0,
     rodada: 1,
-    life:{
+    life: {
       health: 100,
       workedHours: 0,
       studiedHours: 0,
       satisfaction: 100,
-      energy: 100,    
+      energy: 100,
       seniority: null,
-      skills:["Alfabetizado"],
-      workExpirience: ["Nenhuma"],   
-    }
+      skills: ["Alfabetizado"],
+      workExpirience: ["Nenhuma"],
+    },
   },
   mutations: {
-    
     addRodada(state, rodada) {
       state.rodada = rodada;
     },
@@ -78,12 +77,55 @@ export default createStore({
 
     addWorkExpirience(state, workExpirience) {
       state.life.workExpirience.push(workExpirience);
+    },
+
+    addHealth(state, health) {
+      state.life.health += health;
+      if (state.life.health > 100) {
+        state.life.health = 100;
+      }
+
+      if (state.life.health < 0) {
+        state.life.health = 0;
+        alert("Você morreu!"); 
+        location.reload();         
+      }
+
+    },
+
+    addSatisfaction(state, satisfaction) {
+      state.life.satisfaction += satisfaction;
+      if (state.life.satisfaction > 100) {
+        state.life.satisfaction = 100;
+      }
+      if (state.life.satisfaction < 50) {
+        state.life.health -= 1;
+      }
+
+      if(state.conta < 0 && state.conta > -999){
+        state.life.satisfaction -= 1;
+      }
+
+      if(state.conta < -1000){
+        state.life.satisfaction -= 5;
+      } 
+
+      if(state.life.satisfaction < 0){
+        state.life.satisfaction = 0;
+      }
     }
-
-
   },
-  
+
   actions: {
+
+    addSatisfaction({ commit }, satisfaction) {
+      commit("addSatisfaction", satisfaction);
+    },
+
+    addHealth({ commit }, health) {
+      commit("addHealth", health);
+    },
+
     addWorkExpirience({ commit }, workExpirience) {
       commit("addWorkExpirience", workExpirience);
     },
@@ -92,14 +134,14 @@ export default createStore({
       commit("addSkills", skills);
     },
 
-    addSeiority({ commit }, seniority) {    
+    addSeiority({ commit }, seniority) {
       commit("addSeniority", seniority);
     },
 
     addConta({ commit }, conta) {
       commit("addConta", conta);
     },
-    
+
     loadStudies({ commit }) {
       commit("loadStudies", studies);
     },

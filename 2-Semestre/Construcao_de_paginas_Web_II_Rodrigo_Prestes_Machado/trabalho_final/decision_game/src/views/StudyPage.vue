@@ -154,14 +154,6 @@ export default {
 
 <style lang="scss">
 .home {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  flex-wrap: wrap;
-  padding-top: 50px;
-  justify-content: flex-start;
-  flex-direction: row;
-
 
   .studies {
     display: flex;
@@ -172,7 +164,8 @@ export default {
     min-width: 400px;
     flex-direction: row;
     align-content: space-around;
-    justify-content: space-between;
+    justify-content: space-between; 
+    background-color: #bbbbbb;
 
 
     h4 {
@@ -188,6 +181,7 @@ export default {
       padding: 16px;
       margin: 8px;
       height: 330px;
+      background-color: #ffffff;
 
       @media only screen and (max-width: 769px) {
         flex: 0 0 40%;
@@ -312,6 +306,7 @@ export default {
     padding: 20px;
     min-width: 350px;
     text-align: left;
+    width: auto;
 
     table {
       width: 100%;

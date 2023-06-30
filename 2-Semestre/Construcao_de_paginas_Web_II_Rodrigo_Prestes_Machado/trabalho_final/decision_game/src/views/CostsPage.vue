@@ -5,14 +5,13 @@
       <div v-for="(category, index) in  categories " :key="index" class="category">
         <div class="categorias">
           <h4> {{ category.name }}</h4>
-          <div v-for=" (cost, index) in category.products" :key="index" class="cost" @click="cost.active = !cost.active" :class="{ selected: cost.active }">
-            
+          <div v-for=" (cost, index) in category.products" :key="index" class="cost" @click=toggle(cost)
+            :class="{ selected: cost.active }">
             <div class="cost-image" :style="{ backgroundImage: 'url(' + cost.image + ')' }"></div>
             <h4>{{ cost.name }}</h4>
-            <p class="salaryPerHour">R$ {{ (cost.cost).toFixed(2) }} /mês</p>
-            <div class="hours-area" v-if="cost.active">
-              <p class="salaryPerHour">Contratado</p>
-            </div>
+            <p class="textoAnucio">R$ {{ (cost.cost).toFixed(2) }} /mês</p>
+            <p class="textoAnucio" v-if="cost.category == 'Alimentação'">Tempo gasto {{ cost.timeToPrepare }} h</p>
+            <button v-if="cost.active" class="finalizado">Selecionado</button>
           </div>
         </div>
       </div>
@@ -40,7 +39,7 @@
 
             <tr>
               <th>Total</th>
-              <th class="center" >R$ {{ total() }}</th>
+              <th class="center">R$ {{ total() }}</th>
             </tr>
           </tbody>
         </table>
@@ -55,7 +54,7 @@ import { mapState } from "vuex";
 export default {
   name: "CostPage",
   computed: {
-    ...mapState(["costs", "despesa"]),
+    ...mapState(["costs", "despesa", "life", "horasOcupadas"]),
     categories() {
       const categories = {};
       this.costs.forEach((cost) => {
@@ -80,12 +79,31 @@ export default {
             total += cost.cost;
           }
         });
-      });
+      });      
       this.$store.dispatch("addDespesa", total.toFixed(2));
       return total.toFixed(2);
     },
-    toggleCategory(category) {
-      category.open = !category.open; // Altera o estado de abertura/fechamento da categoria
+
+    toggle(cost) {
+      cost.active = !cost.active
+      var horas = this.horasOcupadas;     
+
+      if (this.horasOcupadas >= 12 && !cost.active && cost.timeToPrepare > 0) {
+        alert("Limite de horas alcançado!");
+        return;
+      }
+      
+
+      if (cost.active) {
+        horas += cost.timeToPrepare;   
+      } else {
+        horas -= cost.timeToPrepare;       
+
+      }      
+      this.$store.dispatch("addHorasOcupadas", horas);       
+
+      
+
     },
   },
 };
@@ -94,14 +112,6 @@ export default {
 
 <style lang="scss">
 .home {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  flex-wrap: wrap;
-  padding-top: 50px;
-  justify-content: flex-start;
-  flex-direction: row;
-
   .categorias {
     display: flex;
     flex-wrap: wrap;
@@ -124,6 +134,9 @@ export default {
     flex-direction: row;
     align-content: space-around;
     justify-content: space-between;
+    background-color: #bbbbbb;
+
+
 
 
     h4 {
@@ -140,6 +153,18 @@ export default {
       width: 100px;
       margin: 8px;
       height: 330px;
+      background-color: #ffffff;
+
+      button.finalizado {
+        color: #fff;
+        background-color: #ee0000;
+        border: 1px solid #ff0000;
+        border-radius: 50px;
+        font-weight: 700;
+        text-align: center;
+        padding: 8px 16px;
+        cursor: pointer;
+      }
 
       .cost-image {
         margin: auto;
@@ -160,7 +185,7 @@ export default {
         font-weight: normal;
       }
 
-      p.salaryPerHour {
+      p.textoAnucio {
         font-size: 15px;
         font-weight: bold;
       }

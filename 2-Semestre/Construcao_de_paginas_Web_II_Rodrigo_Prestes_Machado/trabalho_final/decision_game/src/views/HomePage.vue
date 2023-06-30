@@ -76,16 +76,7 @@ export default {
   },
 };
 </script>
-
 <style lang="scss">
-.home {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  background-color: #f4f4f4;
-}
 
 .table {
   display: flex;
