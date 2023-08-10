@@ -1,0 +1,20 @@
+Para acessar o Oracle 21c XE instalado no IFRS-POA:
+
+- SQL Plus: usuario/senha@200.132.53.144:1521/XEpdb1
+- SQL Developer:
+Criar uma nova conexão com as seguintes informações:
+Nome da conexão: pode ser qualquer nome
+Nome do usuario: O usuário que vocês receberam no incio do semestre. Quem não tiver usuário pode me enviar email solicitando.
+Senha: o mesmo nome do usuário (lembrando que vocês devem alterar ALTER USER my_user IDENTIFIED BY MyNewPassword123;)
+Nome do host: 200.132.53.144
+Porta: 1521
+Desmarcar SID e marcar nome do serviço: XEpdb1
+IMPORTANTE (para acesso externo ao IFRS-POA): Devido a perda de conexão se o acesso ao Oracle for feito de fora do IFRS-POA deve-se configurar a conexão para autocommit. No sqldeveloper em ferramentas/preferências/Banco de Dados/Avançado marcar opção commit automático. Lembre-se que neste caso não será possível executar rollback!! 
+
+Ainda deve-se habilitar a opção de Monitorar sessões:
+
+No Sql Developer
+
+Ferramentas - Monitorar sessões
+
+Atualizar: 60
