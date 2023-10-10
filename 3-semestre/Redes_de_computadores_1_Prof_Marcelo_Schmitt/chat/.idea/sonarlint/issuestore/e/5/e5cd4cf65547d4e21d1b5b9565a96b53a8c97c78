@@ -1,0 +1,14 @@
+
+0
+java:S1700"Rename field "server"(­«ÚÒùÿÿÿÿ
+@	java:S106%"+Replace this use of System.out by a logger.(Ò™ðÏ
+E	java:S106F"+Replace this use of System.out by a logger.(„ž›‡øÿÿÿÿ
+r
+java:S1450N"WRemove the "nickname" field and declare it as a local variable in the relevant methods.(¥šÓßÿÿÿÿÿ
+o
+java:S3776W"RRefactor this method to reduce its Cognitive Complexity from 20 to the 15 allowed.(“–ýþ8–Þæ«¯1
+L	java:S106]"+Replace this use of System.out by a logger.(óÈ§”þÿÿÿÿ8¡Þæ«¯1
+G	java:S106t"+Replace this use of System.out by a logger.(í†êó8©Þæ«¯1
+E	java:S106~"+Replace this use of System.out by a logger.(Ì«Ìâøÿÿÿÿ
+A	java:S106œ"+Replace this use of System.out by a logger.(ÿ«íÉ
+H	java:S106£"+Replace this use of System.out by a logger.(û€ ý8ßÞæ«¯1

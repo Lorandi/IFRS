@@ -1,0 +1,12 @@
+
++
+java:S1700
+"Rename field "client"(şÌÿ
+M
+java:S1135"2Complete the task associated to this TODO comment.(îÑÀÈüÿÿÿÿ
+E	java:S106"+Replace this use of System.out by a logger.(Ğ›Ú»ÿÿÿÿÿ
+E	java:S106 "+Replace this use of System.out by a logger.(ò›ñØıÿÿÿÿ
+E	java:S106."+Replace this use of System.out by a logger.(æŸ´ûÿÿÿÿ
+E	java:S106D"+Replace this use of System.out by a logger.(‡ÚÑ»ùÿÿÿÿ
+B
+java:S1128",Remove this unused import 'java.nio.Buffer'.(î¦Ïî
