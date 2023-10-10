@@ -1,66 +1,26 @@
---1. Apresentar o nome do curso e as disciplinas.
-select c.nome_curso, d.nome_disciplina 
-from curso c full outer join disciplina d
-on c.id_curso = d.id_curso
-order by c.nome_curso;
+select f.nome,d.nome
+from funcionario f left outer join departamento d
+on f.id_departamento = d.id_departamento;
 
---2. Apresentar o nome do professor e a sua área
-select p.nome_professor, a.nome_area
-from professor p full outer join area a
-on p.id_area = a.id_area
-order by p.nome_professor;
+select f.nome from funcionario f
+where f.salario in (5000,3000);
 
---3. Apresentar o código da turma, o semestre, o nome do aluno e a nota final
-select t.id_turma, t.semestre, a.nome_aluno, tm.media_final
-from turma t inner join turma_aluno tm
-on t.id_turma = tm.id_turma
-inner join aluno a
-on a.id_aluno = tm.id_aluno
-order by t.id_turma;
+select * from funcionario
 
---4. Apresentar o nome do aluno, o nome do curso para os alunos que já concluíram o curso.
-select a.nome_aluno, c.nome_curso
-from aluno a inner join aluno_curso ac
-on a.id_aluno = ac.id_aluno
-inner join curso c
-on c.id_curso = ac.id_curso
-where ac.data_fim is not null; 
+select id_departamento,max(salario)
+from funcionario
+group by id_departamento
 
+select nome,id_departamento, salario
+from funcionario
+where (id_departamento,salario)
+in ( select id_departamento,max(salario)
+from funcionario
+group by id_departamento);
 
---5. Apresentar código da turma , o nome da disciplina e o nome do professor
-SELECT t.ID_TURMA , d.NOME_DISCIPLINA , p.NOME_PROFESSOR  
-FROM TURMA t INNER JOIN DISCIPLINA d 
-ON t.ID_DISCIPLINA = d.ID_DISCIPLINA 
-INNER JOIN PROFESSOR p 
-ON t.ID_PROFESSOR = p.ID_PROFESSOR ;
-
-
-
---6. Apresentar o nome da disciplina e a nota_final das disciplinas cursadas pelo Aluno Bruno no semestre 2018/1;
-SELECT d.NOME_DISCIPLINA , ta.MEDIA_FINAL 
-FROM DISCIPLINA d INNER JOIN TURMA t
-ON d.ID_DISCIPLINA = t.ID_DISCIPLINA 
-INNER JOIN TURMA_ALUNO ta  
-ON ta.ID_TURMA = t.ID_TURMA 
-INNER JOIN ALUNO a 
-ON ta.ID_ALUNO = a.ID_ALUNO 
-WHERE t.SEMESTRE = '2018/1' AND a.NOME_ALUNO = 'Bruno';
-
---7. Apresentar o nome dos alunos que foram aprovados na disciplina de BDI no semestre de 2018/1;
-SELECT *
-FROM ALUNO a ok 
-
-
---8. Apresentar o total de alunos matriculados nas turmas do semestre 2018/1.
-
---9. Apresentar a média geral na disciplina de BDI em 2018/1.
-
---10. Apresentar o código da turma, nome da disciplina e quantidade de alunos para as turma de 2018/1.
-
---11. Apresentar o código da turma, nome da disciplina para as turma de 2018/1 com mais de 30 alunos.
-
---12. Apresentar o nome da área e o total de cursos da área. Se a área não tiver nenhum curso deve aparecer o total de cursos 0.
-
---13. Apresentar o nome do professor e o total de disciplinas ministradas por este professor. Se o professor não ministrar nenhuma disciplina deve aparecer o valor 0.
-
---14. Apresentar o nome dos cursos e o total de turmas ofertadas em 2018/1. Se o curso não tiver nenhuma turma ele deve aparecer também com o total de turma 0.
+select nome, salario
+from funcionario
+where salario > all ( select f.salario
+from funcionario f, departamento d
+where f.id_departamento = d.id_departamento
+and d.nome='Rh');
