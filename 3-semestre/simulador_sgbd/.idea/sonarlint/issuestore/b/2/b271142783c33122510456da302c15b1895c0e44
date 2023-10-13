@@ -1,0 +1,32 @@
+
+k
+java:S11924"UDefine a constant instead of duplicating this literal "OperaÃ§Ã£o cancelada" 3 times.(È‚ÒÍ
+z
+java:S1319"eThe type of "products" should be an interface such as "Map" rather than the implementation "HashMap".(ª¸ïK
+E
+java:S54110"(Use a primitive boolean expression here.(¥ü­ô8½ì¥Õ²1
+E
+java:S5411q"(Use a primitive boolean expression here.(¥ü­ô8½ì¥Õ²1
+F
+java:S5411’"(Use a primitive boolean expression here.(¥ü­ô8½ì¥Õ²1
+2
+java:S1118"Hide this public constructor.(ª¸ïK
+;
+java:S3010"%Remove this assignment of "products".(Ñò×Ì
+K
+java:S2209"5Change this instance-reference to a static reference.(Ñò×Ì
+E	java:S106"+Replace this use of System.out by a logger.(ÕÓå§ÿÿÿÿÿ
+@	java:S106"+Replace this use of System.out by a logger.(ø·»Å
+E	java:S106&"+Replace this use of System.out by a logger.(ÕÓå§ÿÿÿÿÿ
+@	java:S1064"+Replace this use of System.out by a logger.(È‚ÒÍ
+@	java:S106F"+Replace this use of System.out by a logger.(Ÿµåæ
+E	java:S106L"+Replace this use of System.out by a logger.(¦†ıÂùÿÿÿÿ
+@	java:S106M"+Replace this use of System.out by a logger.(Ÿµåæ
+@	java:S106V"+Replace this use of System.out by a logger.(ÒÙíÃ
+@	java:S106j"+Replace this use of System.out by a logger.(ë‹¶‚
+@	java:S106r"+Replace this use of System.out by a logger.(ÊÛˆˆ
+A	java:S106…"+Replace this use of System.out by a logger.(È‚ÒÍ
+A	java:S106ˆ"+Replace this use of System.out by a logger.(ï‚ï‘
+F	java:S106”"+Replace this use of System.out by a logger.(œÖõßúÿÿÿÿ
+A	java:S106–"+Replace this use of System.out by a logger.(È‚ÒÍ
+A	java:S106™"+Replace this use of System.out by a logger.(Ö¶Àß
