@@ -3,14 +3,13 @@ package validators;
 import entities.Database;
 import entities.Product;
 import exceptions.ValueMustBePositiveException;
-import enums.Category;
 
 import java.math.BigDecimal;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Validators {
-    public static void saveOnDatabase(String name, BigDecimal price, Integer quantity, Category category) {
+    public static void saveOnDatabase(String name, BigDecimal price, Integer quantity) {
         int id = 0;
 
         for (Product product : Database.getInstance().recoverProducts().values()) {
@@ -26,14 +25,12 @@ public class Validators {
         product.setName(name);
         product.setPrice(price);
         product.setQuantity(quantity);
-        product.setCategory(category);
         Database.getInstance().persistsProduct(product);
 
         System.out.println("\nProduto adicionado com sucesso!!! \n"
                 + "Nome: " + name + ", "
                 + "Preço: " + price + ", "
-                + "Quantidade: " + quantity + ", "
-                + "Categoria: " + category);
+                + "Quantidade: " + quantity + ", ");
     }
 
     public static BigDecimal validateBigDecimal(String valor) {
@@ -98,69 +95,6 @@ public class Validators {
         return quantity;
     }
 
-    public static Category validateCategory(String nameCategory) {
-        Category category = null;
-        Scanner sc = new Scanner((System.in));
-
-        String menuCategories =
-                "[1]ESCRITÓRIO  " +
-                        "[2]ALIMENTÇÃO E BEBIDAS  " +
-                        "[3]VESTUÁRIO  " +
-                        "[4]HIGIENE E SAÚDE  " +
-                        "[5]MEIO DE TRANSPORTE  " +
-                        "\nSelecione a categoria: ";
-
-        if (nameCategory.equals("")) {
-            System.out.print(menuCategories);
-            nameCategory = sc.next();
-
-            boolean checkCategory = nameCategory.equals("1") ||
-                    nameCategory.equals("2") ||
-                    nameCategory.equals("3") ||
-                    nameCategory.equals("4") ||
-                    nameCategory.equals("5");
-
-            while (!checkCategory) {
-                System.out.println("Valor inválido");
-                System.out.print(menuCategories);
-
-                nameCategory = sc.next();
-
-                checkCategory = nameCategory.equals("1") ||
-                        nameCategory.equals("2") ||
-                        nameCategory.equals("3") ||
-                        nameCategory.equals("4") ||
-                        nameCategory.equals("5");
-            }
-        }
-
-        switch (Category.getByCode(nameCategory)) {
-            case ESCRITORIO:
-                category = Category.ESCRITORIO;
-                break;
-
-            case ALIMENTCAO_E_BEBIDAS:
-                category = Category.ALIMENTCAO_E_BEBIDAS;
-                break;
-
-            case VESTUARIO:
-                category = Category.VESTUARIO;
-                break;
-
-            case HIGIENE_E_SAUDE:
-                category = Category.HIGIENE_E_SAUDE;
-                break;
-
-            case MEIO_DE_TRANSPORTE:
-                category = Category.MEIO_DE_TRANSPORTE;
-                break;
-
-            default:
-                category = Category.CATEGORY_NOT_FOUND;
-        }
-        return category;
-    }
-
     public static Boolean confirmOperation() {
         Scanner sc = new Scanner(System.in);
 
@@ -209,8 +143,7 @@ public class Validators {
                 + "Id: " + produtcOnStock.getId() + ", "
                 + "Nome: " + produtcOnStock.getName() + ", "
                 + "Preço: " + produtcOnStock.getPrice() + ", "
-                + "Quantidade: " + produtcOnStock.getQuantity() + ", "
-                + "Categoria: " + produtcOnStock.getCategory().getDescription() + "\n");
+                + "Quantidade: " + produtcOnStock.getQuantity() + "\n");
 
         return produtcOnStock;
     }

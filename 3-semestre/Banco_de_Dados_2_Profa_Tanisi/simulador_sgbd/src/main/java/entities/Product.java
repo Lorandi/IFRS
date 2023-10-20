@@ -1,7 +1,5 @@
 package entities;
 
-import enums.Category;
-
 import java.math.BigDecimal;
 import java.util.Objects;
 
@@ -10,17 +8,15 @@ public class Product {
     private String name;
     private BigDecimal price;
     private Integer quantity;
-    private Category category;
 
     public Product() {
     }
 
-    public Product(Integer id, String name, BigDecimal price, Integer quantity, Category category) {
+    public Product(Integer id, String name, BigDecimal price, Integer quantity) {
         this.id = id;
         this.name = name;
         this.price = price;
         this.quantity = quantity;
-        this.category = category;
     }
 
     public void setId(Integer id) {
@@ -39,10 +35,6 @@ public class Product {
         this.quantity = quantity;
     }
 
-    public void setCategory(Category category) {
-        this.category = category;
-    }
-
     public Integer getId() {
         return id;
     }
@@ -59,13 +51,9 @@ public class Product {
         return quantity;
     }
 
-    public Category getCategory() {
-        return category;
-    }
-
     @Override
     public String toString() {
-        return id + "," + name + "," + price + "," + quantity + "," + category.getDescription();
+        return id + "," + name + "," + price + "," + quantity;
     }
 
     @Override

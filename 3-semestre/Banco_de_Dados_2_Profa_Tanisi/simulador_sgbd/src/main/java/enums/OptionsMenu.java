@@ -2,12 +2,12 @@ package enums;
 
 public enum OptionsMenu {
 
-    NEW_PRODUCT("1"),
-    EDIT_PRODUCT("2"),
-    REMOVE_PRODUCT("3"),
-    SEE_DATABASE("4"),
-    SEE_MEMORY("5"),
-    COMMIT("6"),
+    TRANSACTION("1"),
+    LOG_BUFFER("2"),
+    LOG_DISC("3"),
+    DATABASE_BUFFER("4"),
+    DATABASE_DISC("5"),
+    FAIL("6"),
     EXIT("7"),
     ERROR("");
 

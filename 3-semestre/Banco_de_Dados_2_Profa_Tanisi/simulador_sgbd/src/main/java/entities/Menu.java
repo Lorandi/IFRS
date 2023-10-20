@@ -1,63 +1,66 @@
 package entities;
 
 import enums.OptionsMenu;
+import enums.TransactionsMenu;
 import service.ProductService;
+import service.TransactionService;
 
 import java.util.HashMap;
 import java.util.Scanner;
 
 import static entities.Database.productsBuffer;
+import static enums.TransactionsMenu.START_TRANSACTION;
 
 public class Menu {
 
     HashMap<Integer, Product> products;
     ProductService productService;
 
+    TransactionService transactionService;
+
     public Menu(){
         Database.getInstance().productsBuffer(productsBuffer);
         this.products = Database.getInstance().recoverProducts();
         this.productService = new ProductService(products);
+        this.transactionService = new TransactionService(TransactionService.transactions);
+
     }
 
     public void menu(){
         Scanner sc = new Scanner(System.in);
 
-        String menu = "\n     - - - MENU - - - \n" +
-                "[1] Adicionar Novo Produto \n" +
-                "[2] Editar Produto\n" +
-                "[3] Excluir Produto\n" +
-                "[4] Ver produtos salvos no banco\n" +
-                "[5] Ver produtos na memória\n" +
-                "[6] Commit\n" +
+        String menu = "\n     - - - MENU PRINCIPAL- - - \n" +
+                "[1] Transações \n" +
+                "[2] Log memória\n"+
+                "[3] Log disco\n"+
+                "[4] Banco memória\n" +
+                "[5] Banco disco\n" +
+                "[6] Falha\n" +
                 "[7] Sair\n" +
                 "Digite o número da opção desejada: ";
         System.out.print(menu);
         String option = sc.nextLine();
 
         switch (OptionsMenu.getByCode(option)) {
-            case NEW_PRODUCT:
-                ProductService.addProduct();
+            case TRANSACTION:
+                transactionMenu();
                 break;
 
-            case EDIT_PRODUCT:
-                ProductService.editProduct();
+            case LOG_BUFFER:
                 break;
 
-            case REMOVE_PRODUCT:
-                ProductService.removeProduct();
+            case LOG_DISC:
                 break;
 
-            case SEE_DATABASE:
-                Database.getInstance().showSavedInDatabase();
-                break;
-
-            case SEE_MEMORY:
+            case DATABASE_BUFFER:
                 Database.getInstance().showStockListInMemory();
                 break;
 
-            case COMMIT:
-                Database.getInstance().saveOnFile();
-                System.out.println("Commit realizado com sucesso!!!");
+            case DATABASE_DISC:
+                Database.getInstance().showSavedInDatabase();
+                break;
+
+            case FAIL:
                 break;
 
             case EXIT:
@@ -71,5 +74,46 @@ public class Menu {
             menu();
         }
         sc.close();
+    }
+
+    public void transactionMenu(){
+        Scanner scanner = new Scanner(System.in);
+
+        String menu = "\n     - - - MENU DE TRANSAÇÕES- - - \n" +
+                "[1] Começar transação \n" +
+                "[2] Escolher transação\n"+
+                "[3] Finalizar transação\n"+
+                "[4] Commit\n" +
+                "[5] Voltar para menu principal\n" +
+                "Digite o número da opção desejada: ";
+        System.out.print(menu);
+        String option = scanner.nextLine();
+
+        switch (TransactionsMenu.getByCode(option)) {
+            case START_TRANSACTION:
+
+                System.out.println("\n" + transactionService.addTransaction() + " criada com sucesso!");
+                break;
+
+            case CHOOSE_TRANSACTION:
+                transactionService.chooseTransaction();
+                break;
+
+            case END_TRANSACTION:
+                break;
+
+            case COMMIT:
+                break;
+
+            case BACK:
+                System.out.println("Voltando para menu principal...");
+                break;
+
+            default:
+                System.out.println("\nOpção inválida. É necessário escolher uma das opções numéricas do menu.");
+        }
+        if (!option.equals("5")) {
+            transactionMenu();
+        }
     }
 }

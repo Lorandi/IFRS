@@ -5,9 +5,6 @@ import java.io.*;
 import java.math.BigDecimal;
 import java.util.HashMap;
 
-import static validators.Validators.validateCategory;
-
-
 public class Database {
 
     private static final Database database = new Database();
@@ -36,7 +33,7 @@ public class Database {
     }
 
     public void showStockListInMemory() {
-        System.out.println("\n Lista de produtos");
+        System.out.println("\n Lista de produtos em memória");
         for (Product product : productsBuffer.values()) {
             System.out.println(product.toString());
         }
@@ -44,7 +41,7 @@ public class Database {
 
     public void showSavedInDatabase(){
         productsBuffer(showSavedInDatabase);
-        System.out.println("\n Lista de produtos");
+        System.out.println("\n Lista de produtos no banco");
         for (Product product : showSavedInDatabase.values()) {
             System.out.println(product.toString());
         }
@@ -63,8 +60,7 @@ public class Database {
                 Product product = new Product(Integer.parseInt(temp[0]),
                         temp[1],
                         new BigDecimal(temp[2]),
-                        Integer.parseInt(temp[3]),
-                        validateCategory(temp[4]));
+                        Integer.parseInt(temp[3]));
 
                 hashMap.put(product.getId(), product);
             }
@@ -85,7 +81,7 @@ public class Database {
         String path = "src/resources/files/estoque.csv";
 
         try (BufferedWriter bw = new BufferedWriter(new FileWriter(path))) {
-            bw.write("id, name, price, quantity, category");
+            bw.write("id, name, price, quantity");
             bw.newLine();
             for (Product product : Database.getInstance().recoverProducts().values()) {
                 bw.write(product.toString());
