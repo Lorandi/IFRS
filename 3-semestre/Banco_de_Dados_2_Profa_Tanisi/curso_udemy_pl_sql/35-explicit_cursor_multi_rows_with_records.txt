@@ -1,0 +1,29 @@
+ create or replace procedure process_customer_explicit_cursor_multi_rows_record
+    (c_id in customer.customer_id%TYPE)
+    IS  
+    cursor c is --declaration of cursor
+    select *   
+    from customer
+    where customer_id=c_id;
+    
+    c_rec c%rowtype;
+    total_rows number;
+begin 
+    open c; --oppening of cursor
+        loop
+            fetch c into c_rec;  -- fetching of data
+            
+            exit when c%notfound;            
+            if c%found then
+            total_rows := c%rowcount;
+            dbms_output.put_line(total_rows || ' customers selected');
+            end if;
+            
+            dbms_output.put_line('First name: ' ||c_rec.first_name);
+            dbms_output.put_line('Lasta name: ' || c_rec.last_name);
+            dbms_output.put_line('' );
+        end loop;
+    close c;
+end;
+
+execute process_customer_explicit_cursor_multi_rows(10);

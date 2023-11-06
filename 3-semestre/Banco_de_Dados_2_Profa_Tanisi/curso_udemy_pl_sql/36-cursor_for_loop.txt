@@ -1,0 +1,22 @@
+ create or replace procedure process_customer_cursor_for_loop
+    (c_id in customer.customer_id%TYPE)
+    IS  
+    total_rows number;
+    actual_row number :=1;
+begin
+    select count(*)
+    into total_rows 
+    from customer 
+    where customer_id=c_id;  
+                
+    for c_rec in( select * from customer where customer_id=c_id)   
+    loop
+        dbms_output.put_line(actual_row || '/' ||total_rows || ' customers selected'); 
+        actual_row :=actual_row + 1; 
+        dbms_output.put_line('First name: ' ||c_rec.first_name);
+        dbms_output.put_line('Lasta name: ' || c_rec.last_name);
+        dbms_output.put_line('' );
+    end loop;
+end;
+
+execute process_customer_cursor_for_loop(10);

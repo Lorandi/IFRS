@@ -1,0 +1,25 @@
+--DESTA FORMA VARIÁVEIS DEVEM ESTAR NA MESMA ORDEM DA PROCEDURE
+BEGIN
+    add_customer(15, 'Larry', 'Bill', 'Peter', '234 River St', 'Greate Place',
+    'Novo Hamburgo', 'Brasil', sysdate, 'Center');
+END;
+
+-- DESTA FORMA AS VARIAVEIS PODEM ESTAR EM QUALQUER ORDEM
+BEGIN
+    add_customer
+    (
+    c_date_added  => sysdate,
+    c_fname       => 'August',
+    c_region      => 'North',
+    c_lname       => 'Kang',
+    c_mame        => '',    
+    c_add2        => 'Botuca',
+    c_city        => 'Arrivar',
+    c_country     => 'Poloste',
+    c_add1        => '98 Tree St',    
+    c_id          => 16    
+    );
+END;
+
+--USANDO EXEC NÃO PODE QUEBRAR LINHA
+EXEC add_customer(31, 'lAFRODO', 'Bill', 'Peter', '234 River St', 'Greate Place','Novo Hamburgo', 'Brasil', sysdate, 'Center');

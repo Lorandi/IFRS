@@ -1,0 +1,48 @@
+create or replace procedure add_customer
+(
+    c_id          IN NUMBER,
+    c_fname       IN VARCHAR2,
+    c_lname       IN VARCHAR2,
+    c_mame        IN VARCHAR2,
+    c_add1        IN VARCHAR2,
+    c_add2        IN VARCHAR2,
+    c_city        IN VARCHAR2,
+    c_country     IN VARCHAR2,
+    c_date_added  IN DATE,
+    c_region      IN VARCHAR2,
+    total_count   OUT NUMBER
+)
+AS    
+BEGIN
+    INSERT INTO customer(customer_id, first_name, last_name, middle_name, address_line1,
+    address_line2, city, country, date_added, region)
+    VALUES(c_id, c_fname, c_lname, c_mame, c_add1, c_add2, c_city, c_country, c_date_added, c_region);
+    
+    COMMIT;    
+   
+    dbms_output.put_line('Data Successfully Inserted');
+    
+    SELECT COUNT(1) INTO total_count FROM customer;
+END;
+
+
+DECLARE
+    t_count NUMBER(2);
+BEGIN
+    add_customer
+    (
+    c_date_added  => sysdate,
+    c_fname       => 'September',
+    c_region      => 'North',
+    c_lname       => 'Kang',
+    c_mame        => '',    
+    c_add2        => 'Botuca',
+    c_city        => 'Arrivar',
+    c_country     => 'Poloste',
+    c_add1        => '98 Tree St',    
+    c_id          => 17,
+    total_count   => t_count
+    );
+    
+    dbms_output.put_line('Total records: ' || t_count);
+END;

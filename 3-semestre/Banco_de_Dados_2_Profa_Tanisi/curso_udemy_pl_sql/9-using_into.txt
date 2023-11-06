@@ -1,0 +1,22 @@
+DECLARE
+    c_id number := 11;
+    c_name varchar2(50);
+    c_addr varchar2(50);
+    date_ad date;
+BEGIN
+    select first_name, country, date_added
+    -- variaveis devem ser do mesmo tipo do dado do banco
+    into c_name, c_addr, date_ad
+    from customer
+    where customer_id = c_id;
+    
+    dbms_output.put_line('Name: ' || c_name);
+    dbms_output.put_line('Country:' || c_addr);
+    dbms_output.put_line('Date:' || date_ad);
+END;
+
+/*
+Name: TOM
+Country:USA
+Date:12/01/15
+*/

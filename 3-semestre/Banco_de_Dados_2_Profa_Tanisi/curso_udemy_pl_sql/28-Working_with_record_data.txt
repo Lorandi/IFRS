@@ -1,0 +1,36 @@
+create or replace procedure process_customer_changed
+(c_id in customer.customer_id%TYPE)
+IS
+    c_rec customer%rowtype;
+    c_rec1 customer%rowtype;
+begin 
+    select *
+    into c_rec
+    from customer
+    where customer_id = c_id;
+    
+    c_rec1 := c_rec;
+    
+    c_rec.first_name := 'Mudou first name';
+    c_rec.last_name:= 'Nome Sobrenome';
+    
+    dbms_output.put_line('c_rep' );
+    dbms_output.put_line('First name: ' || c_rec.FIRST_NAME );
+    dbms_output.put_line('Last name: ' || c_rec.LAST_NAME );
+    dbms_output.put_line('Address: ' || c_rec.ADDRESS_LINE1 );
+    dbms_output.put_line('City: ' || c_rec.CITY );
+    dbms_output.put_line('Country: ' || c_rec.COUNTRY );
+    dbms_output.put_line('Region: ' || c_rec.REGION ); 
+    
+    dbms_output.put_line('' );
+    dbms_output.put_line('c_rep1' );    
+    dbms_output.put_line('First name: ' || c_rec1.FIRST_NAME );
+    dbms_output.put_line('Last name: ' || c_rec1.LAST_NAME );
+    dbms_output.put_line('Address: ' || c_rec1.ADDRESS_LINE1 );
+    dbms_output.put_line('City: ' || c_rec1.CITY );
+    dbms_output.put_line('Country: ' || c_rec1.COUNTRY );
+    dbms_output.put_line('Region: ' || c_rec1.REGION );  
+end;
+
+execute process_customer(11);
+execute process_customer_changed(11);

@@ -1,0 +1,13 @@
+DECLARE
+order_number NUMBER:=1001;
+order_id CONSTANT number default 1002;
+customer_name varchar2(20):='Roberto Leal';
+BEGIN
+    order_number:=234;
+    --order_id:=567; 
+    --a expressão 'ORDER_ID' não pode ser usada como um destino de designação por causa da CONSTANT
+    dbms_output.put_line('Welcome to the course');
+    dbms_output.put_line(order_number);
+      dbms_output.put_line(order_id);
+     dbms_output.put_line(customer_name);
+END;

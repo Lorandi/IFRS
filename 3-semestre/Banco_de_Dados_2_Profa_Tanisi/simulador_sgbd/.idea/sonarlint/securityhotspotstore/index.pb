@@ -15,5 +15,11 @@ X
 (src/main/java/validators/Validators.java,5\9\596d97103b0b2520874cc03f8ba263847a409669
 Y
 )src/main/java/service/ProductService.java,b\2\b271142783c33122510456da302c15b1895c0e44
-Q
-!src/main/java/enums/Category.java,4\9\49699058322e4531b309a287d136b5c9877f7b28
+Y
+)src/main/java/enums/TransactionsMenu.java,5\f\5f29a22de18cdc5b2bb261fa89562fe0bdb64c11
+W
+'src/main/java/entities/Transaction.java,7\8\7883a47f407153325a4bc48e68a39edeb08ce75f
+Z
+*src/main/java/enums/TransactionStatus.java,8\6\860f8a35237ec3f13e5b8830d6934e297e2b54f2
+]
+-src/main/java/service/TransactionService.java,d\4\d48bf1d6c8f75f05ffa0c553fada8dcfdb11be41

@@ -1,0 +1,75 @@
+create or replace package body customer_package
+as
+    procedure add_customer
+    (
+        c_id          IN NUMBER,
+        c_fname       IN VARCHAR2,
+        c_lname       IN VARCHAR2,
+        c_mame        IN VARCHAR2,
+        c_add1        IN VARCHAR2,
+        c_add2        IN VARCHAR2,
+        c_city        IN VARCHAR2,
+        c_country     IN VARCHAR2,
+        c_date_added  IN DATE,
+        c_region      IN VARCHAR2
+    )
+    AS    
+    BEGIN
+        INSERT INTO customer(customer_id, first_name, last_name, middle_name, address_line1,
+        address_line2, city, country, date_added, region)
+        VALUES(c_id, c_fname, c_lname, c_mame, c_add1, c_add2, c_city, c_country, c_date_added, c_region);
+    
+        COMMIT;    
+    
+        dbms_output.put_line('Data Successfully Inserted');
+    
+        --SELECT COUNT(1) INTO c_id FROM customer;
+    END add_customer;
+
+    procedure get_customer
+    (
+        c_id in number
+    )
+    as
+        c_name customer.first_name%type;
+        c_country customer.country%type;
+        ex_custoumer_id EXCEPTION;
+    begin
+        if c_id <= 0 then
+            raise ex_custoumer_id;
+        end if;
+    
+        select first_name, country into c_name, c_country
+        from customer
+        where customer_id = c_id;
+    
+        dbms_output.put_line('Name: ' || c_name);
+        dbms_output.put_line('Country: ' || c_country);
+    EXCEPTION
+        when ex_custoumer_id then
+            dbms_output.put_line('Id must be grater than zero');
+        when no_data_found then
+            dbms_output.put_line('No such customer with id ' || c_id);
+        when too_many_rows then
+            dbms_output.put_line('You got more than 1 row');
+        when others then
+            dbms_output.put_line('Error!!');
+     end get_customer; 
+ 
+ 
+    FUNCTION find_salescount
+    (
+        p_sales_date  IN date
+    ) RETURN NUMBER
+    AS
+        num_of_sales number := 0;
+    
+    BEGIN
+        select count(*) into num_of_sales from sales
+        where sales_date = p_sales_date;
+    
+        return num_of_sales;
+    
+    END find_salescount;
+
+end customer_package;

@@ -1,0 +1,15 @@
+
+--in a table
+select find_salescount(to_date('01-jan-2015', 'dd-mon-yyyy')) from dual;
+
+
+-- in a dbms_output
+DECLARE
+    scount number :=0;
+BEGIN
+    scount := find_salescount(to_date('01-jan-2015', 'dd-mon-yyyy'));
+    dbms_output.put_line(scount);
+END;
+    
+delete from customer where customer_id = 45;
+select * from customer;

@@ -1,0 +1,23 @@
+-- FOR LOOP allows you to execute code repeatedly for a fixed numeber of times
+DECLARE    
+    counter number(2) := 10;   
+    --counter number := 10;  
+    --counter number;
+
+BEGIN
+    -- não precisa declarar variável counter antes
+    FOR counter IN 10..20
+    LOOP
+        dbms_output.put_line('value of counter: ' || counter);        
+    END LOOP;   
+    
+    dbms_output.put_line(' ');  
+    FOR counter IN REVERSE 10..20
+    
+    LOOP
+        dbms_output.put_line('value of counter: ' || counter);        
+    END LOOP; 
+    dbms_output.put_line(' ');  
+    -- vai imprimir valor do counter fora do escopo do for
+    dbms_output.put_line('value of counter: ' || counter); 
+END;

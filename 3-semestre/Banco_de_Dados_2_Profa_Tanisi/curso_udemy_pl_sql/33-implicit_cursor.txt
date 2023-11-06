@@ -1,0 +1,26 @@
+create or replace procedure process_customer_implict_cursor
+    (c_id in customer.customer_id%TYPE)
+    IS  
+    type customer_rec is RECORD
+    (first_name varchar(50),
+    last_name varchar(50)
+    );
+    c_rec customer_rec;
+    total_rows number;
+
+begin 
+    select first_name, last_name
+    into c_rec
+    from customer
+    where customer_id=c_id;
+
+    if sql%found then -- implicit cursor sql
+    total_rows := sql%rowcount;
+    dbms_output.put_line(total_rows || ' customers selecte');
+    end if;
+
+    dbms_output.put_line('First name: ' ||c_rec.first_name);
+    dbms_output.put_line('Lasta name: ' || c_rec.last_name);
+end;
+
+execute process_customer_implict_cursor(10);

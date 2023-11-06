@@ -1,0 +1,36 @@
+create or replace procedure process_customer_insert
+
+(c_id in customer.customer_id%TYPE)
+IS
+    c_rec customer%rowtype;
+    last_id number;
+
+begin 
+    select max(customer_id) 
+    into 
+    last_id
+    from customer;    
+    
+    select *
+    into c_rec
+    from customer
+    where customer_id = c_id;    
+       
+    c_rec.customer_id := last_id + 1;
+
+    insert_customer(c_rec);
+end;
+
+create or replace procedure insert_customer
+(
+    customer_in in customer%rowtype
+)
+is
+begin
+    insert into customer values customer_in;
+    commit;
+end;
+
+select * from customer  where customer_id = 10;
+
+exec process_customer_insert(10);

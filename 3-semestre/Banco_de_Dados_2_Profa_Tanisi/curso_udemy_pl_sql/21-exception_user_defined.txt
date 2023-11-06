@@ -1,0 +1,31 @@
+create or replace procedure get_customer
+(
+    c_id in number
+)
+as
+    c_name customer.first_name%type;
+    c_country customer.country%type;
+    ex_custoumer_id EXCEPTION;
+begin
+    if c_id <= 0 then
+        raise ex_custoumer_id;
+    end if;
+    
+    select first_name, country into c_name, c_country
+    from customer
+    where customer_id = c_id;
+    
+    dbms_output.put_line('Name: ' || c_name);
+    dbms_output.put_line('Country: ' || c_country);
+EXCEPTION
+    when ex_custoumer_id then
+        dbms_output.put_line('Id must be grater than zero');
+    when no_data_found then
+        dbms_output.put_line('No such customer with id ' || c_id);
+    when too_many_rows then
+        dbms_output.put_line('You got more than 1 row');
+    when others then
+        dbms_output.put_line('Error!!');
+ end;  
+ 
+  exec get_customer(0);

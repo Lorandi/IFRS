@@ -1,0 +1,20 @@
+DECLARE
+--Global variables
+    outer_number number :=95;
+BEGIN
+    --esse funciona
+    dbms_output.put_line('Outer variable outer_number = ' || outer_number);
+    
+    DECLARE
+        --Local variable
+        inner_number number := 185;
+    BEGIN
+        dbms_output.put_line('Outer variable outer_number = ' || outer_number);
+        dbms_output.put_line('Inner variable inner_number = ' || inner_number);
+    END;
+    --esse funciona
+    dbms_output.put_line('Outer variable outer_number = ' || outer_number);
+    /*esse não funciona em função do escopo
+    dbms_output.put_line('Inner variable inner_number = ' || inner_number);
+    */
+END;

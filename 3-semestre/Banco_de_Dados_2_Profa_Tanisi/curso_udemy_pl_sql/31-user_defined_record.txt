@@ -1,0 +1,21 @@
+create or replace procedure process_customer_user_defined_record
+(c_id in customer.customer_id%TYPE)
+IS
+TYPE CUSTOMER_REC IS RECORD
+(
+    FIRST_NAME VARCHAR2(50),
+    LAST_NAME VARCHAR(50)
+);
+    c_rec CUSTOMER_REC;
+begin 
+    select FIRST_NAME, LAST_NAME
+    into c_rec
+    from customer
+    where customer_id = c_id;
+
+    dbms_output.put_line('First name: ' || c_rec.FIRST_NAME );
+    dbms_output.put_line('Last name: ' || c_rec.LAST_NAME );
+
+end;
+
+EXEC process_customer_user_defined_record(12);

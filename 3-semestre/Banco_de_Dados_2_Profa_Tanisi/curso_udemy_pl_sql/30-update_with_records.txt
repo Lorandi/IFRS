@@ -1,0 +1,28 @@
+create or replace procedure process_customer_update
+(c_id in customer.customer_id%TYPE)
+IS
+    c_rec customer%rowtype;
+
+begin 
+    select *
+    into c_rec
+    from customer
+    where customer_id = c_id;
+
+    c_rec.first_name := 'Loren';
+
+    update_customer(c_rec);
+end;
+
+create or replace procedure update_customer
+(
+    customer_in in customer%rowtype
+)
+is
+begin
+    update customer set row = customer_in 
+    where customer_id = customer_in.customer_id;
+    commit;
+end;
+
+exec process_customer_update(10);

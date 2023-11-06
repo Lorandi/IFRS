@@ -1,0 +1,14 @@
+create or replace FUNCTION find_salescount
+(
+    p_sales_date  IN date
+) RETURN NUMBER
+AS
+    num_of_sales number := 0;
+    
+BEGIN
+    select count(*) into num_of_sales from sales
+    where sales_date = p_sales_date;
+    
+    return num_of_sales;
+    
+END find_salescount;

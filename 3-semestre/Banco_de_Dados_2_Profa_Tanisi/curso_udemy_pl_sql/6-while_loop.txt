@@ -1,0 +1,12 @@
+-- You use a WHILE LOOP when you ar not sure how many timer you will execute the loop body
+-- and the loop body may not execute even once.
+DECLARE
+    counter number(2) := 10;
+
+BEGIN
+    WHILE counter <20
+    LOOP
+        dbms_output.put_line('value of counter: ' || counter);
+        counter := counter +1;
+    END LOOP;    
+END;
