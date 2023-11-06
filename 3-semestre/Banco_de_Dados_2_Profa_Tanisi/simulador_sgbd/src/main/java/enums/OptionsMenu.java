@@ -7,8 +7,9 @@ public enum OptionsMenu {
     LOG_DISC("3"),
     DATABASE_BUFFER("4"),
     DATABASE_DISC("5"),
-    FAIL("6"),
-    EXIT("7"),
+    CHECK_POINT("6"),
+    FAIL("7"),
+    EXIT("8"),
     ERROR("");
 
     String value;

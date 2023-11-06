@@ -1,12 +1,15 @@
 package service;
 
 import entities.Database;
+import entities.Logs;
 import entities.Product;
+import entities.Transaction;
 
 import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.Scanner;
 
+import static java.util.Objects.isNull;
 import static validators.Validators.*;
 
 public class ProductService {
@@ -53,8 +56,12 @@ public class ProductService {
 //        Database.getInstance().showStockListInMemory();
 //    }
 
-    public static void editProduct() {
+    public static void editProduct(Transaction transaction) {
+        if (isNull(transaction) ) return;
+
         Database.getInstance().showStockListInMemory();
+        StringBuilder log = new StringBuilder();
+        log.append(transaction.getName()+", ");
 
         if (!products.isEmpty()) {
             Scanner sc = new Scanner(System.in);
@@ -62,8 +69,8 @@ public class ProductService {
 
 
             // Produto criado caso operação seja cancelada
-            Product productTemp = produtcOnStock;
-
+            Product productTemp = new Product(produtcOnStock.getId(), produtcOnStock.getName(), produtcOnStock.getPrice(), produtcOnStock.getQuantity());
+            log.append(produtcOnStock.getId()+", ");
 
             System.out.print("Qual dado quer modificar: [1]Nome [2]Preço [3]Quantidade :");
 
@@ -84,16 +91,25 @@ public class ProductService {
                     System.out.print("Digite o novo nome: ");
                     String newNane = sc.nextLine();
                     produtcOnStock.setName(newNane);
+                    log.append("nome, ");
+                    log.append(productTemp.getName() + ", ");
+                    log.append(produtcOnStock.getName());
                     break;
 
                 case "2":
                     BigDecimal newPrice = validateBigDecimal("");
                     produtcOnStock.setPrice(newPrice);
+                    log.append("preço, ");
+                    log.append(productTemp.getPrice() + ", ");
+                    log.append(produtcOnStock.getPrice());
                     break;
 
                 case "3":
                     Integer newQuantity = validateIntegers();
                     produtcOnStock.setQuantity(newQuantity);
+                    log.append("quantidade, ");
+                    log.append(productTemp.getQuantity() + ", ");
+                    log.append(produtcOnStock.getQuantity());
                     break;
             }
 
@@ -104,6 +120,7 @@ public class ProductService {
                     + "Quantidade: " + produtcOnStock.getQuantity() + "\n");
 
             if (confirmOperation()) {
+                Logs.getInstance().persistLogBuffer(log.toString());
                 System.out.println("Operação realizada com sucesso");
 
             } else {

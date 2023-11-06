@@ -1,2 +1,15 @@
-id, process, timestamp
+cod_trans, id_produto, nome_campo, valor_anterior, valor_atual
+T1, 7, quantidade, 3, 5
 
+T1, 7, quantidade, 3, 5
+
+T1, 3, quantidade, 7, 9
+CheckPoint
+T1, 7, quantidade, 3, 5
+
+T1, 3, quantidade, 7, 9
+CheckPoint
+T1, 3, quantidade, 7, 9
+T1, 7, quantidade, 8, 10
+T2, 5, quantidade, 12, 3
+CheckPoint

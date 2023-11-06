@@ -5,8 +5,7 @@ public enum TransactionsMenu {
     START_TRANSACTION("1"),
     CHOOSE_TRANSACTION("2"),
     END_TRANSACTION("3"),
-    COMMIT("4"),
-    BACK("5"),
+    BACK("4"),
     ERROR("");
 
     String value;
