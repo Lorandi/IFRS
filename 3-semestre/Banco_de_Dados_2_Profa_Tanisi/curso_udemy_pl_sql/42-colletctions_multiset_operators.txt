@@ -1,0 +1,19 @@
+--multiset unions
+--multiset union distinct
+--multiset except
+--multiset intersect
+
+declare
+    type t_tab is table of number;
+    l_tab1 t_tab := t_tab(1,2,3,4,5,6);
+    l_tab2 t_tab := t_tab(5,6,7,8,9,10);    
+begin
+    --l_tab1 := l_tab1 multiset union l_tab2; -- UNION display all the elements from collections
+    --l_tab1 := l_tab1 multiset union distinct l_tab2; -- UNION DISTINCT isplay all the elements not repeated from collections
+    --l_tab1 := l_tab1 multiset except l_tab2;  -- EXCEPT display all from l_tab1 except the ones equals on l_tab2;
+    l_tab1 := l_tab1 multiset intersect l_tab2; --INTERSECT displays the common values betweem both these collections;
+     
+    for i in l_tab1.first .. l_tab1.last loop
+        dbms_output.put_line(l_tab1(i));
+    end loop;
+end;

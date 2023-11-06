@@ -1,0 +1,30 @@
+declare
+    type customer_type is table of varchar2(100);
+    customer_table customer_type := customer_type(); -- initialize the collection
+    v_idx number;
+
+begin
+    customer_table.extend(4); --you have to extende before using the table;
+    
+    customer_table(1) := 'Mike';
+    customer_table(2) := 'Jeff';
+    customer_table(3) := 'Moque';
+    --customer_table(6) := 'Milton'; --throws an error'
+    customer_table(4) := 'Milton'; --it must be sequential.
+    --customer_table(5) := 'Logan';  --throws an error'
+    
+    --delete the third item of the collection
+    customer_table.delete(3);
+    
+     dbms_output.put_line('Customer name first ' || customer_table(customer_table.first));
+     dbms_output.put_line('Customer name last ' || customer_table(customer_table.last)); 
+     dbms_output.put_line('');    
+    
+    --transverse sapare collection
+    v_idx := customer_table.first;
+    
+    while v_idx is not null loop
+    dbms_output.put_line('Customer name ' || customer_table(v_idx));
+    v_idx := customer_table.next(v_idx);
+    end loop display_loop;
+end;
