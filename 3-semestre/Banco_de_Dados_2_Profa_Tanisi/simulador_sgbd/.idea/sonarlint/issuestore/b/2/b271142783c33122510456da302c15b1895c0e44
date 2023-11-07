@@ -1,21 +1,23 @@
 
-z
-java:S1319"eThe type of "products" should be an interface such as "Map" rather than the implementation "HashMap".(ª¸ïK
+
+java:S1319"eThe type of "products" should be an interface such as "Map" rather than the implementation "HashMap".(ª¸ïK8›ÿ±º1
 E
-java:S5411j"(Use a primitive boolean expression here.(¥ü­ô8½ì¥Õ²1
-;
-java:S3010"%Remove this assignment of "products".(Ñò×Ì
-K
-java:S2209"5Change this instance-reference to a static reference.(Ñò×Ì
-]	java:S125"<This block of commented-out lines of code should be removed.(ŒÒäÆıÿÿÿÿ8ÊÒÓó´1
-@	java:S106D"+Replace this use of System.out by a logger.(ßıö¥
-E	java:S106J"+Replace this use of System.out by a logger.(¦†ıÂùÿÿÿÿ
-@	java:S106K"+Replace this use of System.out by a logger.(ßıö¥
->	java:S131Q""Add a default case to this switch.(ÙˆÄ8”³Ğó´1
-@	java:S106T"+Replace this use of System.out by a logger.(ÒÙíÃ
-@	java:S106d"+Replace this use of System.out by a logger.(ë‹¶‚
-@	java:S106k"+Replace this use of System.out by a logger.(ÊÛˆˆ
->	java:S131n""Add a default case to this switch.(ÙˆÄ8˜³Ğó´1
-@	java:S106{"+Replace this use of System.out by a logger.(È‚ÒÍ
-@	java:S106~"+Replace this use of System.out by a logger.(ï‚ï‘
-X	java:S125ƒ"<This block of commented-out lines of code should be removed.(Çë‡k8ÓÒÓó´1
+java:S5411z"(Use a primitive boolean expression here.(¥ü­ô8›ÿ±º1
+B
+java:S3010"%Remove this assignment of "products".(Ñò×Ì8Ø›ÿ±º1
+R
+java:S2209"5Change this instance-reference to a static reference.(Ñò×Ì8Ø›ÿ±º1
+]	java:S125"<This block of commented-out lines of code should be removed.(ŒÒäÆıÿÿÿÿ8Ş›ÿ±º1
+G	java:S106K"+Replace this use of System.out by a logger.(ßıö¥8â›ÿ±º1
+L	java:S106Q"+Replace this use of System.out by a logger.(¦†ıÂùÿÿÿÿ8ã›ÿ±º1
+G	java:S106R"+Replace this use of System.out by a logger.(ßıö¥8ã›ÿ±º1
+>	java:S131X""Add a default case to this switch.(ÙˆÄ8ä›ÿ±º1
+G	java:S106["+Replace this use of System.out by a logger.(ÒÙíÃ8ä›ÿ±º1
+G	java:S106t"+Replace this use of System.out by a logger.(ë‹¶‚8æ›ÿ±º1
+G	java:S106|"+Replace this use of System.out by a logger.(ÊÛˆˆ8ç›ÿ±º1
+>	java:S131""Add a default case to this switch.(ÙˆÄ8æ›ÿ±º1
+H	java:S106Œ"+Replace this use of System.out by a logger.(È‚ÒÍ8ç›ÿ±º1
+H	java:S106"+Replace this use of System.out by a logger.(ï‚ï‘8ÂÆ·º1
+X	java:S125”"<This block of commented-out lines of code should be removed.(Çë‡k8ç›ÿ±º1
+ã
+java:S6541;"ÅA "Brain Method" was detected. Refactor it to reduce at least one of the following metrics: LOC from 71 to 64, Complexity from 15 to 14, Nesting Level from 3 to 2, Number of Variables from 10 to 6.(Ï¯Ò¿8è›ÿ±º1

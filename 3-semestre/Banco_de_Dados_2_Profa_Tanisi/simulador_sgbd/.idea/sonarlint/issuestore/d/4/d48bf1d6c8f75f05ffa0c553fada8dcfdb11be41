@@ -1,19 +1,23 @@
 
 ‹
-java:S1319	"iThe type of "transactions" should be an interface such as "Map" rather than the implementation "HashMap".(å¾†üúÿÿÿÿ8®´í¶¹1
+java:S1319"iThe type of "transactions" should be an interface such as "Map" rather than the implementation "HashMap".(å¾†üúÿÿÿÿ8­óð²º1
 ‹
-java:S1319"iThe type of "transactions" should be an interface such as "Map" rather than the implementation "HashMap".(•æ®…ùÿÿÿÿ8°´í¶¹1
+java:S1319"iThe type of "transactions" should be an interface such as "Map" rather than the implementation "HashMap".(•æ®…ùÿÿÿÿ8­óð²º1
 z
-java:S1104	"XMake transactions a static final constant or non-public and provide accessors if needed.(å¾†üúÿÿÿÿ8²´í¶¹1
+java:S1104"XMake transactions a static final constant or non-public and provide accessors if needed.(å¾†üúÿÿÿÿ8®óð²º1
 T
-java:S1444	"2Make this "public static transactions" field final(å¾†üúÿÿÿÿ8²´í¶¹1
+java:S1444"2Make this "public static transactions" field final(å¾†üúÿÿÿÿ8®óð²º1
 ?
-java:S2386	"Make this member "protected".(å¾†üúÿÿÿÿ8Ç´í¶¹1
+java:S2386"Make this member "protected".(å¾†üúÿÿÿÿ8µóð²º1
 F
-java:S3010")Remove this assignment of "transactions".(ÁÛØß8Ø´í¶¹1
+java:S3010")Remove this assignment of "transactions".(ÁÛØß8·óð²º1
 R
-java:S2209"5Change this instance-reference to a static reference.(ÁÛØß8Ú´í¶¹1
-L	java:S106"+Replace this use of System.out by a logger.(ÈÿÂ¦øÿÿÿÿ8á´í¶¹1
-G	java:S106"+Replace this use of System.out by a logger.(ÐÊ—à8å´í¶¹1
-G	java:S106"+Replace this use of System.out by a logger.(Ö¬ÒÂ8ó´í¶¹1
-L	java:S106""+Replace this use of System.out by a logger.(Ò¼’ëùÿÿÿÿ8ö´í¶¹1
+java:S2209"5Change this instance-reference to a static reference.(ÁÛØß8·óð²º1
+L	java:S106"+Replace this use of System.out by a logger.(·Ûí”üÿÿÿÿ8ÂÏù²º1
+L	java:S106 "+Replace this use of System.out by a logger.(Âó“×üÿÿÿÿ8ÂÏù²º1
+L	java:S106%"+Replace this use of System.out by a logger.(ÈÿÂ¦øÿÿÿÿ8ÃÏù²º1
+G	java:S106("+Replace this use of System.out by a logger.(ÐÊ—à8ÆÏù²º1
+G	java:S1060"+Replace this use of System.out by a logger.(ç£¶˜8ÆÏù²º1
+G	java:S1064"+Replace this use of System.out by a logger.(Ö¬ÒÂ8ÇÏù²º1
+L	java:S1069"+Replace this use of System.out by a logger.(Ÿ‰É­úÿÿÿÿ8‘øù²º1
+L	java:S106>"+Replace this use of System.out by a logger.(Ò¼’ëùÿÿÿÿ8ë­‚³º1

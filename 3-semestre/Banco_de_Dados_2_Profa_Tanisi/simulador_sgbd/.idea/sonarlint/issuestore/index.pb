@@ -23,3 +23,5 @@ W
 'src/main/java/entities/Transaction.java,7\8\7883a47f407153325a4bc48e68a39edeb08ce75f
 ]
 -src/main/java/service/TransactionService.java,d\4\d48bf1d6c8f75f05ffa0c553fada8dcfdb11be41
+P
+ src/main/java/entities/Logs.java,1\5\152c0ca16ea8d20ec1f2fd1bca1871f14d7222ad

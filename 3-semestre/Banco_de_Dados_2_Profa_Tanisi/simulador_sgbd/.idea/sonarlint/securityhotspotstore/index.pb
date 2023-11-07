@@ -23,3 +23,5 @@ Z
 *src/main/java/enums/TransactionStatus.java,8\6\860f8a35237ec3f13e5b8830d6934e297e2b54f2
 ]
 -src/main/java/service/TransactionService.java,d\4\d48bf1d6c8f75f05ffa0c553fada8dcfdb11be41
+P
+ src/main/java/entities/Logs.java,1\5\152c0ca16ea8d20ec1f2fd1bca1871f14d7222ad

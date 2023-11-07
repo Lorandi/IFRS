@@ -1,12 +1,12 @@
 
 K
-java:S2440".Remove this instantiation of "ProductService".(ÿ¶ûŞ8Á‚ïÖ²1
-G	java:S106)"+Replace this use of System.out by a logger.(ê¿ 8Ã‚ïÖ²1
-G	java:S106C"+Replace this use of System.out by a logger.(İ¥Æ‡8Ä‚ïÖ²1
-L	java:S106G"+Replace this use of System.out by a logger.(ŸØó´ûÿÿÿÿ8”Ä»Ø²1
-G	java:S106Y"+Replace this use of System.out by a logger.(ê¿ 8Œ„Ÿö´1
-L	java:S106_"+Replace this use of System.out by a logger.(®Á°“ÿÿÿÿÿ8§Âí¶¹1
-L	java:S106m"+Replace this use of System.out by a logger.(º‚æÑşÿÿÿÿ8Œ„Ÿö´1
-L	java:S106q"+Replace this use of System.out by a logger.(ŸØó´ûÿÿÿÿ8Œ„Ÿö´1
-a
-java:S1128"ERemove this unused import 'enums.TransactionsMenu.START_TRANSACTION'.(ÛÏŒ~8„Ÿö´1
+java:S2440".Remove this instantiation of "ProductService".(ÿ¶ûŞ8‚ö»¸º1
+G	java:S106,"+Replace this use of System.out by a logger.(ê¿ 8…ö»¸º1
+G	java:S106O"+Replace this use of System.out by a logger.(İ¥Æ‡8†ö»¸º1
+L	java:S106S"+Replace this use of System.out by a logger.(ŸØó´ûÿÿÿÿ8‡ö»¸º1
+G	java:S106d"+Replace this use of System.out by a logger.(ê¿ 8‡ö»¸º1
+L	java:S106j"+Replace this use of System.out by a logger.(®Á°“ÿÿÿÿÿ8‡ö»¸º1
+L	java:S106v"+Replace this use of System.out by a logger.(¨“ğĞùÿÿÿÿ8ˆö»¸º1
+L	java:S106z"+Replace this use of System.out by a logger.(ŸØó´ûÿÿÿÿ8ˆö»¸º1
+U
+java:S1128"8Remove this unused import 'enums.TransactionsMenu.BACK'.(äˆä”8ˆö»¸º1
