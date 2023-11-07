@@ -9,7 +9,6 @@ import java.util.HashMap;
 import java.util.Scanner;
 
 import static entities.Database.productsBuffer;
-import static enums.TransactionsMenu.BACK;
 
 
 public class Menu {
@@ -37,7 +36,7 @@ public class Menu {
                 "[3] Log disco\n"+
                 "[4] Banco buffer\n" +
                 "[5] Banco disco\n" +
-                "[6] Check_point\n" +
+                "[6] Check point\n" +
                 "[7] Falha\n" +
                 "[8] Sair\n" +
                 "Digite o número da opção desejada: ";
@@ -103,7 +102,7 @@ public class Menu {
         switch (TransactionsMenu.getByCode(option)) {
             case START_TRANSACTION:
 
-                System.out.println("\n" + transactionService.addTransaction() + " criada com sucesso!");
+                System.out.println("\n" + transactionService.startTransaction() + " criada com sucesso!");
                 break;
 
             case CHOOSE_TRANSACTION:

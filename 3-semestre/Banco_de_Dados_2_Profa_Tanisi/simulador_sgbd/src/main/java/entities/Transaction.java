@@ -2,20 +2,29 @@ package entities;
 
 import enums.TransactionStatus;
 
+import java.time.Instant;
 import java.util.Objects;
 
 public class Transaction {
     private static Integer counter = 0;
 
-    private Integer id;
-    private String name;
+    private final Integer id;
+    private final String name;
     private TransactionStatus status;
 
     public Transaction() {
+
         counter++;
         this.id = counter;
-        this.name = "T"+ counter;
+        this.name = "T"+ Instant.now().getEpochSecond();
         this.status = TransactionStatus.STARTED;
+        System.out.println("\nTransação " + this.name + " sendo criada...");
+        try{
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
     }
 
     public Integer getId() {

@@ -1,15 +1,6 @@
-cod_trans, id_produto, nome_campo, valor_anterior, valor_atual
-T1, 7, quantidade, 3, 5
-
-T1, 7, quantidade, 3, 5
-
-T1, 3, quantidade, 7, 9
-CheckPoint
-T1, 7, quantidade, 3, 5
-
-T1, 3, quantidade, 7, 9
-CheckPoint
-T1, 3, quantidade, 7, 9
-T1, 7, quantidade, 8, 10
-T2, 5, quantidade, 12, 3
-CheckPoint
+operacao,cod_trans,id_produto,nome_campo,valor_anterior,valor_atual,timestamp
+inicia,T1699360692,,,,,07-11-2023 09:38:13
+update,T1699360692,7,quantidade,15,5,07-11-2023 09:38:23
+inicia,T1699360707,,,,,07-11-2023 09:38:28
+finaliza,T1699360692,,,,,07-11-2023 09:38:35
+checkpoint,,,,,,07-11-2023 09:41:29

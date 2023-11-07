@@ -1,23 +1,27 @@
 package service;
 
+import entities.Logs;
 import entities.Transaction;
 import enums.TransactionStatus;
 
+import java.time.Instant;
 import java.util.HashMap;
 import java.util.Scanner;
 
 import static java.util.Objects.isNull;
 
 public class TransactionService {
+
     public static HashMap<Integer, Transaction> transactions = new HashMap<>();
 
     public TransactionService(HashMap<Integer, Transaction> transactions) {
         this.transactions = transactions;
     }
 
-    public Transaction addTransaction() {
+    public Transaction startTransaction() {
         Transaction transaction = new Transaction();
         transactions.put(transaction.getId(), transaction);
+        Logs.getInstance().persistLogBuffer("inicia,"+ transaction.getName() + ",,,,,"+ Utils.formatDateTime(Instant.now().getEpochSecond()));
         return transaction;
     }
 
@@ -27,6 +31,7 @@ public class TransactionService {
 
         if(transaction.getStatus().equals(TransactionStatus.STARTED)){
             transaction.setStatus(TransactionStatus.FINISHED);
+            Logs.getInstance().persistLogBuffer("finaliza,"+ transaction.getName() + ",,,,,"+ Utils.formatDateTime(Instant.now().getEpochSecond()));
             System.out.println(transaction.getName() + ": finalizada");
         } else{
             System.out.println("\n Transação já finalizada ou inexistente \n");
@@ -47,14 +52,16 @@ public class TransactionService {
         if (transactions.values().isEmpty()) {
             System.out.println("\n Não há transações iniciadas \n");
 
+        } else if (transactions.values().stream().noneMatch(transaction -> transaction.getStatus().equals(TransactionStatus.STARTED))) {
+            System.out.println("\n Não há transações iniciadas \n");
         } else {
             showTransactions();
             System.out.print("Escolha uma transação: ");
             String option = scanner.nextLine();
             Transaction transaction = transactions.get(Integer.parseInt(option));
 
-            if(isNull(transaction)){
-                System.out.println("Transação inexistente");
+            if(isNull(transaction) || transaction.getStatus().equals(TransactionStatus.FINISHED)){
+                System.out.println("Transação inexistente ou já finalizada");
                 return null;
             }
 

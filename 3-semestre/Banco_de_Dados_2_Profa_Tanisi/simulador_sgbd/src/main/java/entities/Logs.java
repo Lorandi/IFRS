@@ -1,7 +1,10 @@
 package entities;
 
 
+import service.Utils;
+
 import java.io.*;
+import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,6 +13,8 @@ public class Logs {
     public static final List<String> logsBuffer = new ArrayList<>();
     public static final List<String> logsMemory = new ArrayList<>();
     private static final Logs logs = new Logs();
+
+    private String CABECALHO = "operacao,cod_trans,id_produto,nome_campo,valor_anterior,valor_atual,timestamp";
 
     public Logs() {
     }
@@ -30,17 +35,24 @@ public class Logs {
         System.out.println("\n Lista de logs no buffer:");
         if (logsBuffer.isEmpty()) {
             System.out.println(" Buffer vazio");
-        }
-        for (String log : logsBuffer) {
-            System.out.println(log);
+        }else{
+            System.out.println(CABECALHO);
+            for (String log : logsBuffer) {
+                System.out.println(log);
+            }
         }
     }
 
     public void showLogsMemory() {
         logsFromMemory();
-        System.out.println("\n Lista de logs em memória");
-        for (String log : logsMemory) {
-            System.out.println(log);
+        if(logsMemory.isEmpty()){
+            System.out.println("Não há logs salvos em disco");
+        }else{
+            System.out.println("\n Lista de logs em memória");
+            System.out.println(CABECALHO);
+            for (String log : logsMemory) {
+                System.out.println(log);
+            }
         }
     }
 
@@ -52,7 +64,9 @@ public class Logs {
             String line = br.readLine(); //atribuido valor para ler a primeira linha com os nomes dos parâmentros
 
             while ((line = br.readLine()) != null) {
-                logsMemory.add(line);
+                if(!logsMemory.contains(line)){
+                    logsMemory.add(line);
+                }
             }
         } catch (FileNotFoundException e) {
             System.out.println("arquivo não encontrado");
@@ -67,15 +81,17 @@ public class Logs {
         String path = "src/resources/files/logs.csv";
 
         try (BufferedWriter bw = new BufferedWriter(new FileWriter(path))) {
-            bw.write("cod_trans, id_produto, nome_campo, valor_anterior, valor_atual");
+            bw.write(CABECALHO);
             bw.newLine();
             for (String log : logsMemory) {
                 bw.write(log);
                 bw.newLine();
             }
             for (String log : logsBuffer) {
-                bw.write(log);
-                bw.newLine();
+                if(!logsMemory.contains(log)){
+                    bw.write(log);
+                    bw.newLine();
+                }
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -102,14 +118,14 @@ public class Logs {
         }
 
         try (BufferedWriter bw = new BufferedWriter(new FileWriter(path))) {
-            bw.write("cod_trans, id_produto, nome_campo, valor_anterior, valor_atual");
+            bw.write(CABECALHO);
             bw.newLine();
             for(String log : checkPoint){
                 bw.write(log);
                 bw.newLine();
             }
 
-            bw.write("CheckPoint");
+            bw.write("checkpoint,,,,,,"+ Utils.formatDateTime(Instant.now().getEpochSecond()));
             bw.newLine();
 
         } catch (IOException e) {
