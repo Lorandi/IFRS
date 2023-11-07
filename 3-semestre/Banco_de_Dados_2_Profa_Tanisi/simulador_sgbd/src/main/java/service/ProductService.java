@@ -21,42 +21,6 @@ public class ProductService {
 
         this.products = products;
     }
-
-//    public static void addProduct() {
-//        Scanner sc = new Scanner(System.in);
-//        System.out.print("Nome do produto: ");
-//        String name = sc.nextLine();
-//
-//        boolean registerItem = true;
-//        for (Product product : products.values()) {
-//            if (product.getName().equals(name)) {
-//                System.out.println("Produto com este nome já cadastrado. Utilize o menu Editar para modificar produto\n");
-//                registerItem = false;
-//                editProduct();
-//            }
-//        }
-//
-//        if (registerItem) {
-//            while (name.isEmpty()) {
-//                System.out.print("Nome do produto: ");
-//                name = sc.nextLine();
-//            }
-//
-//            BigDecimal price = validateBigDecimal("");
-//
-//            Integer quantity = validateIntegers();
-//
-//
-//            if (confirmOperation()) {
-//                saveOnDatabase(name, price, quantity);
-//
-//            } else {
-//                System.out.println("Operação cancelada");
-//            }
-//        }
-//        Database.getInstance().showStockListInMemory();
-//    }
-
     public static void editProduct(Transaction transaction) {
         if (isNull(transaction) ) return;
 
@@ -141,21 +105,4 @@ public class ProductService {
         }
         Database.getInstance().showStockListInMemory();
     }
-
-//    public static void removeProduct() {
-//        if (products.size() >= 1) {
-//            Database.getInstance().showStockListInMemory();
-//            Product produtcOnStock = searchProductOnStock();
-//
-//            if (confirmOperation()) {
-//                Database.getInstance().removeProduct(produtcOnStock);
-//                System.out.println("Produto excluído");
-//            } else {
-//                System.out.println("Operação cancelada");
-//            }
-//        } else {
-//            System.out.println("Não é possível excluir itens da lista");
-//        }
-//        Database.getInstance().showStockListInMemory();
-//    }
 }
