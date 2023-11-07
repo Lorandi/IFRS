@@ -1,33 +1,0 @@
-
-‡
-java:S1319"kThe type of "productsBuffer" should be an interface such as "Map" rather than the implementation "HashMap".(Œğš8ëâ×²1
-’
-java:S1319"pThe type of "showSavedInDatabase" should be an interface such as "Map" rather than the implementation "HashMap".(Ó¶«ğøÿÿÿÿ8ëâ×²1
-
-java:S1319"mThe return type of this method should be an interface such as "Map" rather than the implementation "HashMap".(Í§ øøÿÿÿÿ8ëâ×²1
-
-java:S13192"mThe return type of this method should be an interface such as "Map" rather than the implementation "HashMap".(Ø²´‡şÿÿÿÿ8ëâ×²1
-†
-java:S13192"dThe type of "hashMap" should be an interface such as "Map" rather than the implementation "HashMap".(Ø²´‡şÿÿÿÿ8ëâ×²1
-R
-java:S1143L"5Remove this return statement from this finally block.(ÅÑÍø8ìâ×²1
-
-java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(˜£Ì…8ûâ×²1
-
-java:S1845*"kRename method "showSavedInDatabase" to prevent any misunderstanding/clash with field "showSavedInDatabase".(Ñºñõúÿÿÿÿ8ûâ×²1
-ƒ
-java:S18452"aRename method "productsBuffer" to prevent any misunderstanding/clash with field "productsBuffer".(Ø²´‡şÿÿÿÿ8ûâ×²1
-9
-java:S2386"Make this member "protected".(Œğš8üâ×²1
-?
-java:S2386"Make this member "protected".(Ó¶«ğøÿÿÿÿ8üâ×²1
-G	java:S106$"+Replace this use of System.out by a logger.(¯ëÿ‰8‚ã×²1
-L	java:S106&"+Replace this use of System.out by a logger.(Ş´öùÿÿÿÿ8‚ã×²1
-L	java:S106,"+Replace this use of System.out by a logger.(¢ˆéùÿÿÿÿ8ƒã×²1
-L	java:S106."+Replace this use of System.out by a logger.(Ş´öùÿÿÿÿ8„ã×²1
-G
-java:S11977"*Move the array designators [] to the type.(ºœà“8†ã×²1
-n
-java:S5998:"LRefactor this repetition that can lead to a stack overflow for large inputs.(øŒâ–øÿÿÿÿ8†ã×²1
-L	java:S106E"+Replace this use of System.out by a logger.(Ú”íÿÿÿÿÿ8‰ã×²1
-L	java:S106I"+Replace this use of System.out by a logger.(×“Øúÿÿÿÿ8Šã×²1
