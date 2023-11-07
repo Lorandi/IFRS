@@ -1,19 +1,22 @@
 
 
-java:S11921"]Define a constant instead of duplicating this literal "src/resources/files/logs.csv" 3 times.(€©ºÿÿÿÿÿ8·„¦¸º1
+java:S1192="]Define a constant instead of duplicating this literal "src/resources/files/logs.csv" 3 times.(€©ºÿÿÿÿÿ8ƒÌşÍº1
+p	java:S116"TRename this field "CABECALHO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(…€®©8ÌşÍº1
 £
-java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(²Ÿ”‚ûÿÿÿÿ8àÄ¦¸º1
+java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(²Ÿ”‚ûÿÿÿÿ8ÌşÍº1
 :
-java:S2386
-"Make this member "protected".(óşÕ¥8À„¦¸º1
+java:S2386"Make this member "protected".(óşÕ¥8ÌşÍº1
 :
-java:S2386"Make this member "protected".(„£üË8À„¦¸º1
-F	java:S106"+Replace this use of System.out by a logger.(ç¸”H8Ä„¦¸º1
-L	java:S106 "+Replace this use of System.out by a logger.(ÌŸ—øÿÿÿÿ8Ä„¦¸º1
-G	java:S106#"+Replace this use of System.out by a logger.( †›Ã8Ä„¦¸º1
-G	java:S106)"+Replace this use of System.out by a logger.(è¯8Å„¦¸º1
-G	java:S106+"+Replace this use of System.out by a logger.( †›Ã8Å„¦¸º1
-L	java:S106:"+Replace this use of System.out by a logger.(Ú”íÿÿÿÿÿ8Æ„¦¸º1
-L	java:S106="+Replace this use of System.out by a logger.(×“Øúÿÿÿÿ8Ç„¦¸º1
-L	java:S106a"+Replace this use of System.out by a logger.(Ú”íÿÿÿÿÿ8É„¦¸º1
-L	java:S106d"+Replace this use of System.out by a logger.(×“Øúÿÿÿÿ8É„¦¸º1
+java:S2386"Make this member "protected".(„£üË8ÌşÍº1
+F	java:S106#"+Replace this use of System.out by a logger.(ç¸”H8¢ÌşÍº1
+L	java:S106%"+Replace this use of System.out by a logger.(ÌŸ—øÿÿÿÿ8£ÌşÍº1
+G	java:S106'"+Replace this use of System.out by a logger.(·Ÿªİ8£ÌşÍº1
+G	java:S106)"+Replace this use of System.out by a logger.( †›Ã8£ÌşÍº1
+L	java:S1061"+Replace this use of System.out by a logger.(ÎÒê‰øÿÿÿÿ8£ÌşÍº1
+G	java:S1063"+Replace this use of System.out by a logger.(è¯8¤ÌşÍº1
+G	java:S1064"+Replace this use of System.out by a logger.(·Ÿªİ8¤ÌşÍº1
+G	java:S1066"+Replace this use of System.out by a logger.( †›Ã8¤ÌşÍº1
+L	java:S106H"+Replace this use of System.out by a logger.(Ú”íÿÿÿÿÿ8¦ÌşÍº1
+L	java:S106K"+Replace this use of System.out by a logger.(×“Øúÿÿÿÿ8¦ÌşÍº1
+L	java:S106q"+Replace this use of System.out by a logger.(Ú”íÿÿÿÿÿ8©ÌşÍº1
+L	java:S106t"+Replace this use of System.out by a logger.(×“Øúÿÿÿÿ8©ÌşÍº1

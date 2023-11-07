@@ -25,3 +25,11 @@ Z
 -src/main/java/service/TransactionService.java,d\4\d48bf1d6c8f75f05ffa0c553fada8dcfdb11be41
 P
  src/main/java/entities/Logs.java,1\5\152c0ca16ea8d20ec1f2fd1bca1871f14d7222ad
+S
+#.idea/sonarlint/issuestore/index.pb,9\f\9fe84ebb15faf917b7def6236dba604453cc61e0
+Å
+Q.idea/sonarlint/securityhotspotstore/1/5/152c0ca16ea8d20ec1f2fd1bca1871f14d7222ad,f\0\f05c676de6ccebc9a8cb10382938db313313bb2d
+]
+-.idea/sonarlint/securityhotspotstore/index.pb,8\8\88a9255124c95bdc913197c120a8d560edc59c8e
+P
+ src/main/java/service/Utils.java,5\2\52e33964c8901551c8f15a691ae11a374e442898
