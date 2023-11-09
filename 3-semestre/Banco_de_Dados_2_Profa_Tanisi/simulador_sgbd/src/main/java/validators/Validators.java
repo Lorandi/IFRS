@@ -9,29 +9,6 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Validators {
-    public static void saveOnDatabase(String name, BigDecimal price, Integer quantity) {
-        int id = 0;
-
-        for (Product product : Database.getInstance().recoverProducts().values()) {
-            if (product.getId() > id) {
-                id = product.getId();
-            }
-        }
-
-        id++;
-
-        Product product = new Product();
-        product.setId(id);
-        product.setName(name);
-        product.setPrice(price);
-        product.setQuantity(quantity);
-        Database.getInstance().persistsProduct(product);
-
-        System.out.println("\nProduto adicionado com sucesso!!! \n"
-                + "Nome: " + name + ", "
-                + "Preço: " + price + ", "
-                + "Quantidade: " + quantity + ", ");
-    }
 
     public static BigDecimal validateBigDecimal(String valor) {
         Scanner readBigDecimal = new Scanner(System.in);

@@ -33,7 +33,7 @@ public class Database {
     }
 
     public void showStockListInMemory() {
-        System.out.println("\n Lista de produtos em memória");
+        System.out.println("\n Lista de produtos no buffer");
         for (Product product : productsBuffer.values()) {
             System.out.println(product.toString());
         }
@@ -41,7 +41,7 @@ public class Database {
 
     public void showSavedInDatabase(){
         productsBuffer(showSavedInDatabase);
-        System.out.println("\n Lista de produtos no banco");
+        System.out.println("\n Lista de produtos no disco");
         for (Product product : showSavedInDatabase.values()) {
             System.out.println(product.toString());
         }
