@@ -1,0 +1,19 @@
+create or replace trigger customer_before_update
+before update
+on customer
+
+declare
+v_username varchar2(100);
+
+begin
+select user into v_username from dual;
+
+insert into audit_table(table_name, userid, operation_date, operation)
+VALUES ('customer', v_username, sysdate, 'before update operation');
+end;
+
+
+select * from audit_table;
+select * from customer;
+
+update customer set first_name = 'Pablito' where customer_id = 10;

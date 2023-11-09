@@ -1,0 +1,22 @@
+create or replace trigger customer_after_update_values_with_when
+after update
+on customer
+for each row
+when (old.region = 'SOUTH')
+
+declare
+v_username varchar2(100);
+
+begin
+select user into v_username from dual;   
+    insert into audit_log(userid,operation_date, b_customerid, a_customerid, b_firstname, a_firstname)
+    VALUES (v_username, sysdate, :old.customer_id, :new.customer_id, :old.first_name, :new.first_name);
+end;
+
+
+select * from audit_log;
+
+select * from customer ORDER BY customer_id;
+
+update customer set last_name= 'Tigresa' where country= 'USA';
+    

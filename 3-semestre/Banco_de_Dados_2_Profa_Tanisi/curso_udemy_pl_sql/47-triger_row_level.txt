@@ -1,0 +1,20 @@
+create or replace trigger customer_after_update
+after update
+on customer
+for each row
+
+declare
+v_username varchar2(100);
+
+begin
+select user into v_username from dual;   
+    insert into audit_table(table_name, userid, operation_date, operation)
+    VALUES ('customer', v_username, sysdate, 'Insert operation row level');
+end;
+
+
+select * from audit_table;
+
+select * from customer ORDER BY date_added;
+
+update customer set date_added= sysdate where region = 'SOUTH';

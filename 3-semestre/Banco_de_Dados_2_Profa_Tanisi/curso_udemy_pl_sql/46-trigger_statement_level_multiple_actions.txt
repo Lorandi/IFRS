@@ -1,0 +1,28 @@
+create or replace trigger customer_after_action
+after insert or delete or update
+on customer
+
+declare
+v_username varchar2(100);
+
+begin
+select user into v_username from dual;
+
+    if inserting then
+    insert into audit_table(table_name, userid, operation_date, operation)
+    VALUES ('customer', v_username, sysdate, 'Insert operation');
+    elsif deleting then
+    insert into audit_table(table_name, userid, operation_date, operation)
+    VALUES ('customer', v_username, sysdate, 'Delete operation');
+    elsif updating then
+    insert into audit_table(table_name, userid, operation_date, operation)
+    VALUES ('customer', v_username, sysdate, 'Update operation');
+    end if;
+    
+end;
+
+
+select * from audit_table;
+select * from customer ORDER BY CUSTOMER_ID;
+
+update customer set customer_id = 9  where first_name = 'Pablito' and last_name = 'JOSEPH';
