@@ -17,20 +17,14 @@ public class Database {
         return database;
     }
 
-    public Database() {
-    }
+    public Database() {   }
 
-    public void persistsProduct(Product product) {
-        productsBuffer.put(product.getId(), product);
-    }
+
 
     public HashMap<Integer, Product> recoverProducts() {
         return productsBuffer;
     }
 
-    public void removeProduct(Product product) {
-        productsBuffer.remove(product.getId());
-    }
 
     public void showStockListInMemory() {
         System.out.println("\n Lista de produtos no buffer");
@@ -45,6 +39,10 @@ public class Database {
         for (Product product : showSavedInDatabase.values()) {
             System.out.println(product.toString());
         }
+    }
+
+    public static void productBufferClear(){
+        productsBuffer.clear();
     }
 
     public HashMap<Integer, Product> productsBuffer(HashMap<Integer, Product> hashMap) {

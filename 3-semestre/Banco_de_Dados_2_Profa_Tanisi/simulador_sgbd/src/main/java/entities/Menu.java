@@ -76,12 +76,11 @@ public class Menu {
                 break;
 
             case CHECK_POINT:
-                LogsService.saveLogsOnDatabase();
-                Database.getInstance().saveOnFile();
                 CheckpointService.checkPoint();
                 break;
 
             case FAIL:
+                RecoveryService.fail();
                 RecoveryService.recoveryFromDatabaseLogs();
                 break;
 

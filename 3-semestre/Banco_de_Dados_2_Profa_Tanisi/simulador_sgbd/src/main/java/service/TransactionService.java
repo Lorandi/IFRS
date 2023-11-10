@@ -21,7 +21,8 @@ public class TransactionService {
     public Transaction startTransaction() {
         Transaction transaction = new Transaction();
         transactions.put(transaction.getId(), transaction);
-        Logs.getInstance().persistLogBuffer("inicia,"+ transaction.getName() + ",,,,,"+ Utils.formatDateTime(Instant.now().getEpochSecond()));
+        var log = "inicia,"+ transaction.getName() + ",,,,,"+ Utils.formatDateTime(Instant.now().getEpochSecond());
+        LogsService.persistLogBuffer(log);
         return transaction;
     }
 
@@ -31,11 +32,14 @@ public class TransactionService {
 
         if(transaction.getStatus().equals(TransactionStatus.STARTED)){
             transaction.setStatus(TransactionStatus.FINISHED);
-            Logs.getInstance().persistLogBuffer("finaliza,"+ transaction.getName() + ",,,,,"+ Utils.formatDateTime(Instant.now().getEpochSecond()));
+            var log = "finaliza,"+ transaction.getName() + ",,,,,"+ Utils.formatDateTime(Instant.now().getEpochSecond());
+            LogsService.persistLogBuffer(log);
+            LogsService.saveLogsOnDatabase();
             System.out.println(transaction.getName() + ": finalizada");
         } else{
             System.out.println("\n Transação já finalizada ou inexistente \n");
         }
+
     }
 
     public void showTransactions() {
