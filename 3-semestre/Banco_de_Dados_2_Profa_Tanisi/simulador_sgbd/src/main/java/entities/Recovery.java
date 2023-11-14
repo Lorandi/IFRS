@@ -40,7 +40,7 @@ public class Recovery {
         listUndo.clear();
     }
 
-    public void removeAllListRedo() {
+    public void removeAllListRedo(String redo) {
         listRedo.clear();
     }
 

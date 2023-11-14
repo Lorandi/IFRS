@@ -80,15 +80,4 @@ public class LogsService {
         }
     }
 
-    public static void persistLogBuffer(String log) {
-        Logs.getInstance().persistLogBuffer(log);
-    }
-
-    public static void persistLogDatabase(String log) {
-        Logs.getInstance().persistLogDatabase(log);
-    }
-
-    public static void clearLogsBuffer(){
-        logsBuffer.clear();
-    }
 }

@@ -1,0 +1,81 @@
+modo usuário
+Router>
+
+entrar no modo privilegiado
+Router>en ou enable
+Router#
+
+entrar no modo global de configuração
+Router#conf t ou configure terminal
+Router(config)#
+
+configurar interface
+Router(config)#interface gigabitEthernet 0/0
+Router(config-if)#
+
+ligar interface
+Router(config-if)#no shutdown
+
+atribuir ip ao roteador
+Router(config-if)#ip address 192.168.10.1 255.255.255.0
+
+ver o que está rodando no roteador
+Router(config)#do show run
+
+configurar dhcp
+Router(config)#ip dhcp pool teste
+
+Router(dhcp-config)#network 192.168.10.0 255.255.255.0
+
+
+ligando dois roteadores pela serial
+roteador 1
+Router>en
+Router#conf t 
+Router(config)#interface gigabitEthernet 0/0
+Router(config-if)#ip address 192.168.10.1 255.255.255.0
+Router(config-if)#no shutdown
+Router(config-if)#exit
+Router(config)#interface serial 0/0/0
+Router(config-if)#ip address 192.168.100.1 255.255.255.0
+Router(config-if)#clock rate 56000    -> na que tem o relogio
+Router(config-if)#no shutdown
+Router(config-if)#exit
+Router(config)#ip dhcp pool teste
+Router(dhcp-config)#network 192.168.10.0 255.255.255.0
+Router(dhcp-config)#def
+Router(dhcp-config)#default-router 192.168.10.1
+
+roteador 2
+Router>en
+Router#conf t 
+Router(config)#interface gigabitEthernet 0/0
+Router(config-if)#ip address 192.168.20.1 255.255.255.0
+Router(config-if)#no shutdown
+Router(config-if)#exit
+Router(config)#interface serial 0/0/0
+Router(config-if)#ip address 192.168.100.2 255.255.255.0
+Router(config-if)#no shutdown
+
+Router(config-if)#exit
+Router(config)#ip dhcp pool teste
+Router(dhcp-config)#network 192.168.20.0 255.255.255.0
+Router(dhcp-config)#def
+Router(dhcp-config)#default-router 192.168.20.1
+
+configura RIP
+roteador 1
+Router(config)#router rip
+Router(config-router)#network 192.168.10.0
+Router(config-router)#network 192.168.100.0
+
+ver tabelas de roteamento
+Router#show ip route
+
+mudar nome do roteador
+Router(config)#hostname Router_A
+salvar
+Router_A#copy running-config startup-config
+
+repeteir
+
