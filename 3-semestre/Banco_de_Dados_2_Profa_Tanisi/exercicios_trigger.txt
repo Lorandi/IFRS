@@ -1,0 +1,76 @@
+--1-Alterar a tabela funcionário e incluir o campo data_admissão. 
+Alter table funcionario add data_admissao date;
+
+--Fazer uma trigger que não permite que seja inserido/alterado a data de admissão 
+--para um valor maior que a data de hoje.
+
+create or replace trigger funcionario_admissao
+before insert or update
+on funcionario
+for each row
+
+begin
+    if:new.data_admissao > sysdate 
+    then RAISE_APPLICATION_ERROR(-20001, 'A data de admissão não pode ser maior que a data atual.');
+    end if;
+end;
+
+insert into funcionario values(1, 'Carlos', 3500, 1,1, sysdate-1); --funciona
+insert into funcionario values(2, 'Jacques', 4500, 1,1, sysdate+1); -- não funciona
+
+----------------------
+
+--2-Fazer uma trigger que gera um log de todas as operações realizadas na tabela 
+--cargo para todos os campos. O log deve conter, além dos valores antigo e novo 
+--de cada campo, o nome do usuário que realizou a alteração, a data e a hora e o
+--tipo de operação (insert, update, delete).
+
+CREATE TABLE log_cargo (
+    NEW_ID_CARGO      NUMBER,
+    OLD_ID_CARGO      NUMBER,
+    NEW_NOME_CARGO    VARCHAR2(50),
+    OLD_NOME_CARGO    VARCHAR2(50),
+    NEW_MIN_SAL       NUMBER,
+    OLD_MIN_SAL       NUMBER,
+    NEW_MAX_SAL       NUMBER,
+    OLD_MAX_SAL       NUMBER,
+    OPERACAO          VARCHAR2(50),
+    USUARIO           VARCHAR2(50),
+    DATA_HORA         DATE
+);
+
+create or replace trigger log_cargo
+after insert or update or delete
+on cargo
+for each row
+
+declare
+v_username varchar2(100);
+
+begin
+select user into v_username from dual;
+
+    if inserting then
+    insert into log_cargo (NEW_ID_CARGO, OLD_ID_CARGO, NEW_NOME_CARGO, OLD_NOME_CARGO, 
+    NEW_MIN_SAL, OLD_MIN_SAL, NEW_MAX_SAL, OLD_MAX_SAL, OPERACAO, USUARIO, DATA_HORA)
+    values (:new.id_cargo, :old.id_cargo, :new.nome_cargo, :old.nome_cargo, :new.min_sal,
+    :old.min_sal, :new.max_sal, :old.max_sal,'Inserting cargo', v_username, sysdate);
+    
+    elsif deleting then
+     insert into log_cargo (NEW_ID_CARGO, OLD_ID_CARGO, NEW_NOME_CARGO, OLD_NOME_CARGO, 
+    NEW_MIN_SAL, OLD_MIN_SAL, NEW_MAX_SAL, OLD_MAX_SAL, OPERACAO, USUARIO, DATA_HORA)
+    values (:new.id_cargo, :old.id_cargo, :new.nome_cargo, :old.nome_cargo, :new.min_sal,
+    :old.min_sal, :new.max_sal, :old.max_sal,'Deleting cargo', v_username, sysdate);
+    
+    elsif updating then
+    insert into log_cargo (NEW_ID_CARGO, OLD_ID_CARGO, NEW_NOME_CARGO, OLD_NOME_CARGO, 
+    NEW_MIN_SAL, OLD_MIN_SAL, NEW_MAX_SAL, OLD_MAX_SAL, OPERACAO, USUARIO, DATA_HORA)
+    values (:new.id_cargo, :old.id_cargo, :new.nome_cargo, :old.nome_cargo, :new.min_sal,
+    :old.min_sal, :new.max_sal, :old.max_sal,'Updating cargo', v_username, sysdate);
+    end if;
+    
+end;
+
+insert into cargo values(3, 'Programador', 2000, 15000);
+update cargo set min_sal = 3500 where id_cargo = 3;
+delete from cargo where id_cargo = 3;

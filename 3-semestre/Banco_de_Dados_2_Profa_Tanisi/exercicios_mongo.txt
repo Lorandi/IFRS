@@ -1,0 +1,71 @@
+// Criar o banco de dados 'bancoaula'
+use bancoaula
+
+// Mostrar os bancos de dados
+show dbs
+
+// Criar a coleção 'hoteis' e inserir um documento
+db.hoteis.insertOne({ nome: "Ibis", wifi: "s", quartos: 10 })
+
+// Inserir mais um documento com um campo adicional 'cafe' booleano
+db.hoteis.insertOne({ nome: "Hilton", wifi: "s", quartos: 15, cafe: true })
+
+// Utilizar o método insertMany para inserir dois documentos adicionais
+db.hoteis.insertMany([
+  { nome: "Lavandas da Terra EcoResort", wifi: "n", quartos: 20, cafe: true },
+  { nome: "Continental", wifi: "s", quartos: 25, cafe: false }
+])
+
+// Inserir um documento com o campo 'avaliacoes'
+db.hoteis.insertOne({
+  nome: "Sheraton",
+  wifi: "s",
+  quartos: 30,
+  cafe: true,
+  avaliacoes: [{ nota: 8, comentario: "Ótimo lugar" }, { nota: 9, comentario: "Excelente serviço" }]
+})
+
+// Fazer uma consulta com find()
+db.hoteis.find()
+
+// Fazer uma consulta com find.pretty()
+db.hoteis.find().pretty()
+
+// Recuperar apenas os documentos com wifi = 's'
+db.hoteis.find({ wifi: 's' })
+
+// Recuperar apenas os documentos com wifi = 's' e quartos = 20
+db.hoteis.find({ wifi: 's', quartos: 20 })
+
+// Recuperar os documentos com mais de 20 quartos
+db.hoteis.find({ quartos: { $gt: 20 } })
+
+// Recuperar os documentos cujos nomes de hotéis começam com a letra 'L' e mostrar nome e número de quartos
+db.hoteis.find({ nome: /^L/ }, { nome: 1, quartos: 1 })
+
+// Fazer a mesma consulta anterior, mas não mostrar o _id
+db.hoteis.find({ nome: /^L/ }, { nome: 1, quartos: 1, _id: 0 })
+
+// Recuperar os hotéis com nota de avaliação igual a 7
+db.hoteis.find({ 'avaliacoes.nota': 7 })
+
+// Recuperar um documento pelo _id
+db.hoteis.findOne({ _id: ObjectId("65552d62bc4c39fcb03f1b05") })
+
+// Recuperar os hotéis com avaliação maior do que 9
+db.hoteis.find({ 'avaliacoes.nota': { $gt: 9 } })
+
+// Atualizar o campo wifi de um hotel pelo nome
+db.hoteis.updateOne({ nome: "Sheraton", }, { $set: { wifi: "n" } })
+
+// Atualizar todos os documentos inserindo o campo estacionamento:true
+db.hoteis.updateMany({}, { $set: { estacionamento: true } })
+
+// Deletar um documento pelo nome do hotel
+db.hoteis.deleteOne({ nome: "Ibis" })
+
+// Deletar todos os documentos com quartos igual a 20
+db.hoteis.deleteMany({ quartos: 20 })
+
+// Pesquisar o documento pelo nome do hotel e incrementar o número de quartos em 5
+db.hoteis.updateOne({ nome: "Continental" }, { $inc: { quartos: 5 } })
