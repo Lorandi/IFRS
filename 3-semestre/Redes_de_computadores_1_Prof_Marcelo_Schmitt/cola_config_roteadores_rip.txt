@@ -79,3 +79,26 @@ Router_A#copy running-config startup-config
 
 repeteir
 
+
+ipv6
+router(config)# ipv6 unicast-routing  (out router#(config) ipv6 uni)
+router(config)# inter g0/0
+router(config-if)# ipv6 address 2001:1:1:1::2/64 
+routerconfig-if)# no shutdown
+router# write memory (ou router# wr men)
+
+
+duas config roteador (dinâmico)
+router(config)# ipv6 router rip p (p pode ser qualquer nome)
+router(config-rtr)#exit
+router(config)# inter g0/0
+router(config-if)# ipv6 rip p enable
+repete para cada porta e roteador
+router(config)# inter g0/1
+router(config-if)# ipv6 rip p enable
+
+router# show ipv6 route
+
+
+
+
