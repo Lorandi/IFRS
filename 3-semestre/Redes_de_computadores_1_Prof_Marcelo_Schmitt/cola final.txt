@@ -1,0 +1,34 @@
+Router(config)#ipv6 uni
+Router1(config)# inter g0/0
+Router1(config-if)# ipv6 address 2001:1:1:1::1/64
+Router1(config-if)# no shutdown
+Router(config)#^Z  crtl + z
+Router#wr mem
+
+configurar rotas estatico
+Router1(config)# ipv6 route 2001:5:5:5::/64 2001:2:2:2::2
+
+Router(config)#ipv6 route ::/0 2001:4:4:4::2  --> rota default (::/0)
+
+crtl + shift + 6  --> destrava terminal
+
+Router#show ipv6 route
+Router(config)# clear ipv6 route *   -> apagar todas as rotas
+
+
+configurar rotas dinamicas
+
+en
+conf t
+ipv6 router rip p
+inter g0/0
+ipv6 rip p enable
+inter g0/1
+ipv6 rip p enable
+exit
+exit
+wr mem
+
+Router#show run
+Router#traceroute 2001:8:8:8::5
+Router#show ipv6 route
