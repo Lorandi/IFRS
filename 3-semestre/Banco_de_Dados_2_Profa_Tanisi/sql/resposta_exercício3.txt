@@ -1,0 +1,176 @@
+15. Apresentar o nome dos alunos que fizeram a disciplina de Lógica em 2018/1 (utilizar exists).
+
+
+Select a.nome_aluno 
+from aluno a 
+where exists 
+  (select null
+   from turma_aluno ta
+   where  a.id_aluno = ta.id_aluno
+     and  exists (select null
+                    from turma 
+                    where ta.id_turma=turma.id_turma
+                    and semestre='2018/1'
+                    and exists (select null
+                                      from disciplina
+                                       where                                         turma.id_disciplina=disciplina.id_disciplina
+                                        and nome_disciplina='BDI')));
+
+
+Select a.nome_aluno 
+from aluno a inner join turma_aluno ta
+ on a.id_aluno = ta.id_aluno
+where exists (select null
+                    from turma 
+                    where ta.id_turma=turma.id_turma
+                    and semestre='2018/1'
+                    and exists (select null
+                                      from disciplina
+                                       where                                         turma.id_disciplina=disciplina.id_disciplina
+                                        and nome_disciplina='BDI'));
+
+
+Select a.nome_aluno 
+from aluno a inner join turma_aluno ta
+ on a.id_aluno = ta.id_aluno
+inner join turma 
+on ta.id_turma=turma.id_turma
+where semestre='2018/1'
+      and exists (select null
+                  from disciplina
+                        where                         turma.id_disciplina=disciplina.id_disciplina
+                        and nome_disciplina='BDI');
+
+
+16. Apresentar o nome do aluno que tirou a maior nota na turma 102.
+
+--certo
+Select a.nome_aluno
+from aluno a inner join turma_aluno ta
+ on (a.id_aluno = ta.id_aluno)
+where ta.id_turma=400
+and ta.media_final = (select max (media_final)
+                               from turma_aluno
+                                where id_turma=400);
+--errado
+
+Select a.nome_aluno
+from aluno a inner join turma_aluno ta
+ on (a.id_aluno = ta.id_aluno)
+where ta.id_turma=400
+and rownum=1
+order by media_final desc;
+
+update turma_aluno
+set media_final=1
+where id_turma=400 and id_aluno=200;
+
+
+Select a.nome_aluno
+from aluno a inner join turma_aluno ta
+ on (a.id_aluno = ta.id_aluno)
+where ta.id_turma=400
+and rownum=1
+order by media_final desc;
+
+--O where é processado antes do order by
+
+--certo
+select nome_aluno
+from(
+Select a.nome_aluno
+from aluno a inner join turma_aluno ta
+ on (a.id_aluno = ta.id_aluno)
+where ta.id_turma=400
+order by media_final desc)
+where rownum=1;
+
+
+17. Apresentar o nome do aluno que tirou a maior nota na disciplina de BDI em 2018/1.
+
+Select a.nome_aluno 
+from turma t
+ inner join disciplina d
+on t.id_disciplina=d.id_disciplina
+inner join turma_aluno ta
+on t.id_turma = ta.id_turma
+inner join  aluno a 
+ on ta.id_aluno = a.id_aluno
+where d.nome_disciplina = 'BDI'
+and t.semestre = '2018/1'
+and ta.media_final = (select max(media_final)
+                       from turma_aluno
+                       where id_turma=ta.id_turma);
+
+
+18. Apresentar o nome dos alunos do curso de Informática que nunca cursaram a disciplina de BDI.
+
+Select * 
+from aluno inner join aluno_curso
+ on (aluno.id_aluno = aluno_curso.id_aluno)
+ inner join curso 
+ on aluno_curso.id_curso = curso.id_curso
+left outer join turma_aluno 
+on turma_aluno.id_aluno=aluno_curso.id_aluno
+left outer join turma
+ on turma_aluno.id_turma = turma.id_turma
+ left outer join disciplina
+ on disciplina.id_disciplina = turma.id_disciplina;
+
+Errado:
+
+Select aluno.nome_aluno 
+from aluno inner join aluno_curso
+ on (aluno.id_aluno = aluno_curso.id_aluno)
+ inner join curso 
+ on aluno_curso.id_curso = curso.id_curso
+inner join turma_aluno 
+on turma_aluno.id_aluno=aluno_curso.id_aluno
+inner join turma
+ on turma_aluno.id_turma = turma.id_turma
+ inner join disciplina
+ on disciplina.id_disciplina = turma.id_disciplina
+ where curso.nome_curso = 'Informática' and disciplina.nome_disciplina<> 'BDI';
+
+Certo:
+
+Select nome_aluno 
+from aluno inner join aluno_curso
+ on (aluno.id_aluno = aluno_curso.id_aluno)
+ inner join curso 
+ on aluno_curso.id_curso = curso.id_curso
+where curso.nome_curso = 'Informática' 
+and aluno.id_aluno not in (
+ select id_aluno
+ from turma_aluno inner join turma
+ on turma_aluno.id_turma = turma.id_turma
+ inner join disciplina
+ on disciplina.id_disciplina = turma.id_disciplina
+ where disciplina.nome_disciplina='BDI'
+ );
+
+insert into aluno (id_aluno, nome_aluno)
+values (s_id_aluno.nextval, 'Bia');
+
+
+insert into aluno_curso (id_aluno, id_curso, data_inicio, data_fim, turno)
+values (203, 1, '09/03/2018', null, 'Noite');
+
+
+Select nome_aluno 
+from aluno inner join aluno_curso
+ on (aluno.id_aluno = aluno_curso.id_aluno)
+ inner join curso 
+ on aluno_curso.id_curso = curso.id_curso
+where curso.nome_curso = 'Informática' 
+and aluno.id_aluno not in (
+ select id_aluno
+ from turma_aluno inner join turma
+ on turma_aluno.id_turma = turma.id_turma
+ inner join disciplina
+ on disciplina.id_disciplina = turma.id_disciplina
+ where disciplina.nome_disciplina='BDI'
+ );
+
+
+ 

@@ -1,0 +1,99 @@
+-- teste 1
+select * from funcionario;
+
+select * from departamento;
+
+update funcionario
+set id_departamento=null
+where id_funcionario=3;
+
+
+select * from funcionario;
+
+select * from departamento;
+
+select f.nome,d.nome
+from funcionario f inner join departamento d 
+on f.id_departamento = d.id_departamento;
+
+select f.nome,d.nome
+from funcionario f left outer join departamento d 
+on f.id_departamento = d.id_departamento;
+
+-- teste 2
+select f.nome,d.nome
+from funcionario f right outer join departamento d 
+on f.id_departamento = d.id_departamento;
+
+-- teste 3
+
+select f.nome,d.nome
+from funcionario f full outer join departamento d 
+on f.id_departamento = d.id_departamento;
+
+
+- teste 4
+
+select nome from funcionario;
+select nome_aluno aluno;
+
+select nome
+from funcionario
+intersect
+select nome_aluno
+from aluno;
+
+-- teste 5
+
+select f.nome
+from funcionario f inner join departamento d
+on f.id_departamento = d.id_departamento 
+where d.nome='Rh';
+
+select nome
+from funcionario
+where id_departamento = ( select id_departamento
+                          from departamento
+                          where nome='Rh');
+
+-- teste 6
+-- Nome dos funcionarios que trabalham no depto vemdas ou rh
+
+update funcionario
+set id_departamento=2
+where id_funcionario=3;
+
+select nome
+from funcionario
+where id_departamento in ( select id_departamento
+                           from departamento
+                            where nome in ('Vendas','Rh'));
+
+-- teste 7
+-- Nome do funcionario que recebe o maior salario
+
+select * from funcionario;
+
+select nome
+from funcionario
+where salario = (select max(salario)
+                 from funcionario);
+
+-- teste 8
+-- Retornar o nome dos func do depto vendas
+
+select nome
+from funcionario
+where exists (select null
+                     from departamento
+                     where funcionario.id_departamento = departamento.id_departamento
+                     and nome = 'Vendas');
+
+
+
+
+
+
+
+
+

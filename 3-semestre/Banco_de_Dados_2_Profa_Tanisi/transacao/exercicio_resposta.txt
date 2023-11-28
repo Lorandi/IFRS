@@ -1,0 +1,104 @@
+Testar Rollback
+- connect oracle
+- atualizar uma linha da tabela funcionarios
+select * from funcionario;
+update funcionario
+set salario=4000
+where id_funcionario=2;
+
+- fazer select na tabela funcionarios
+select * from funcionario;
+- fazer rollback
+rollback;
+
+- verificar com select como ficou a tabela funcionarios
+select * from funcionario;
+
+Testar Commit
+- atualizar uma linha da tabela funcionarios
+update funcionario
+set salario=4000
+where id_funcionario=2;
+- fazer select na tabela funcionarios
+select * from funcionario;
+- fazer commit
+commit;
+- verificar com select como ficou a tabela funcionarios
+select * from funcionario;
+- fazer rollback
+rollback;
+- verificar com select como ficou a tabela funcionarios
+select * from funcionario;
+
+Testar comandos da transação (desfaz toda a TA e não apenas um comando)
+- Executar dois updates na tabela funcionarios
+update funcionario
+set salario=8000
+where id_funcionario=1;
+
+update funcionario
+set salario=2000
+where id_funcionario=2;
+- fazer select na tabela funcionarios
+select * from funcionario;
+- rollback
+rollback;
+- fazer select na tabela funcionarios
+select * from funcionario;
+
+Testar fim de transação com comando DDL
+- atualizar uma linha da tabela funcionarios
+update funcionario
+set salario=7000
+where id_funcionario=3;
+- fazer select na tabela funcionarios
+select * from funcionario;
+- executar create table
+create table teste(a number);
+
+- fazer select na tabela funcionarios
+select * from funcionario;
+- Rollback
+rollback;
+- fazer select na tabela funcionarios (o update não foi desfeito, porque??)
+select * from funcionario;
+
+-Testar diferença entre delete e truncate
+delete from funcionario;
+select * from funcionario;
+rollback;
+select * from funcionario;
+truncate table funcionario;
+rollback;
+select * from funcionario;
+
+-Testar savepoint
+commit;
+Inserir linha na tabela funcionario
+insert into funcionario values(9,'Ana',2000,1);
+Criar savepoint
+savepoint a;
+Atualizar uma linha
+update funcionario
+set salario=7000
+where id_funcionario=9;
+Fazer rollback até o savepoint
+rollback to savepoint a;
+select * from funcionario;
+Excluir uma linha
+delete from funcionario where id_funcionario=9;
+Fazer o commit
+commit;
+Fazer um select
+select * from funcionario;
+
+O insert e o delete foram realizados? e o update porque?
+
+- Utilizar o comando set autocommit on
+inserir uma linha na tabela funcionario
+fazer o rollback, funcionou?
+set autocommit on;
+insert into funcionario values(10,'Paulo',2000,1);
+select * from funcionario;
+rollback;
+select * from funcionario;

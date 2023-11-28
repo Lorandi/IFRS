@@ -1,0 +1,30 @@
+Código dos clientes que compraram todos os produtos.
+
+  Select  id_cliente
+
+   From cliente
+
+  Minus
+
+  Select id_cliente
+
+ From (select id_cliente, id_produto
+
+            From cliente, produto
+
+            Minus
+
+            Select id_cliente,id_produto
+
+            From pedido_produto pp inner join pedido p
+
+            on p.id_pedido=pp.id_pedido);
+
+ 
+
+select distinct id_cliente
+from pedido inner join pedido_produto
+on pedido.id_pedido = pedido_produto.id_pedido
+group by id_cliente
+having count(distinct id_produto) = (select count(*)
+                                                          from produto)

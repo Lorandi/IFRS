@@ -1,0 +1,29 @@
+QL> alter table funcionario add id_gerente number;
+
+Table altered.
+
+SQL> alter table funcionario add constraint pk_gerente foreign key (id_gerente) references funcionario;
+
+Table altered.
+
+SQL> update funcionario
+2 set id_gerente = 3
+3 where id_funcionario in (1,2);
+
+2 rows updated.
+
+id_funcionarios que são gerente:
+
+select id_funcionario from funcionario where id_funcionario in
+( select id_gerente from funcionario );
+
+select id_funcionario from funcionario T1
+where exists ( select null from funcionario T2 where t2.id_gerente = t1.id_funcionario );
+
+id dos funcionarios que não são gerentes:
+
+select id_funcionario from funcionario where id_funcionario not in
+( select id_gerente from funcionario );
+
+select id_funcionario from funcionario T1
+where not exists ( select null from funcionario T2 where t2.id_gerente = t1.id_funcionario );
