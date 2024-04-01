@@ -1,0 +1,7 @@
+
+r	java:S117#"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ë˜òÃúÿÿÿÿ8“ˆæÆç1
+p	java:S116"TRename this field "MIN_SALDO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ö Û™8—ˆæÆç1
+j	java:S100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¦ó¤ß8™ˆæÆç1
+o	java:S100#"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ë˜òÃúÿÿÿÿ8šˆæÆç1
+G	java:S106-"+Replace this use of System.out by a logger.(ñĞª8šˆæÆç1
+L	java:S1060"+Replace this use of System.out by a logger.(ê Ìµıÿÿÿÿ8šˆæÆç1

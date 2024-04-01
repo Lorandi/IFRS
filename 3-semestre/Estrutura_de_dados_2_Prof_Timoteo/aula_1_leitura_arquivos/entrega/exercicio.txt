@@ -1,0 +1,6 @@
+Considerando o arquivo "arquivo_texto.txt" disponibilizado na aula da Semana 01, e considerando que na primeira aula conseguimos abordar somente até a entrada de dados através da leitura utilizando as funções fscanf, fgetc e fgets, faça um programa que leia o arquivo indicado e no final apresente:
+
+Imprima na tela o arquivo de trás para frente (invertido).
+A quantidade de caracteres A (maiúscula ou minúscula).
+A quantidade de vezes que as palavras "Direito", "Dever" ou "Deveres" (maiúscula ou minúscula) aparecem no texto.
+A maior palavra encontrada no texto. 

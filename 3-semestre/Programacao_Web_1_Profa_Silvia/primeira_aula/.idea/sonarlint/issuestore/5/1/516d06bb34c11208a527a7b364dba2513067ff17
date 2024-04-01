@@ -1,0 +1,11 @@
+
+:
+java:S1643‚"Use a StringBuilder instead.(ÙÆ²ë8íİÄ©ã1
+G	java:S106+"+Replace this use of System.out by a logger.(€ş—8îŞÄ©ã1
+O
+java:S61261"2Replace this String concatenation with Text block.(ÜæËÙ8îŞÄ©ã1
+…
+java:S1157Y"cReplace these toUpperCase()/toLowerCase() and equals() calls with a single equalsIgnoreCase() call.(šœ¨óüÿÿÿÿ8óŞÄ©ã1
+†
+java:S1157€"cReplace these toUpperCase()/toLowerCase() and equals() calls with a single equalsIgnoreCase() call.(¿·øÿÿÿÿ8öŞÄ©ã1
+Y	java:S125"<This block of commented-out lines of code should be removed.(ûª’å8÷ŞÄ©ã1

@@ -1,0 +1,11 @@
+Responda:
+
+a) Quantos posições de memória voce conseguiu ocupar? 
+
+b) Quantos MB ou GB o seu programa reservou? 
+
+c) Quais são os cinco primeiros endereços de memória? 
+
+d) O deslocamento de cada endereço é de quantos bytes? Explique. 
+
+ 

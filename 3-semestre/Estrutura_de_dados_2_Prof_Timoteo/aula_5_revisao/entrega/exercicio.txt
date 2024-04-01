@@ -1,0 +1,5 @@
+Faça um programa em C que leia o arquivo arquivo_colunas.txt (semana 01) e gere um arquivo em Binário com o mesmo conteúdo. 
+
+Após a conversão, gere um novo programa para comparar o desempenho de leitura do arquivo ASCII e o arquivo binário. 
+
+Qual dos dois arquivos ficou com o menor tamanho? Explique o motivo. 
