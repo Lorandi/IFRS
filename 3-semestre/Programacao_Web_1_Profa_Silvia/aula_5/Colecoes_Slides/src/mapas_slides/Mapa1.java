@@ -7,10 +7,24 @@ public class Mapa1 {
         map.put("um", 1);
         map.put("dois", 2);
         map.put("tres", 3);
-        
-        Iterator<Integer> it = map.values().iterator();
-        while (it.hasNext()) {
-            System.out.println((Integer) it.next());
+        map.put(String.valueOf(4), 4);
+        System.out.println(map.get("um"));
+        System.out.println(map.get("4"));
+        System.out.println();
+
+        //pegar todas as chaves do mapa
+        Set<String> chaves = map.keySet();
+        chaves.forEach(System.out::println);
+        System.out.println();
+
+        Collection<Integer> valores = map.values();
+        valores.forEach(System.out::println);
+        System.out.println();
+
+        //imprimir todas as chaves e valores
+        Set<Map.Entry<String, Integer>> entradas = map.entrySet();
+        for (Map.Entry<String, Integer> entrada : entradas) {
+            System.out.println(entrada.getKey() + " -> " + entrada.getValue());
         }
     }
 }
