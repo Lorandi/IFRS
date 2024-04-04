@@ -14,7 +14,7 @@ int main(void)
 	FILE *bin;
 	int  tamanho = 0; 
 	
-	if((bin = fopen("arquivo_binario.txt","rb")) == NULL)
+	if((bin = fopen("arquivo_binario.txt","r")) == NULL)
     {
         printf("Erro ao abrir arquivo");
     }
