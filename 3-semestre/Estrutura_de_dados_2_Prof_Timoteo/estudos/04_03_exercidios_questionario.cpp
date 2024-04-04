@@ -8,6 +8,10 @@ void func(){
 
 int main(){
 	
+	char *palavra = (char*)"Amigo";
+	printf("%s", palavra);
+	
+	/*
 	int num[5]= {5,4,3,2,1}, tam=5;
   	int i, j, min;
 	for (i = 0; i < (tam-1); i++) {
@@ -27,6 +31,7 @@ int main(){
     	printf("%d \n",num[q]);
     }
     system("pause");
+    */
 	
 	
 	/*

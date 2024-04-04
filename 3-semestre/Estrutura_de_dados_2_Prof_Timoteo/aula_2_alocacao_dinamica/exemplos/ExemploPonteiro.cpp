@@ -11,7 +11,7 @@ main()
 	
 	printf("Conteudo do Ponteiro de n: %d \n", *pn);
 	printf("Ponteiro de n: %x \n", pn);
-	
+	printf("Endereco do Ponteiro de n: %x \n", &pn);
 	
 	system("pause");
 }

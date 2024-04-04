@@ -5,7 +5,7 @@ typedef struct Cpessoa
 {
 	char nome[20];
 	int idade;
-};
+}Cpessoa;
 
 int main(void)
 {
