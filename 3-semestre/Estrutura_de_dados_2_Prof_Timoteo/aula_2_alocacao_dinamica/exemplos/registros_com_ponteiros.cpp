@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 
 typedef struct Cpessoa
 {
@@ -9,7 +10,13 @@ typedef struct Cpessoa
 
 int main(void)
 {
-	Cpessoa aluno[4];
+	//Cpessoa aluno[4];
+	// Aloca memória para 4 structs Cpessoa
+    Cpessoa *aluno = (Cpessoa *)malloc(4 * sizeof(Cpessoa));
+    if (aluno == NULL) {
+        printf("Erro na alocação de memória\n");
+        return 1;
+    }
 	Cpessoa *paluno = aluno;
 	
 	strcpy(paluno->nome, "Celso de Melo");
@@ -35,5 +42,12 @@ int main(void)
 		printf("%s \t %d \n", paluno->nome, paluno->idade);
 		paluno++;
 	}
+	
+	// Libera a memória alocada
+    free(aluno);
+    
 	getchar();
+	
+	return 0;
+	
 }
