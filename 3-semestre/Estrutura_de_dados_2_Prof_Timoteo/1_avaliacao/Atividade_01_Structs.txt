@@ -1,0 +1,22 @@
+Atividade 01 - Structs (2,0 Pontos)
+Condições de conclusão
+
+Considerando o código fonte "Avaliacao_01.cpp" e as variáveis locais:
+
+int icodigo;
+char esfera[16];
+char solicitante[80];
+char situacao[10];
+char data[16];
+char motivo[80];
+Altere a estrutura de variáveis para utilizar uma struct (registro) chamada "dados" e defina o tipo 
+com o nome de "DADOS". 
+
+Para identificar o item 01 da Avaliação você deve identificar colando imediatamente acima do seu 
+código alterado a seguinte linha:
+
+"//****************Atividade 01********************** "
+
+1,0 Ponto para criação da Struct .
+
+1,0 Para definição do "typedef". 
