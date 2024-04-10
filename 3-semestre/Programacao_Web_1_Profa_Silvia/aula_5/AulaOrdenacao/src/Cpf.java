@@ -28,10 +28,11 @@ public class Cpf implements Comparable<Cpf>{
 	}
 	@Override
 	public int compareTo(Cpf o) {
-		if(this.getNumero() > o.getNumero()) return 1;
-		if(this.getNumero() < o.getNumero()) return -1;
-		return 0;
-	}
+        return Long.compare(this.getNumero(), o.getNumero());
+//		if(this.getNumero() > o.getNumero()) return 1;
+//		if(this.getNumero() < o.getNumero()) return -1;
+//		return 0;
+    }
 	
 	
 }
