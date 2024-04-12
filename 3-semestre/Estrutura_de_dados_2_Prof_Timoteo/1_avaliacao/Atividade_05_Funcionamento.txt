@@ -1,5 +1,0 @@
-Atividade 05 - Funcionamento
- 
-0,5 Ponto se o programa estiver compilando e rodando.
-
-0,5 Ponto se estiver um menu de busca, e finalizar o programa quando informar o código Zero. 
