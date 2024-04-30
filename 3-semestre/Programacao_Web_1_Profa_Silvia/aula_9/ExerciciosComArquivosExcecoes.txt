@@ -1,0 +1,13 @@
+Usando a classe Arquivo criada na aula passada faça os itens abaixo:
+
+1 - Faça o tratamento de todas as exceções dos métodos da classe Arquivo, use try com recursos
+
+2 - Usando a classe Pessoa (aulas anteriores) monte o menu abaixo
+
+1 – Cadastrar Pessoa em Arquivo
+2 – Listar todas as pessoas que estão no arquivo
+3 – Pesquisar pessoa usando o nome
+4 – Pesquisar pessoa usando o telefone (criar na classe telefone o método equals())
+5 - Sair
+
+Obs.: para resolver a questão você precisa ver como usar o Serializable nos slides da aula de Arquivos.
