@@ -1,5 +1,6 @@
 package org.trabalho_colecoes;
 
+import org.trabalho_colecoes.IOClasses.ArquivoObjetos;
 import org.trabalho_colecoes.entities.Biblioteca;
 import org.trabalho_colecoes.entities.Livro;
 import org.trabalho_colecoes.entities.Membro;
@@ -44,7 +45,18 @@ public class Main {
         System.out.println();
 
 
+        ArquivoObjetos arquivoObjetos = new ArquivoObjetos("Arquivo");
 
+        arquivoObjetos.abrir("w");
+        arquivoObjetos.gravarObjeto(biblioteca1);
+        arquivoObjetos.fechar();
+
+        arquivoObjetos.abrir("r");
+
+        Biblioteca b = (Biblioteca) arquivoObjetos.lerObjeto();
+        arquivoObjetos.fechar();
+
+        b.listarTodosMembros();
     }
 
 }

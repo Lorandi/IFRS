@@ -1,8 +1,9 @@
 package org.trabalho_colecoes.entities;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class Livro implements Comparable<Livro> {
+public class Livro implements Comparable<Livro>, Serializable {
     private String titulo;
     private String autor;
     private String isbn;

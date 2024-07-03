@@ -2,9 +2,10 @@ package org.trabalho_colecoes.entities;
 
 import org.trabalho_colecoes.enums.SituacaoMatriculaEnum;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class Membro {
+public class Membro implements Serializable {
 
     private String matricula;
     private String nome;

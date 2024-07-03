@@ -2,10 +2,11 @@ package org.trabalho_colecoes.entities;
 
 import org.trabalho_colecoes.interfaces.OperacoesBiblioteca;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.TreeSet;
 
-public class Biblioteca implements OperacoesBiblioteca {
+public class Biblioteca implements OperacoesBiblioteca, Serializable {
     private ArrayList<Membro> membros = new ArrayList<>();
     private TreeSet<Livro> livros = new TreeSet<>();
 
