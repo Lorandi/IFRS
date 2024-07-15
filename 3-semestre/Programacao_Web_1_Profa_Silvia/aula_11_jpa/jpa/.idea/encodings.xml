@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/src/main/java/META-INF" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/classes" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/colecoes" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/datas" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/enums" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/org" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/testes" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/util" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../jpa_com_maven/src/main/java/testes/Exemplo1.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/../jpa_com_maven/src/main/java/testes/Exemplo2.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/../jpa_com_maven/src/main/java/testes/Exemplo3.java" charset="windows-1252" />
+    <file url="PROJECT" charset="windows-1252" />
+  </component>
+</project>
