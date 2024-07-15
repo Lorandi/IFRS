@@ -20,12 +20,12 @@ public class TesteColecoes2 {
 	        user.setDataCadastro(new Date());
 	        em.getTransaction().begin();
 	        em.persist(user);
-	        System.out.println("Usu�rio salvo com sucesso! " );
 	        em.getTransaction().commit();
+			System.out.println("Usuário salvo com sucesso! " );
 	        //buscando objeto cadastrado no banco
 	        Usuario4 userAux = em.find(Usuario4.class, 1L);
 	        Date date = userAux.getDataCadastro();
-	        System.out.println("Data" + date.toString());
+	        System.out.println("Data " + date.toString());
 
         }catch(RuntimeException e) {
         	 if (em.getTransaction().isActive()) {

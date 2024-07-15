@@ -13,11 +13,13 @@ public class TesteEnum {
     public static void main(String[] args) {
         EntityManager em = JPAUtil.getEntityManager();
         try {
-	        Usuario2 user = new Usuario2("fulano", "123456", Perfil.ALUNO);
+	        Usuario2 user = new Usuario2("Usuario2", "123456", Perfil.ALUNO);
 	        em.getTransaction().begin();
 	        em.persist(user);
-	        System.out.println("Usu�rio salvo com sucesso! " );
 	        em.getTransaction().commit();
+            System.out.println("Usuário salvo com sucesso! ");
+            System.out.println(user.toString());
+
         }catch(RuntimeException e) {
         	 if (em.getTransaction().isActive()) {
                  em.getTransaction().rollback();

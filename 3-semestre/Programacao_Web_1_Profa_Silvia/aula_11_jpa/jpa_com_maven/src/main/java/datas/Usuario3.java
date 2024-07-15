@@ -19,12 +19,15 @@ public class Usuario3 implements Serializable {
     @Enumerated(EnumType.STRING) 
     private Perfil perfil; 
    
-    @Temporal(TemporalType.DATE)
-    @Column(name = "data_cadastro", nullable = false)
-    private Date dataCadastro;
+//    @Temporal(TemporalType.DATE)
+//    @Column(name = "data_cadastro", nullable = false)
+//    private Date dataCadastro;
     
-    /*@Column(name = "data_cad", nullable = false) 
-    private LocalDate dataCadastro;*/
+    @Column(name = "data_cad", nullable = false)
+    private Date dataCadastro;
+
+    @Column(name = "data_nascimento")
+    private LocalDate dataNascimento;
   
     public Usuario3(){}
 
@@ -38,6 +41,16 @@ public class Usuario3 implements Serializable {
         this.perfil = perfil;
         this.dataCadastro = data;
     }
+
+    public Usuario3(String identificador, String senha, Perfil perfil, Date data, LocalDate dataNascimento) {
+        this.identificador = identificador;
+        this.senha = senha;
+        this.perfil = perfil;
+        this.dataCadastro = data;
+        this.dataNascimento = dataNascimento;
+    }
+
+
     public Long getIdUsuario() {
         return idUsuario;
     }

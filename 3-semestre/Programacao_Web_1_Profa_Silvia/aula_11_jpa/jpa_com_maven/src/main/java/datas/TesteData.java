@@ -16,8 +16,8 @@ public class TesteData {
 	        user.setDataCadastro(new Date());
 	        em.getTransaction().begin();
 	        em.persist(user);
-	        System.out.println("Usu�rio salvo com sucesso! " );
 	        em.getTransaction().commit();
+            System.out.println("Usuário salvo com sucesso! " );
         }catch(RuntimeException e) {
         	 if (em.getTransaction().isActive()) {
                  em.getTransaction().rollback();

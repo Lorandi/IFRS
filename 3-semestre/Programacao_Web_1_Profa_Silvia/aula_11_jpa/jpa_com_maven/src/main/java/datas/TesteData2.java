@@ -1,26 +1,24 @@
-package colecoes;
+package datas;
 
+import enums.Perfil;
 import jakarta.persistence.EntityManager;
 import util.JPAUtil;
 
-import enums.Perfil;
-import java.util.*;
+import java.time.LocalDate;
+import java.util.Date;
 
-public class TesteColecoes1 {
+
+public class TesteData2 {
 
     public static void main(String[] args) {
         EntityManager em = JPAUtil.getEntityManager();
         try {
-        	Set<String> emails = new HashSet<String>();
-        	emails.add("fulano1@mail.com");
-        	emails.add("fulano2@mail.com");
-	        Usuario4 user = new Usuario4("fulano", "123456", emails);
+	        Usuario3 user = new Usuario3("Ciclano", "123456", Perfil.ALUNO, new Date(), LocalDate.now());
 	        user.setPerfil(Perfil.ALUNO);
-	        user.setDataCadastro(new Date());
 	        em.getTransaction().begin();
 	        em.persist(user);
+	        System.out.println("Usuário salvo com sucesso! " );
 	        em.getTransaction().commit();
-            System.out.println("Usuário salvo com sucesso! " );
         }catch(RuntimeException e) {
         	 if (em.getTransaction().isActive()) {
                  em.getTransaction().rollback();
