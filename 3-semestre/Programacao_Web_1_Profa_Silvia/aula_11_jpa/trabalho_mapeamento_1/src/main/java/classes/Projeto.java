@@ -29,7 +29,7 @@ public class Projeto implements Serializable {
     private LocalDate dataFim;
 
     @ElementCollection(fetch = FetchType.LAZY)
-    @CollectionTable(name="participantes")
+    @CollectionTable(name="projeto_tem_participantes")
     private Set<String> participantes = new HashSet<>();
 
     @Enumerated(EnumType.STRING)
